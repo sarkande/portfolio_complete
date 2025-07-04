@@ -1,0 +1,53 @@
+<div class="sidebar">
+  <input
+    type="text"
+    placeholder="Rechercher un projet..."
+    [(ngModel)]="searchText"
+    (input)="onFilterChange()"
+  />
+
+  <div class="tags">
+    <span
+      *ngFor="let tag of tags"
+      (click)="toggleTag(tag)"
+      [class.active]="isActive(tag)"
+    >
+      <img [src]="'/assets/icons/' + (tag | icon) + '.svg'" alt="Tag Icon" width="16" height="16" />
+      {{ tag }}
+    </span>
+  </div>
+  <hr />
+
+  <div class="filter-toggle">
+    <label class="toggle-label">
+      <input type="checkbox" [(ngModel)]="showGitPublic" (change)="onFilterChange()" />
+      <span class="slider"></span>
+      <span class="label-text">Sources Git public ?</span>
+    </label>
+  </div>
+
+  <div class="filter-toggle">
+    <label class="toggle-label">
+      <input type="checkbox" [(ngModel)]="showObsolete" (change)="onFilterChange()" />
+      <span class="slider"></span>
+      <label class="help-container">
+        <span class="label-text">Projets obsolètes&nbsp;?</span>
+        <span class="help-icon" aria-label="Plus d’informations" tabindex="0">?</span>
+        <span class="help-bubble" role="tooltip">
+         Concerne les projets trop anciens pour avoir encore leur code source et/ou d'images lié au projet. 
+        </span>
+      </label>
+    </label>
+  </div>
+<hr />
+  <div class="year-range custom-slider">
+    <ngx-slider
+      [(value)]="startYearFilter"
+      [(highValue)]="endYearFilter"
+      [options]="sliderOptions"
+      (userChangeEnd)="onFilterChange()"
+    ></ngx-slider>
+  
+  </div>
+  
+</div>

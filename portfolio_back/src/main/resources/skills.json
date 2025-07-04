@@ -1,0 +1,248 @@
+[
+  {
+    "name": "React",
+    "level": 5,
+    "content": "{\"fr\":\"Bibliothèque JavaScript pour construire des interfaces utilisateur réactives et déclaratives.\",\"en\":\"A JavaScript library for building reactive, declarative user interfaces.\"}",
+    "icon": "icons/React.svg"
+  },
+  {
+    "name": "TypeScript",
+    "level": 4,
+    "content": "{\"fr\":\"Sur-ensemble typé de JavaScript offrant la vérification statique et une meilleure lisibilité du code.\",\"en\":\"A typed superset of JavaScript providing static checks and improved code readability.\"}",
+    "icon": "icons/TypeScript.svg"
+  },
+  {
+    "name": "PHP",
+    "level": 3,
+    "content": "{\"fr\":\"Langage de scripting côté serveur largement utilisé pour le développement web dynamique.\",\"en\":\"A server-side scripting language widely used for dynamic web development.\"}",
+    "icon": "icons/PHP.svg"
+  },
+  {
+    "name": "Angular",
+    "level": 4,
+    "content": "{\"fr\":\"Framework web TypeScript complet pour construire des applications single-page maintenables et modulaires.\",\"en\":\"A full-featured TypeScript web framework for building maintainable, modular single-page applications.\"}",
+    "icon": "icons/Angular.svg"
+  },
+  {
+    "name": "Odoo",
+    "level": 5,
+    "content": "{\"fr\":\"Suite d'applications open source de gestion d'entreprise intégrée (ERP/CRM).\",\"en\":\"An open-source suite of integrated business applications (ERP/CRM).\"}",
+    "icon": "icons/Odoo.svg"
+  },
+  {
+    "name": "SysAdmin",
+    "level": 4,
+    "content": "{\"fr\":\"Gestion et maintenance des serveurs, réseaux et infrastructures système.\",\"en\":\"Administration and maintenance of servers, networks, and system infrastructure.\"}",
+    "icon": "icons/SysAdmin.svg"
+  },
+  {
+    "name": "Docker",
+    "level": 4,
+    "content": "{\"fr\":\"Plateforme de conteneurisation permettant d'emballer et déployer des applications isolées.\",\"en\":\"A containerization platform for packaging and deploying applications in isolation.\"}",
+    "icon": "icons/Docker.svg"
+  },
+  {
+    "name": "CSharp",
+    "level": 4,
+    "content": "{\"fr\":\"Langage orienté objet de Microsoft pour le développement .NET, desktop et web.\",\"en\":\"Microsoft’s object-oriented language for .NET desktop and web development.\"}",
+    "icon": "icons/CSharp.svg"
+  },
+  {
+    "name": "Electron",
+    "level": 3,
+    "content": "{\"fr\":\"Framework open source pour développer des applications desktop multi-plateformes avec web tech.\",\"en\":\"An open-source framework for building cross-platform desktop apps using web technologies.\"}",
+    "icon": "icons/Electron.svg"
+  },
+  {
+    "name": "Reverse Engineering",
+    "level": 2,
+    "content": "{\"fr\":\"Analyse en profondeur de logiciels pour comprendre leur fonctionnement interne.\",\"en\":\"In-depth analysis of software to understand its internal workings.\"}",
+    "icon": "icons/Reverse Engineering.svg"
+  },
+  {
+    "name": "NeutralinoJS",
+    "level": 3,
+    "content": "{\"fr\":\"Micro-framework pour créer des apps desktop légères en JavaScript/HTML/CSS.\",\"en\":\"A lightweight framework for building desktop apps with JavaScript/HTML/CSS.\"}",
+    "icon": "icons/NeutralinoJS.svg"
+  },
+  {
+    "name": "Node.js",
+    "level": 3,
+    "content": "{\"fr\":\"Environnement d'exécution JavaScript côté serveur basé sur le moteur V8 de Chrome.\",\"en\":\"A server-side JavaScript runtime built on Chrome’s V8 engine.\"}",
+    "icon": "icons/Node.js.svg"
+  },
+  {
+    "name": "Redux",
+    "level": 2,
+    "content": "{\"fr\":\"Bibliothèque de gestion d'état prévisible pour applications JavaScript.\",\"en\":\"A predictable state management library for JavaScript applications.\"}",
+    "icon": "icons/Redux.svg"
+  },
+  {
+    "name": "NPM",
+    "level": 5,
+    "content": "{\"fr\":\"Gestionnaire de paquets pour Node.js, permettant d'installer et partager des modules.\",\"en\":\"The package manager for Node.js, enabling installation and sharing of modules.\"}",
+    "icon": "icons/NPM.svg"
+  },
+  {
+    "name": "REST",
+    "level": 5,
+    "content": "{\"fr\":\"Style d'architecture pour concevoir des services web légers et scalables.\",\"en\":\"An architectural style for designing lightweight, scalable web services.\"}",
+    "icon": "icons/REST.svg"
+  },
+  {
+    "name": "D3JS",
+    "level": 2,
+    "content": "{\"fr\":\"Bibliothèque JavaScript pour manipuler des documents via des données et créer des visualisations.\",\"en\":\"A JavaScript library for manipulating documents based on data and creating visualizations.\"}",
+    "icon": "icons/D3JS.svg"
+  },
+  {
+    "name": "UI/UX",
+    "level": 1,
+    "content": "{\"fr\":\"Pratiques de conception centrées utilisateur pour améliorer l'expérience et l'interface.\",\"en\":\"User-centered design practices to improve experience and interface usability.\"}",
+    "icon": "icons/UI/UX.svg"
+  },
+  {
+    "name": "Figma",
+    "level": 1,
+    "content": "{\"fr\":\"Outil de design collaboratif pour maquettes, prototypes et partage d'interfaces.\",\"en\":\"A collaborative design tool for mockups, prototypes, and UI sharing.\"}",
+    "icon": "icons/Figma.svg"
+  },
+  {
+    "name": "JavaScript",
+    "level": 5,
+    "content": "{\"fr\":\"Langage de script principal du web pour rendre les pages interactives.\",\"en\":\"The core scripting language of the web to make pages interactive.\"}",
+    "icon": "icons/JavaScript.svg"
+  },
+  {
+    "name": "Jest",
+    "level": 3,
+    "content": "{\"fr\":\"Framework de test JavaScript axé sur la simplicité et la couverture de code.\",\"en\":\"A JavaScript testing framework focused on simplicity and code coverage.\"}",
+    "icon": "icons/Jest.svg"
+  },
+  {
+    "name": "Accessibility",
+    "level": 2,
+    "content": "{\"fr\":\"Pratiques assurant l'accès aux interfaces pour tous les utilisateurs.\",\"en\":\"Practices ensuring interface access for all users.\"}",
+    "icon": "icons/Accessibility.svg"
+  },
+  {
+    "name": "Regex",
+    "level": 4,
+    "content": "{\"fr\":\"Expressions régulières pour matcher et manipuler des motifs dans des chaînes.\",\"en\":\"Regular expressions for matching and manipulating patterns in strings.\"}",
+    "icon": "icons/Regex.svg"
+  },
+  {
+    "name": "HTML5",
+    "level": 5,
+    "content": "{\"fr\":\"Dernière version du langage de balisage pour structurer le contenu web.\",\"en\":\"The latest version of the markup language for structuring web content.\"}",
+    "icon": "icons/HTML5.svg"
+  },
+  {
+    "name": "Sass",
+    "level": 4,
+    "content": "{\"fr\":\"Préprocesseur CSS offrant variables, mixins et nesting pour mieux organiser le style.\",\"en\":\"A CSS preprocessor providing variables, mixins, and nesting for better style organization.\"}",
+    "icon": "icons/Sass.svg"
+  },
+  {
+    "name": "CSS3",
+    "level": 5,
+    "content": "{\"fr\":\"Standard de style pour le web avec animations, flexbox et media queries.\",\"en\":\"The web styling standard with animations, flexbox, and media queries.\"}",
+    "icon": "icons/CSS3.svg"
+  },
+  {
+    "name": "AngularJS",
+    "level": 2,
+    "content": "{\"fr\":\"Ancienne version du framework Angular, orientée MVVM pour applications single-page.\",\"en\":\"The original Angular version, MVVM-oriented for single-page applications.\"}",
+    "icon": "icons/AngularJS.svg"
+  },
+  {
+    "name": "RubyOnRails",
+    "level": 2,
+    "content": "{\"fr\":\"Framework web Ruby favorisant la convention plutôt que la configuration.\",\"en\":\"A Ruby web framework that emphasizes convention over configuration.\"}",
+    "icon": "icons/RubyOnRails.svg"
+  },
+  {
+    "name": "Bash",
+    "level": 4,
+    "content": "{\"fr\":\"Shell Unix pour automatiser tâches, scripts et gestion de systèmes.\",\"en\":\"A Unix shell for automating tasks, scripting, and system management.\"}",
+    "icon": "icons/Bash.svg"
+  },
+  {
+    "name": "Unity",
+    "level": 3,
+    "content": "{\"fr\":\"Moteur de jeu multi-plateforme pour créer expériences 2D/3D interactives.\",\"en\":\"A cross-platform game engine for creating interactive 2D/3D experiences.\"}",
+    "icon": "icons/Unity.svg"
+  },
+  {
+    "name": "Android",
+    "level": 2,
+    "content": "{\"fr\":\"Plateforme mobile open source de Google pour développer des apps natives.\",\"en\":\"Google’s open-source mobile platform for building native apps.\"}",
+    "icon": "icons/Android.svg"
+  },
+  {
+    "name": "WordPress",
+    "level": 2,
+    "content": "{\"fr\":\"CMS open source populaire pour créer blogs et sites vitrines.\",\"en\":\"A popular open-source CMS for building blogs and showcase sites.\"}",
+    "icon": "icons/WordPress.svg"
+  },
+  {
+    "name": "Joomla",
+    "level": 1,
+    "content": "{\"fr\":\"CMS open source flexible pour sites web et portails.\",\"en\":\"A flexible open-source CMS for websites and portals.\"}",
+    "icon": "icons/Joomla.svg"
+  },
+  {
+    "name": "Autodesk Maya",
+    "level": 1,
+    "content": "{\"fr\":\"Logiciel de modélisation, animation et rendu 3D professionnel.\",\"en\":\"A professional 3D modeling, animation, and rendering software.\"}",
+    "icon": "icons/Autodesk Maya.svg"
+  },
+  {
+    "name": "API Google",
+    "level": 3,
+    "content": "{\"fr\":\"Suite d'interfaces RESTful fournies par Google pour divers services.\",\"en\":\"A set of RESTful interfaces provided by Google for various services.\"}",
+    "icon": "icons/API Google.svg"
+  },
+  {
+    "name": "Tesseract",
+    "level": 2,
+    "content": "{\"fr\":\"Moteur OCR open source pour extraire du texte depuis des images.\",\"en\":\"An open-source OCR engine for extracting text from images.\"}",
+    "icon": "icons/Tesseract.svg"
+  },
+  {
+    "name": "WPF",
+    "level": 2,
+    "content": "{\"fr\":\"Framework .NET pour construire interfaces utilisateurs desktop riches.\",\"en\":\"A .NET framework for building rich desktop user interfaces.\"}",
+    "icon": "icons/WPF.svg"
+  },
+  {
+    "name": "C++",
+    "level": 1,
+    "content": "{\"fr\":\"Langage compilé performant orienté objet et bas-niveau.\",\"en\":\"A high-performance, object-oriented and low-level compiled language.\"}",
+    "icon": "icons/C++.svg"
+  },
+  {
+    "name": "Qt",
+    "level": 1,
+    "content": "{\"fr\":\"Framework C++ pour créer applications GUI et multi-plateformes.\",\"en\":\"A C++ framework for building cross-platform GUI applications.\"}",
+    "icon": "icons/Qt.svg"
+  },
+  {
+    "name": "WinForm",
+    "level": 2,
+    "content": "{\"fr\":\"Bibliothèque .NET pour créer applications desktop Windows basées sur Win32.\",\"en\":\"A .NET library for building Win32-based Windows desktop applications.\"}",
+    "icon": "icons/WinForm.svg"
+  },
+  {
+    "name": "Python",
+    "level": 4,
+    "content": "{\"fr\":\"Langage polyvalent et lisible, utilisé en data science, web, IA et automatisation.\\n\",\"en\":\"Versatile and readable language, used in data science, web, AI, and automation.\\n\\n\"}",
+    "icon": "icons/Python.svg"
+  },
+  {
+    "name": "XML",
+    "level": 5,
+    "content": "{\"fr\":\"Langage de balisage pour structurer et échanger des données entre systèmes.\\n\",\"en\":\"Markup language for structuring and exchanging data between systems.\\n\\n\"}",
+    "icon": "icons/XML.svg"
+  }
+]

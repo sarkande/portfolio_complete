@@ -1,0 +1,84 @@
+<div class="container">
+  <div *ngIf="isLoading" class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Article complet une fois chargé -->
+  <article *ngIf="!isLoading && project" class="post">
+    <!-- Navigation prev/next + titre -->
+    <header class="post-header">
+      <div class="nav-links">
+        <a
+          *ngIf="prevProject"
+          [routerLink]="['/', currentLang, 'projects', prevProject.slug]"
+          class="nav-link prev"
+          >← {{ prevProject.title }}</a
+        >
+        <a
+          *ngIf="nextProject"
+          [routerLink]="['/', currentLang, 'projects', nextProject.slug]"
+          class="nav-link next"
+          >{{ nextProject.title }} →</a
+        >
+      </div>
+      <h1>{{ project.title }}</h1>
+    </header>
+    <!-- Sommaire en début -->
+    <nav *ngIf="!isLoading && project && toc.length" class="toc">
+      <h2>Sommaire</h2>
+      <ul>
+        <li
+          *ngFor="let item of toc"
+          [style.paddingLeft.px]="(item.level - 2) * 10"
+        >
+          <a [routerLink]="[]" [fragment]="item.slug">{{ item.text }}</a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <!-- Métadonnées du projet -->
+    <section class="project-meta">
+      <p><strong>Catégorie :</strong> Projets récents</p>
+      <p>
+        <strong>Période :</strong> {{ project.startDate }} –
+        {{ project.endDate }}
+      </p>
+      <p><strong>Rôle :</strong> {{ project.role }}</p>
+      <p><strong>Techno :</strong> {{ project.technologies.join(", ") }}</p>
+      <p *ngIf="project.liveUrl">
+        <a [href]="project.liveUrl" target="_blank" rel="noopener">
+          Voir le site
+        </a>
+      </p>
+    </section>
+
+    <!-- Galerie d’images -->
+    <div *ngIf="project.gallery?.length" class="post-gallery">
+      <h3 id="Galerie">Galerie</h3>
+      <app-carousel [images]="project.gallery"></app-carousel>
+    </div>
+
+    <!-- Contenu Markdown -->
+    <section class="post-content">
+      <markdown [data]="project.content"></markdown>
+    </section>
+
+    <header class="post-header">
+      <div class="nav-links">
+        <a
+          *ngIf="prevProject"
+          [routerLink]="['/', currentLang, 'projects', prevProject.slug]"
+          class="nav-link prev"
+          >← {{ prevProject.title }}</a
+        >
+        <a
+          *ngIf="nextProject"
+          [routerLink]="['/', currentLang, 'projects', nextProject.slug]"
+          class="nav-link next"
+          >{{ nextProject.title }} →</a
+        >
+      </div>
+    </header>
+  </article>
+</div>

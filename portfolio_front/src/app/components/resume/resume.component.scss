@@ -1,0 +1,102 @@
+.timeline {
+    img {
+        position: absolute;
+    }
+}
+
+
+.custom-timeline-event {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    /* Pour une transition douce des couleurs */
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.event-title {
+    color: #333;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.event-date {
+    color: #666;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.event-description {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* --- Styles spécifiques à la position --- */
+
+.event-left {
+    border-left: 5px solid #007bff;
+    /* Bordure bleue pour la gauche */
+    background-color: #e6f3ff;
+    /* Fond légèrement bleuté */
+
+    .event-title {
+        color: #0056b3;
+        /* Titre bleu foncé */
+    }
+}
+
+.event-right {
+    border-right: 5px solid #28a745;
+    /* Bordure verte pour la droite */
+    background-color: #e9ffe9;
+    /* Fond légèrement verdâtre */
+
+    .event-title {
+        color: #1e7e34;
+        /* Titre vert foncé */
+    }
+}
+
+/* --- Style pour les éléments "en cours" --- */
+
+.event-en-cours {
+    border: 2px dashed #ffc107 !important;
+    /* Bordure jaune pointillée, plus épaisse */
+    background-color: #fffde7 !important;
+    /* Fond jaune très clair */
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+
+
+    .event-title {
+        color: #c19200 !important;
+        /* Titre orange/jaune */
+        font-weight: bold;
+        /* Texte du titre en gras */
+    }
+
+    .event-date {
+        color: #666;
+        font-size: 0.9em;
+        white-space: nowrap;
+        // Optionnel: ajuster la marge si les plages de dates sont plus longues
+        // margin-left: 10px;
+    }
+}
+
+.col-center:not(.col-period) {
+    min-height: 1rem !important;
+}
+
+:host ::ng-deep ngx-timeline.timeline cdk-virtual-scroll-viewport {
+    height: 500px;
+}

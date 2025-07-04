@@ -1,0 +1,17 @@
+<!-- skill-card.component.html -->
+<div class="skill-card">
+    <img
+      [src]="skill.icon ? '/assets/' + skill.icon : '/assets/projects/image_not_available.png'"
+      alt="{{ skill.name }}"
+      class="skill-image"
+    />
+    <div class="skill-info">
+      <h3 class="skill-name">{{ skill.name }}</h3>
+      <p class="description">{{ skill.content }}</p>
+      <div class="level">
+        <span class="level-value">
+          <app-star-rating [priority]="skill.level" [readonly]="true"></app-star-rating>
+        </span>
+      </div>
+    </div>
+  </div>

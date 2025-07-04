@@ -1,0 +1,74 @@
+<div class="navBar">
+  <div class="navBar__lang">
+    <button
+      (click)="switchLang('fr')"
+      [disabled]="currentLang === 'fr'"
+      [attr.aria-pressed]="currentLang === 'fr'"
+      aria-label="Switch to French"
+      title="Français"
+    >
+      🇫🇷
+    </button>
+    <button
+      (click)="switchLang('en')"
+      [disabled]="currentLang === 'en'"
+      [attr.aria-pressed]="currentLang === 'en'"
+      aria-label="Switch to English"
+      title="English"
+    >
+      🇬🇧
+    </button>
+  </div>
+
+  <!-- Bouton burger -->
+  <button
+    class="navBar__burger"
+    (click)="toggleMobileMenu()"
+    [attr.aria-expanded]="mobileMenuOpen"
+    aria-label="Toggle navigation"
+  >
+    <span class="navBar__burger_line"></span>
+    <span class="navBar__burger_line"></span>
+    <span class="navBar__burger_line"></span>
+  </button>
+
+  <!-- Menu principal -->
+  <div
+    class="navBar__menu"
+    [class.navBar__menu--open]="mobileMenuOpen"
+  >
+    <ng-container *ngFor="let link of links">
+      <a
+        [routerLink]=" link.path ? ['/', currentLang, link.path] : ['/', currentLang] "
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="navBar__menu_link"
+        (click)="closeMobileMenu()"
+      >
+        {{ link.name | translate }}
+      </a>
+    </ng-container>
+  </div>
+
+  <!-- Langues + réseaux (restent visibles) -->
+
+
+  <div class="navBar__network">
+    <ng-container *ngFor="let social of socials">
+      <a
+        [href]="social.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        [title]="social.name"
+      >
+        <img
+          class="navBar__network_img"
+          [src]="'/assets/icons/' + social.icon"
+          [alt]="social.name"
+          width="30"
+          height="30"
+        />
+      </a>
+    </ng-container>
+  </div>
+</div>

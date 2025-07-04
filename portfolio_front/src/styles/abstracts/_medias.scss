@@ -1,0 +1,17 @@
+// Définition des mixins
+@mixin for-tablet-portrait {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+@mixin for-little-phone {
+  @media (max-width: 340px) {
+    @content;
+  }
+}

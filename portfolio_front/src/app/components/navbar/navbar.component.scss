@@ -1,0 +1,140 @@
+@use "abstracts/medias";
+
+.navBar {
+    // border: solid 1px black;
+    // background-color: #0b0c18;
+    min-height: 80px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #1A2324;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; // Assure que la barre de navigation est au-dessus des autres éléments
+
+    // Burger (caché par défaut)
+    .navBar__burger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        .navBar__burger_line {
+            width: 100%;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+    }
+
+    .navBar__lang {
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 4px;
+            margin-left: 8px;
+            outline: none;
+
+            &:disabled {
+                cursor: default;
+                opacity: 0.6;
+            }
+
+            &:not(:disabled):hover {
+                color: #1a2561; // couleur au hover
+            }
+        }
+    }
+
+    .navBar__profile {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+
+        img {
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+    }
+
+    .navBar__menu {
+        display: flex;
+
+        &_link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 5px;
+            // border-radius: 10px;
+            text-align: center;
+            margin-right: 5px;
+            width: 100px;
+            color: rgb(255, 255, 255);
+
+            &:hover {
+                // background-color: #283a9d;
+                color: teal;
+                cursor: pointer;
+                border-bottom: teal solid 2px;
+            }
+
+            &.selected {
+                border-bottom: teal solid 2px;
+            }
+        }
+    }
+
+    .navBar__network {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+
+        &_img {
+            background-color: white;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+    }
+
+    // Responsive pour tablettes en portrait et plus petit
+    @include medias.for-tablet-portrait {
+        .navBar__burger {
+            display: flex;
+        }
+
+        .navBar__menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #1A2324;
+            flex-direction: column;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+
+            &--open {
+                max-height: 500px; // assez grand pour tout afficher
+            }
+
+            &_link {
+                padding: 1rem;
+                border-top: 1px solid #333;
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}

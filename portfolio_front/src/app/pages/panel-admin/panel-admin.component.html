@@ -1,0 +1,478 @@
+<div class="container">
+  <h1>Administration des projets</h1>
+  <button
+    *ngIf="!quickCreate"
+    class="btn btn-primary"
+    (click)="openQuickCreate()"
+  >
+    Ajouter un projet
+  </button>
+  <button class="btn btn-primary" (click)="exportProjects()">
+    Exporter les projets
+  </button>
+  <button class="btn btn-primary" (click)="exportSkills()">
+    Exporter les skills
+  </button>
+
+  <table class="projects-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Slug</th>
+        <th>Titre FR</th>
+        <th>Titre EN</th>
+        <th>Description FR</th>
+        <th>Description EN</th>
+        <th>Description longue FR</th>
+        <th>Description longue EN</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        <th>Actif</th>
+        <th>Tech.</th>
+        <th>Tags</th>
+        <th>Compétences</th>
+        <th>Catégorie</th>
+        <th>Vignette</th>
+        <th>Galerie</th>
+        <th>Git</th>
+        <th>Live</th>
+        <th>Rôle</th>
+        <th>Feat.</th>
+        <th>Old</th>
+        <th>Contenu FR</th>
+        <th>Contenu EN</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="quickCreate" class="quick-create-row">
+        <td>—</td>
+        <td>—</td>
+        <td class="editable">
+          <input
+            type="text"
+            placeholder="Titre FR"
+            [(ngModel)]="newProject.titleFr"
+          />
+        </td>
+        <td class="editable">
+          <input
+            type="text"
+            placeholder="Titre EN"
+            [(ngModel)]="newProject.titleEn"
+          />
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Description FR"
+            [(ngModel)]="newProject.descriptionFr"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Description EN"
+            [(ngModel)]="newProject.descriptionEn"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Description longueFR"
+            [(ngModel)]="newProject.longDescriptionFr"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Description longue EN"
+            [(ngModel)]="newProject.longDescriptionEn"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <input type="date" [(ngModel)]="newProject.startDate" />
+        </td>
+        <td class="editable">
+          <input type="date" [(ngModel)]="newProject.endDate" />
+        </td>
+        <td><input type="checkbox" [(ngModel)]="newProject.active" /></td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            placeholder="Technologies (séparées par des virgules)"
+            [(ngModel)]="newProject.technologiesStr"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            placeholder="Tags (séparés par des virgules)"
+            [(ngModel)]="newProject.tagsStr"
+          ></textarea>
+        </td>
+        <td></td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            placeholder="Catégorie"
+            [(ngModel)]="newProject.category"
+          ></textarea>
+        </td>
+        <td>
+          <textarea
+            rows="1"
+            cols="30"
+            placeholder="URL de la vignette"
+            [(ngModel)]="newProject.thumbnailUrl"
+          ></textarea>
+        </td>
+        <td class="gallery-cell">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Galerie (URLs séparées par des points-virgules)"
+            [(ngModel)]="newProject.galleryStr"
+          ></textarea>
+        </td>
+        <td>
+          <input
+            type="url"
+            placeholder="URL du dépôt Git"
+            [(ngModel)]="newProject.gitUrl"
+          />
+        </td>
+        <td>
+          <input
+            type="url"
+            placeholder="URL du site en ligne"
+            [(ngModel)]="newProject.liveUrl"
+          />
+        </td>
+        <td class="editable">
+          <input type="text" placeholder="Rôle" [(ngModel)]="newProject.role" />
+        </td>
+        <td><input type="checkbox" [(ngModel)]="newProject.isFeatured" /></td>
+        <td><input type="checkbox" [(ngModel)]="newProject.old" /></td>
+        <td class="content-cell editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Contenu FR"
+            [(ngModel)]="newProject.contentFr"
+          ></textarea>
+        </td>
+        <td class="content-cell editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Contenu EN"
+            [(ngModel)]="newProject.contentEn"
+          ></textarea>
+        </td>
+        <td class="content-cell editable">
+          <button class="btn btn-secondary" (click)="createProject()">
+            Créer
+          </button>
+        </td>
+      </tr>
+      <tr *ngFor="let p of projects" [attr.id]="p.slug">
+        <td>{{ p.id }}</td>
+        <td class="editable">{{ p.slug }}</td>
+        <td class="editable">
+          <input type="text" [(ngModel)]="p.titleFr" (blur)="editProject(p)" />
+        </td>
+        <td class="editable">
+          <input type="text" [(ngModel)]="p.titleEn" (blur)="editProject(p)" />
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.descriptionFr"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.descriptionEn"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.longDescriptionFr"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.longDescriptionEn"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <input
+            type="date"
+            [(ngModel)]="p.startDate"
+            (blur)="editProject(p)"
+          />
+        </td>
+        <td class="editable">
+          <input type="date" [(ngModel)]="p.endDate" (blur)="editProject(p)" />
+        </td>
+        <td class="editable">
+          <input
+            type="checkbox"
+            [(ngModel)]="p.active"
+            (change)="editProject(p)"
+          />
+        </td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            [(ngModel)]="p.technologiesStr"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            [(ngModel)]="p.tagsStr"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="skills-cell">
+          <ng-container *ngIf="p.skills">
+            <span class="tag" *ngFor="let sk of p.skills">
+              {{ sk.name }}
+              <span class="remove" (click)="removeSkillFromProject(p, sk)"
+                >×</span
+              >
+            </span>
+          </ng-container>
+          <input
+            type="text"
+            [attr.list]="'skills-' + p.id"
+            [(ngModel)]="projectSkillInputs[p.slug]"
+            (keydown.enter)="addSkillToProject(p, projectSkillInputs[p.slug])"
+            placeholder="ajouter"
+          />
+          <datalist [id]="'skills-' + p.id">
+            <option
+              *ngFor="let opt of availableSkills(p)"
+              [value]="opt.name"
+            ></option>
+          </datalist>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            [(ngModel)]="p.category"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="1"
+            cols="30"
+            [(ngModel)]="p.thumbnailUrl"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="gallery-cell">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.galleryStr"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <input type="url" [(ngModel)]="p.gitUrl" (blur)="editProject(p)" />
+        </td>
+        <td class="editable">
+          <input type="url" [(ngModel)]="p.liveUrl" (blur)="editProject(p)" />
+        </td>
+        <td class="editable">
+          <input type="text" [(ngModel)]="p.role" (blur)="editProject(p)" />
+        </td>
+        <td class="editable">
+          <input
+            type="checkbox"
+            [(ngModel)]="p.isFeatured"
+            (change)="editProject(p)"
+          />
+        </td>
+        <td class="editable">
+          <input
+            type="checkbox"
+            [(ngModel)]="p.old"
+            (change)="editProject(p)"
+          />
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.contentFr"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="p.contentEn"
+            (blur)="editProject(p)"
+          ></textarea>
+        </td>
+        <td class="actions-cell">
+          <button class="btn btn-secondary" (click)="editProject(p)">
+            Modifier
+          </button>
+          <button class="btn btn-danger" (click)="deleteProject(p)">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+  <h2>Administration des compétences</h2>
+
+  <button
+    *ngIf="!quickCreateSkill"
+    class="btn btn-primary"
+    (click)="openQuickCreateSkill()"
+  >
+    Ajouter une compétence
+  </button>
+
+  <table class="skills-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Niveau</th>
+        <th>Contenu FR</th>
+        <th>Contenu EN</th>
+        <th>Icone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="quickCreateSkill" class="quick-create-row">
+        <td>—</td>
+        <td class="editable">
+          <input type="text" placeholder="Nom" [(ngModel)]="newSkill.name" />
+        </td>
+        <td class="editable">
+          <input
+            type="number"
+            placeholder="Niveau"
+            [(ngModel)]="newSkill.level"
+          />
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Contenu FR"
+            [(ngModel)]="newSkill.contentFr"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Contenu EN"
+            [(ngModel)]="newSkill.contentEn"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <input
+            type="number"
+            placeholder="Icone"
+            [(ngModel)]="newSkill.icon"
+          />
+        </td>
+        <td class="content-cell editable">
+          <button class="btn btn-secondary" (click)="createSkill()">
+            Créer
+          </button>
+        </td>
+      </tr>
+      <tr *ngFor="let skill of skills">
+        <td>{{ skill.id }}</td>
+        <td class="editable">
+          <input
+            type="text"
+            [(ngModel)]="skill.name"
+            (blur)="editSkill(skill)"
+          />
+        </td>
+        <td class="editable">
+          <input
+          type="number"
+          [(ngModel)]="skill.level"
+            (blur)="editSkill(skill)"
+          />
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="skill.contentFr"
+            (blur)="editSkill(skill)"
+            ></textarea>
+          </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            [(ngModel)]="skill.contentEn"
+            (blur)="editSkill(skill)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <input
+            [(ngModel)]="skill.icon"
+            (blur)="editSkill(skill)"
+          />
+        </td>
+        <td class="actions-cell">
+          <button class="btn btn-secondary" (click)="editSkill(skill)">
+            Modifier
+          </button>
+          <button class="btn btn-danger" (click)="deleteSkill(skill)">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="notifications">
+    <div class="notification" *ngFor="let notif of notifications">
+      <p [ngClass]="notif.type">{{ notif.message }}</p>
+    </div>
+  </div>
+</div>

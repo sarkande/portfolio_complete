@@ -1,0 +1,821 @@
+[
+    {
+        "id": "bujinkan-neko",
+        "title": "Bujinkan-Neko",
+        "description": "Commande de site web pour un club d’arts martiaux à Fréjus. Front en ReactJS, back en PHP REST.",
+        "startDate": "2022-02-01",
+        "endDate": "2022-03-01",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "REST"
+        ],
+        "tags": [
+            "Front",
+            "Formation"
+        ],
+        "category": "Projets récents",
+        "thumbnailUrl": "projects/bujinkan-neko/1.jpg",
+        "gallery": [
+            "projects/bujinkan-neko/1.jpg"
+        ],
+        "gitUrl": null,
+        "liveUrl": "https://bujinkan-neko.fr/",
+        "role": "Développeur Fullstack",
+        "isFeatured": true,
+        "active": true
+    },
+    {
+        "id": "capture-trame",
+        "title": "Capture trame",
+        "description": "Décompilation de trames du jeu Dofus, exploitation en CSharp avec UI en Electron/ReactJS.",
+        "startDate": "2022-04-01",
+        "endDate": "2022-06-01",
+        "technologies": [
+            "CSharp",
+            "React",
+            "Electron",
+            "Reverse Engineering"
+        ],
+        "tags": [
+            "Electron",
+            "Formation"
+        ],
+        "category": "Projets récents",
+        "thumbnailUrl": "projects/captureTrame/1.png",
+        "gallery": [
+            "projects/captureTrame/1.png",
+            "projects/captureTrame/2.png",
+            "projects/captureTrame/3.png",
+            "projects/captureTrame/4.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur Fullstack",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "better-organizer",
+        "title": "BetterOrganizer",
+        "description": "Refonte du logiciel Organizer de Naio en CSharp, Electron, ReactJS et Node.js.",
+        "startDate": "2022-07-01",
+        "endDate": "2022-08-01",
+        "technologies": [
+            "React",
+            "Electron",
+            "Node.js",
+            "CSharp",
+            "Redux"
+        ],
+        "tags": [
+            "Electron",
+            "Personnel"
+        ],
+        "category": "Projets récents",
+        "thumbnailUrl": "projects/betterOrganizer/1.png",
+        "gallery": [
+            "projects/betterOrganizer/1.png",
+            "projects/betterOrganizer/2.png",
+            "projects/betterOrganizer/3.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur Fullstack",
+        "isFeatured": true,
+        "active": true
+    },
+    {
+        "id": "modale",
+        "title": "Modale HRNet",
+        "description": "Composant ReactJS de modale publié sur NPM. Projet de fin de formation React.",
+        "startDate": "2022-09-01",
+        "endDate": "2022-10-01",
+        "technologies": [
+            "React",
+            "Redux",
+            "NPM"
+        ],
+        "tags": [
+            "Component",
+            "NPM"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet14-modale/2.png",
+        "gallery": [
+            "projects/openclassrooms/projet14-modale/1.png",
+            "projects/openclassrooms/projet14-modale/2.png",
+            "projects/openclassrooms/projet14-modale/3.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Projet_14",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "argentbank",
+        "title": "ArgentBank",
+        "description": "Application bancaire React avec Redux et gestion d'authentification via API REST.",
+        "startDate": "2022-07-01",
+        "endDate": "2022-08-01",
+        "technologies": [
+            "React",
+            "Redux",
+            "REST"
+        ],
+        "tags": [
+            "Finance",
+            "Formation"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet13-argentbank/2.png",
+        "gallery": [
+            "projects/openclassrooms/projet13-argentbank/1.png",
+            "projects/openclassrooms/projet13-argentbank/2.png",
+            "projects/openclassrooms/projet13-argentbank/3.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Projet_13",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "sportsee",
+        "title": "SportSee",
+        "description": "Dashboard sportif animé avec React et D3.js pour visualiser des performances.",
+        "startDate": "2022-06-01",
+        "endDate": "2022-07-01",
+        "technologies": [
+            "React",
+            "D3JS",
+            "REST"
+        ],
+        "tags": [
+            "Graphique",
+            "Sport"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet12-sportsee/2.png",
+        "gallery": [
+            "projects/openclassrooms/projet12-sportsee/1.png",
+            "projects/openclassrooms/projet12-sportsee/2.png",
+            "projects/openclassrooms/projet12-sportsee/3.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Projet_12",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "kasa",
+        "title": "Kasa",
+        "description": "Application de location immobilière avec ReactJS consommant une API REST.",
+        "startDate": "2022-05-01",
+        "endDate": "2022-06-01",
+        "technologies": [
+            "React",
+            "REST"
+        ],
+        "tags": [
+            "Immobilier",
+            "Formation"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet11-kasa/2.png",
+        "gallery": [
+            "projects/openclassrooms/projet11-kasa/1.png",
+            "projects/openclassrooms/projet11-kasa/2.png",
+            "projects/openclassrooms/projet11-kasa/3.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Projet_11",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "maquettage",
+        "title": "Learn@school (maquettage)",
+        "description": "Création de maquettes Figma adaptatives pour une association d'aide scolaire.",
+        "startDate": "2022-04-01",
+        "endDate": "2022-04-30",
+        "technologies": [
+            "UI/UX",
+            "Figma"
+        ],
+        "tags": [
+            "Design",
+            "Formation"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet10-maquettage/3.png",
+        "gallery": [
+            "projects/openclassrooms/projet10-maquettage/1.png",
+            "projects/openclassrooms/projet10-maquettage/2.png",
+            "projects/openclassrooms/projet10-maquettage/3.png",
+            "projects/openclassrooms/projet10-maquettage/4.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Projet_13",
+        "liveUrl": null,
+        "role": "UX Designer",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "billed",
+        "title": "Billed app",
+        "description": "Gestion de frais professionnels avec sécurité des tokens et Redux.",
+        "startDate": "2022-03-01",
+        "endDate": "2022-03-31",
+        "technologies": [
+            "JavaScript",
+            "Jest"
+        ],
+        "tags": [
+            "Tests",
+            "Formation"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet9-Billed/2.png",
+        "gallery": [
+            "projects/openclassrooms/projet9-Billed/1.png",
+            "projects/openclassrooms/projet9-Billed/2.png",
+            "projects/openclassrooms/projet9-Billed/3.png",
+            "projects/openclassrooms/projet9-Billed/4.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Billed-app-FR-Front",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "les-petits-plats",
+        "title": "Les petits plats",
+        "description": "Application de recherche de recettes basée sur des filtres avancés. Réalisée en JS natif.",
+        "startDate": "2022-02-01",
+        "endDate": "2022-02-28",
+        "technologies": [
+            "JavaScript",
+            "REST",
+            "NPM"
+        ],
+        "tags": [
+            "Recettes",
+            "Recherche"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet7-lespetitsplats/1.png",
+        "gallery": [
+            "projects/openclassrooms/projet7-lespetitsplats/1.png",
+            "projects/openclassrooms/projet7-lespetitsplats/2.png",
+            "projects/openclassrooms/projet7-lespetitsplats/3.png",
+            "projects/openclassrooms/projet7-lespetitsplats/4.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/projet07",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "fisheye",
+        "title": "FishEye",
+        "description": "Site de promotion pour artistes photographes, axé sur l'accessibilité.",
+        "startDate": "2022-01-01",
+        "endDate": "2022-01-31",
+        "technologies": [
+            "JavaScript",
+            "Accessibility"
+        ],
+        "tags": [
+            "Accessibilité",
+            "Photographie"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet6-fisheye/1.png",
+        "gallery": [
+            "projects/openclassrooms/projet6-fisheye/1.png",
+            "projects/openclassrooms/projet6-fisheye/2.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/Front-End-Fisheye",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "gameon",
+        "title": "GameOn",
+        "description": "Validation de formulaires complexes via des regex sur un site de gaming.",
+        "startDate": "2021-12-01",
+        "endDate": "2021-12-31",
+        "technologies": [
+            "JavaScript",
+            "Regex"
+        ],
+        "tags": [
+            "Formulaire",
+            "Validation"
+        ],
+        "category": "Formation ReactJS",
+        "thumbnailUrl": "projects/openclassrooms/projet4-gameon/1.png",
+        "gallery": [
+            "projects/openclassrooms/projet4-gameon/1.png",
+            "projects/openclassrooms/projet4-gameon/2.png"
+        ],
+        "gitUrl": "https://github.com/sarkande/GameOn-website-FR",
+        "liveUrl": null,
+        "role": "Développeur Frontend",
+        "isFeatured": false,
+        "active": true
+    },
+
+    {
+        "id": "ohmyfood",
+        "title": "OhMyFood",
+        "description": " OhMyFood",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "HTML5",
+            "Sass"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/openclassrooms/projet3-ohmyfood/5.png",
+        "gallery": [
+            "projects/openclassrooms/projet3-ohmyfood/5.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "booki",
+        "title": "Booki",
+        "description": " Booki",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "HTML5",
+            "CSS3"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/openclassrooms/projet2-booki/1.png",
+        "gallery": [
+            "projects/openclassrooms/projet2-booki/1.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "foundry-vtt-naheulbeuk",
+        "title": "Foundry VTT Naheulbeuk",
+        "description": " Foundry VTT Naheulbeuk",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/naheulbeuk/1.png",
+        "gallery": [
+            "projects/naheulbeuk/1.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "talents-affinity",
+        "title": "Talents-Affinity",
+        "description": " Talents-Affinity",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "AngularJS",
+            "RubyOnRails",
+            "Bash"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/talents-affinity/3.png",
+        "gallery": [
+            "projects/talents-affinity/3.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "site-angularjs-rubyonrails-goldrush",
+        "title": "Site AngularJS/RubyOnRails Goldrush",
+        "description": " Site AngularJS/RubyOnRails Goldrush",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "AngularJS",
+            "RubyOnRails"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/goldrush.png",
+        "gallery": [
+            "projects/goldrush.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "orcwar",
+        "title": "OrcWar",
+        "description": " OrcWar",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "Unity",
+            "CSharp",
+            "Android"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/orcwar/2.png",
+        "gallery": [
+            "projects/orcwar/2.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "jonquille-sportive-reignier",
+        "title": "Jonquille Sportive Reignier",
+        "description": " Jonquille Sportive Reignier",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "PHP"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/jonquille/1.png",
+        "gallery": [
+            "projects/jonquille/1.png",
+            "projects/jonquille/2.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "bujinkan-kanji",
+        "title": "Bujinkan-kanji",
+        "description": " Bujinkan-kanji",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "WordPress",
+            "PHP"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/bujinkan-kanji.png",
+        "gallery": [
+            "projects/bujinkan-kanji.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "rpg-3d-unity",
+        "title": "RPG 3D Unity",
+        "description": " RPG 3D Unity",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "Unity",
+            "CSharp",
+            "Autodesk Maya"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/rpg3d/1.png",
+        "gallery": [
+            "projects/rpg3d/1.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "rpg-tactical-3d-unity",
+        "title": "RPG tactical 3D Unity",
+        "description": " RPG tactical 3D Unity",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "Unity",
+            "CSharp",
+            "Autodesk Maya"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/tactical/1.png",
+        "gallery": [
+            "projects/tactical/1.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "android-unity",
+        "title": "android Unity",
+        "description": " android Unity",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "Unity",
+            "CSharp",
+            "Android"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/android/1.png",
+        "gallery": [
+            "projects/android/1.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "ocr-discord",
+        "title": "OCR Discord",
+        "description": " OCR Discord",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+            "API Google"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/OCR_discord/1.png",
+        "gallery": [
+            "projects/OCR_discord/1.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "ocr-dofus",
+        "title": "OCR Dofus",
+        "description": " OCR Dofus",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+            "NeutralinoJS",
+            "Tesseract"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/OCR_app/1.png",
+        "gallery": [
+            "projects/OCR_app/1.png",
+            "projects/OCR_app/2.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "navigateur-web-simplifié",
+        "title": "Navigateur web simplifié",
+        "description": " Navigateur web simplifié",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "JavaScript",
+            "NeutralinoJS"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/mini/2.png",
+        "gallery": [
+            "projects/mini/1.png",
+            "projects/mini/2.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "lecteur-multimédia-wpf",
+        "title": "Lecteur multimédia wpf",
+        "description": " Lecteur multimédia wpf",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "WPF",
+            "CSharp"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "projects/PFAudio.png",
+        "gallery": [
+            "projects/PFAudio.png"
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "wakeonlan-php",
+        "title": "WakeOnLan PHP",
+        "description": " WakeOnLan PHP",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "PHP"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "",
+        "gallery": [
+            ""
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "fnac-php",
+        "title": "Fnac PHP",
+        "description": " Fnac PHP",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "PHP"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "",
+        "gallery": [
+            ""
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "bloc-notes-c",
+        "title": "Bloc notes C++",
+        "description": " Bloc notes C++",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "C++",
+            "Qt"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "",
+        "gallery": [
+            ""
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "bot-discord-parsing",
+        "title": "Bot discord parsing",
+        "description": " Bot discord parsing",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "JavaScript"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "",
+        "gallery": [
+            ""
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    },
+    {
+        "id": "logiciel-de-chat-en-réseau-winform",
+        "title": "Logiciel de chat en réseau winform",
+        "description": " Logiciel de chat en réseau winform",
+        "startDate": "2022-01-01",
+        "endDate": null,
+        "technologies": [
+            "WinForm",
+            "CSharp"
+        ],
+        "tags": [
+            "AutoImport"
+        ],
+        "category": "Import React",
+        "thumbnailUrl": "",
+        "gallery": [
+            ""
+        ],
+        "gitUrl": null,
+        "liveUrl": null,
+        "role": "Développeur",
+        "isFeatured": false,
+        "active": true
+    }
+]

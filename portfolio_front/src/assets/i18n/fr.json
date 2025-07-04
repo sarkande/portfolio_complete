@@ -1,0 +1,54 @@
+{
+  "home": "Accueil",
+  "resume": "CV",
+  "skills": "Compétences",
+  "projects": "Projets",
+  "about": "Contact",
+
+  "contact-me": "Contactez-moi",
+
+  "home.title1": "Expert Odoo",
+  "home.title2": "Développeur passionné",
+  "home.title3": "Développeur full-stack",
+  "home.title4": "Expert front-end (React & Angular)",
+  "home.title5": "Expert back-end (Node.js & Java Spring)",
+  "home.title6": "Ingénieur logiciel",
+  "home.title7": "Architecte logiciel",
+  "home.title8": "Architecte ERP (Python & Odoo)",
+  "home.title9": "Ingénieur DevOps & containers",
+  "home.title10": "Spécialiste Docker & CI/CD",
+
+  "home.description": "Votre partenaire full-stack : React & Angular en front, Node.js & Spring en back, Python/Odoo pour l’ERP, CI/CD automatisé et déploiement containerisé avec Docker.",
+
+  "home.my-journey": "Mon parcours",
+  "home.last-projects": "Derniers projets",
+  "home.top-skills": "Top compétences",
+
+  "home.see-more": "Voir plus",
+  "home.see-all-projects": "Voir tous les projets",
+  "home.see-all-skills": "Voir toutes les compétences",
+
+  "home.resume": "Télécharger mon CV en PDF",
+  "home.resume-ast": "Télécharger mon CV (ATS)",
+
+  "error.404": "Oups ! La page que vous recherchez n'existe pas.",
+  "error.go_home": "Retour à l'accueil",
+
+  "contact.title": "Contactez-moi",
+  "contact.name": "Nom & Prénom",
+  "contact.email": "Email",
+  "contact.phone": "Téléphone",
+  "contact.message": "Message",
+  "contact.send": "Envoyer",
+  "contact.success": "Votre message a bien été envoyé!",
+  "contact.error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard.",
+  "contact.required": "Ce champ est obligatoire.",
+  "contact.name_required": "Le nom est obligatoire.",
+  "contact.email_required": "L'email est obligatoire.",
+  "contact.email_invalid": "L'email n'est pas valide.",
+  "contact.message_required": "Le message est obligatoire.",
+  "contact.message_length": "Le message doit comporter au moins 10 caractères.",
+  "contact.phone_invalid": "Veuillez saisir un numéro de téléphone valide.",
+  "contact.recaptcha": "Veuillez cocher la case reCAPTCHA.",
+  "contact.invalid_email": "Veuillez saisir une adresse email valide."
+}

@@ -1,0 +1,21 @@
+$star-size: 24px;
+$star-color-not-selected: #ddd;
+$star-color-hovered: #ffdb70;
+$star-color-selected: #ffc107;
+
+.star-rating {
+    font-size: $star-size;
+    color: $star-color-not-selected;
+
+    span {
+        cursor: pointer;
+
+        &.hovered {
+            color: $star-color-hovered;
+        }
+
+        &.selected {
+            color: $star-color-selected;
+        }
+    }
+}

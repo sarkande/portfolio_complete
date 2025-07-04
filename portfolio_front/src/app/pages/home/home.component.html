@@ -1,0 +1,78 @@
+<div class="container">
+  <!-- En tete avec ma photo, le titre le bout de texte de description -->
+  <div class="header">
+    <div class="title-container">
+      <div class="title">
+        <h1>Allan PEREZ</h1>
+        <h2 #titleEl></h2>
+      </div>
+      <p class="header__description">
+        {{ "home.description" | translate }}
+
+      </p>
+      <button
+        class="btn btn-primary"
+        [routerLink]="['/', currentLang, 'about']"
+      >
+        {{ "about" | translate }}
+      </button>
+      <a
+        class="btn btn-primary"
+        [href]="'/assets/data/CV.pdf'"
+        [attr.download]="'CV.pdf'"
+      >
+      {{ "home.resume" | translate }}
+    </a>
+      <!-- <button
+        class="btn btn-primary"
+        [routerLink]="['/', currentLang, 'about']"
+      >
+      {{ "home.resume-ast" | translate }}
+      </button> -->
+    </div>
+    <div class="photo-container">
+      <img src="/assets/photoq.png" alt="Profile" />
+    </div>
+  </div>
+
+  <div>
+    <div class="resume-section">
+      <h1>{{ "home.my-journey" | translate }}</h1>
+      <app-resume></app-resume>
+    </div>
+    <div class="projects-section">
+      <h1>{{ "home.last-projects" | translate }}</h1>
+      <div class="projects">
+        <div class="project" *ngFor="let project of projects; let i = index">
+          <app-project-home-card
+            [project]="project"
+            [reverse]="i % 2 === 1"
+          ></app-project-home-card>
+        </div>
+
+        <div class="projects-about">
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/', currentLang, 'projects']"
+          >
+          {{ "home.see-all-projects" | translate }}
+          </button>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h1>{{ "home.top-skills" | translate }}</h1>    
+            <div class="skills-about">
+          <button class="btn btn-primary" (click)="goToSkill()">
+            {{ "home.see-all-skills" | translate }}
+          </button>
+        </div>
+
+        <div class="skills">
+          <div class="skill" *ngFor="let skill of skills">
+            <app-skill-home-card [skill]="skill"></app-skill-home-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

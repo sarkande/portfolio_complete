@@ -1,0 +1,22 @@
+<div class="skill-card" >
+    <img
+        [src]="skill.icon ? '/assets/' + skill.icon : '/assets/projects/image_not_available.png'"
+        alt="Miniature du projet"
+        class="project-image"
+      />
+    <div class="project-info">
+      <h3>{{ skill.name }}</h3>
+      <p class="description">{{ skill.content }}</p>
+      <div class="level">
+        <span class="level-value"><app-star-rating [priority]="skill.level" [readonly]="true"></app-star-rating></span>
+      </div>
+      <div class="projects">
+        <div *ngFor="let project of skill.projects" class="skill" [routerLink]="['/', currentLang, 'projects', project.slug]"> 
+          <i class="fa fa-folder"></i >
+         {{ project.title }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+  

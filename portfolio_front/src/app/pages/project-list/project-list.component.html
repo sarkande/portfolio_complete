@@ -1,0 +1,14 @@
+<app-search-sidebar
+  [tags]="allTags"
+  [minYear]="minYear"
+  [maxYear]="maxYear"
+  (filtersChanged)="onFiltersChanged($event)"
+></app-search-sidebar>
+
+<div class="project-list">
+  <app-project-card
+    *ngFor="let project of filtered"
+    [project]="project"
+    (click)="handleClickProject(project.slug)"
+  ></app-project-card>
+</div>

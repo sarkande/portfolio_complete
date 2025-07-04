@@ -1,0 +1,23 @@
+<!-- project-home-card.component.html -->
+<div class="project-home-card" [class.reverse]="reverse">
+  <div class="card-image">
+    <img
+      [src]="
+        project.thumbnailUrl
+          ? '/assets/' + project.thumbnailUrl
+          : '/assets/projects/image_not_available.png'
+      "
+      [alt]="project.title"
+    />
+  </div>
+  <div class="card-content">
+    <div class="content-header">
+      <h2 class="title">{{ project.title }}</h2>
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+      </div>
+    </div>
+    <p class="description">{{ project.longDescription }}</p>
+    <a  [routerLink]="['/', currentLang, 'projects', project.slug]" class="btn btn-primary">{{ "home.see-more" | translate }}</a>
+  </div>
+</div>

@@ -1,0 +1,206 @@
+.container {
+    padding: 0 16px; // ajustez si besoin sur les côtés
+    padding-top: 100px; // top spacing comme demandé
+    max-width: 100%; // pleine largeur, retirez si vous voulez un max-width
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    font-size: 0.875rem; // plus compact
+    line-height: 1.2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.btn-primary {
+        background-color: #007bff;
+        color: #fff;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+
+        &:hover {
+            background-color: #5a6268;
+        }
+    }
+
+    &.btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+
+        &:hover {
+            background-color: #c82333;
+        }
+    }
+}
+
+.projects-table,
+.skills-table {
+
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem; // plus compact
+    line-height: 1.2;
+    color: #333;
+
+    thead {
+        background-color: #f5f5f5;
+    }
+
+    th,
+    td {
+        padding: 0.4rem 0.6rem;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+
+    }
+
+
+    th:not([scope=row]) {
+        //https: //adrianroselli.com/2020/01/fixed-table-headers.html
+        font-weight: 600;
+        font-size: 0.9rem;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+        z-index: 2;
+        background-color: #4f6bf7;
+        color: white;
+    }
+
+    tbody tr {
+        &:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        &:hover {
+            background-color: #f0f8ff;
+        }
+    }
+
+    .quick-create-row {
+        background-color: #beffb5;
+        font-style: italic;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #dfe2e6;
+        }
+    }
+
+
+    /* Cellules où on pourra activer l’édition inline */
+    .editable {
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        input,
+        textarea {
+            // width: 100%;
+            padding: 0.2rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 0.875rem; // plus compact
+            line-height: 1.2;
+            height: 100%;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+    }
+
+    /* Pour le contenu Markdown, on limite la hauteur et on active le scroll */
+    .content-cell {
+        max-width: 200px;
+        max-height: 80px;
+        overflow: auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    /* Galerie de miniatures */
+    .gallery-cell {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .skills-cell {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        .tag {
+            background: #e0e0e0;
+            border-radius: 12px;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+
+            .remove {
+                margin-left: 4px;
+                cursor: pointer;
+            }
+        }
+
+        input {
+            border: none;
+            padding: 2px 4px;
+            min-width: 80px;
+        }
+    }
+
+    /* Liens */
+    a {
+        color: #007bff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+.notifications {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .notification {
+        p {
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            &.success {
+                background-color: #4caf50; // vert
+            }
+
+            &.error {
+                background-color: #f44336; // rouge
+            }
+        }
+    }
+}

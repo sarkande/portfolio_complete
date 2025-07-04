@@ -1,0 +1,31 @@
+<div class="timeline">
+  <img src="/assets/medias/scroll.gif" alt="Timeline Image" class="timeline-image" />
+  <ngx-timeline class="timeline"
+  [reverseOrder]="true"
+  [events]="events"
+  [eventCustomTemplate]="customEventTemplate"
+  [virtualScroll]="true"
+
+  ></ngx-timeline>
+</div>
+
+<ng-template #customEventTemplate let-event="event">
+  <div
+    class="custom-timeline-event"
+    [ngClass]="{
+      'event-left': event.position === 'ON_LEFT',
+      'event-right': event.position === 'ON_RIGHT',
+    }"
+  >
+    <div class="event-header">
+      <h3 class="event-title">{{ event.eventInfo.title }}</h3>
+      <span class="event-date">
+        {{ event.eventInfo.timestamp | date:'MMM yyyy' }}
+        @if (event.eventInfo.endDate && (event.eventInfo.timestamp.getTime() !== event.eventInfo.endDate.getTime())) {
+          - {{ event.eventInfo.endDate | date:'MMM yyyy' }}
+        }
+      </span>
+    </div>
+    <p class="event-description">{{ event.eventInfo.description }}</p>
+  </div>
+</ng-template>

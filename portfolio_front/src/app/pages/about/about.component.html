@@ -1,0 +1,71 @@
+<div class="contact-form">
+    <h1>{{"contact.title" | translate}}</h1>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="handleSubmit()">
+  
+      <div class="field" [class.invalid]="submitAttempted && contactForm.get('nom')?.invalid">
+        <label for="nom">{{"contact.name" | translate}} :</label>
+        <input id="nom" type="text" formControlName="nom" />
+        <div *ngIf="contactForm.get('nom')?.touched && contactForm.get('nom')?.invalid">
+          <small *ngIf="contactForm.get('nom')?.errors?.['required']">{{"contact.name_required" | translate}} </small>
+        </div>
+      </div>
+  
+      <div class="field" [class.invalid]="submitAttempted && contactForm.get('mail')?.invalid">
+        <label for="mail">{{"contact.email" | translate}} :</label>
+        <input id="mail" type="email" formControlName="mail" />
+        <div *ngIf="contactForm.get('mail')?.touched && contactForm.get('mail')?.invalid">
+          <small *ngIf="contactForm.get('mail')?.errors?.['required']">{{"contact.email_required" | translate}}</small>
+          <small *ngIf="contactForm.get('mail')?.errors?.['email']">{{"contact.email_invalid" | translate}}</small>
+        </div>
+      </div>
+  
+      <div class="field" [class.invalid]="submitAttempted && contactForm.get('telephone')?.invalid">
+        <label for="telephone">{{"contact.phone" | translate}} :</label>
+        <input id="telephone" type="tel" formControlName="telephone" />
+        <div *ngIf="contactForm.get('telephone')?.touched && contactForm.get('telephone')?.invalid">
+          <small>{{"contact.phone_invalid" | translate}}</small>
+        </div>
+      </div>
+  
+      <div class="field" [class.invalid]="submitAttempted && contactForm.get('message')?.invalid">
+        <label for="message">{{"contact.message" | translate}} :</label>
+        <textarea id="message" rows="5" formControlName="message"></textarea>
+        <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+          <small *ngIf="contactForm.get('message')?.errors?.['required']">{{"contact.message_required" | translate}}</small>
+          <small *ngIf="contactForm.get('message')?.errors?.['minlength']">{{"contact.message_required" | translate}}</small>
+        </div>
+      </div>
+  
+      <div class="field" [class.invalid]="submitAttempted && contactForm.get('recaptcha')?.invalid">
+        <label>Captcha :</label>
+        <re-captcha
+          formControlName="recaptcha"
+          siteKey="6Leaj3YrAAAAALVpydt9I_oGD2ELGrfSqjVb-cur"
+          (resolved)="onCaptchaResolved($event)">
+        </re-captcha>
+        <div *ngIf="contactForm.get('recaptcha')?.touched && contactForm.get('recaptcha')?.invalid">
+          <small>{{"contact.recaptcha" | translate}}</small>
+        </div>
+      </div>
+  
+      <button
+        type="submit"
+        [disabled]="loading || result === true"
+        [ngClass]="{
+          'btn-loading': loading,
+          'btn-success': result === true,
+          'btn-error': result === false
+        }"
+      >
+        <span *ngIf="!loading && result === null">{{"contact.send" | translate}}</span>
+        <span *ngIf="loading" class="spinner"></span>
+        <span *ngIf="!loading && result === true" class="btn-icon">✔</span>
+        <span *ngIf="!loading && result === false" class="btn-icon">✖</span>
+      </button>
+    </form>
+  
+    <div *ngIf="result === true" class="success-message">
+      {{"contact.success" | translate}}
+    </div>
+  </div>

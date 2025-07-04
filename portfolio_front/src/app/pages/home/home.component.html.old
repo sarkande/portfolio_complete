@@ -1,0 +1,67 @@
+<div class="header">
+  <div class="header__blob header__blob--red"></div>
+  <div class="header__blob header__blob--blue"></div>
+  <div class="header__container">
+    <!-- A -->
+    <div class="header__title">
+      <h1>Allan PEREZ</h1>
+      <h2 #titleEl></h2>
+      <h3 #descEl></h3>
+
+      <p class="header__description">
+        Velit velit consequat sint fugiat do eu quis aute excepteur velit anim
+        nisi. Exercitation amet duis culpa magna cupidatat qui cillum ullamco
+        duis do quis qui ea quis fugiat. Est commodo cillum non eu culpa
+        consectetur dolore veniam velit amet dolor esse adipisicing. Duis fugiat
+        incididunt officia exercitation esse. Ut tempor labore fugiat excepteur
+        fugiat commodo ea. Labore nulla eu fugiat nisi deserunt in. Exercitation
+        eu ullamco qui consectetur ipsum consectetur dolor aliqua irure deserunt
+        ipsum reprehenderit exercitation. Ex sit et incididunt officia fugiat
+        cupidatat.
+      </p>
+    </div>
+
+    <!-- B -->
+    <div class="header__links">
+      <div class="header__link" [routerLink]="['/', currentLang, 'skills']">
+        <div class="header__link--title">{{ "skills" | translate }}</div>
+        <div class="header__link--icons">
+          <img
+            src="/assets/icons/github.svg"
+            alt="GitHub"
+            class="header__link--icon"
+          />
+        </div>
+      </div>
+      <div class="header__link" [routerLink]="['/', currentLang, 'projects']">
+        <div class="header__link--title">{{ "projects" | translate }}</div>
+        <div class="header__link--icons">
+          <img
+            src="/assets/icons/github.svg"
+            alt="GitHub"
+            class="header__link--icon"
+          />
+          <img
+            src="/assets/icons/gitlab.svg"
+            alt="Gitlab"
+            class="header__link--icon"
+          />
+        </div>
+      </div>
+      <div class="header__link" [routerLink]="['/', currentLang, 'about']">
+        <div class="header__link--title">{{ "about" | translate }}</div>
+        <div class="header__link--icons">
+          <img
+            src="/assets/icons/about-me-icon.svg"
+            alt="About me"
+            class="header__link--icon"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- C -->
+    <div class="header__profile">
+      <img src="/assets/photo.png" alt="Profile" />
+    </div>
+  </div>
+</div>

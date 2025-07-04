@@ -1,0 +1,225 @@
+{
+  "events": [
+    {
+      "timestamp": "2025-11-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "Mastère Expert en Ingénierie Logicielle – ISCOD (en cours)",
+        "en": "Master’s in Software Engineering – ISCOD (ongoing)"
+      },
+      "description": {
+        "fr": "Validation prévue en novembre 2025. Formation RNCP niveau 7 (Bac+5/6) Expert en ingenierie du logiciel : Focus sur le développement full-stack, architecture logicielle, DevOps, méthodes agiles, sécurité et gestion de projet. Suivie en alternance avec mise en pratique directe chez Pure Illusion.",
+        "en": "Expected graduation November 2025. RNCP level 7 program focused on full-stack development, software architecture, DevOps, agile methods, security, and project management. Completed as an apprenticeship with direct hands-on work at Pure Illusion."
+      }
+    },
+    {
+      "timestamp": "2025-10-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "Passage du TOEIC – Score : XXX/990",
+        "en": "TOEIC Exam – Score: XXX/990"
+      },
+      "description": {
+        "fr": "Score équivalent au niveau CECRL XX. Mise en valeur des compétences professionnelles en anglais, notamment en contexte IT et projet agile international.",
+        "en": "Score equivalent to CEFR level XX. Demonstrates professional English skills in IT contexts and international agile projects."
+      }
+    },
+    {
+      "timestamp": "2025-06-16T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "Passage Certification fonctionnelle Odoo 18",
+        "en": "Odoo 18 Functional Certification"
+      },
+      "description": {
+        "fr": "Certification fonctionnelle Odoo 18, validant les compétences en configuration et personnalisation des modules Odoo pour répondre aux besoins métiers. Permet d'être reconnu comme expert Odoo capable de configurer et adapter les modules aux exigences spécifiques des entreprises.",
+        "en": "Odoo 18 functional certification, validating skills in configuring and customizing Odoo modules to meet business needs. Recognized as an Odoo expert capable of configuring and adapting modules to specific business requirements."
+      }
+    },
+    {
+      "timestamp": "2025-01-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Refonte web & ERP Odoo – Bujinkan Kanji, Neko & GSI Automeca",
+        "en": "Web & Odoo ERP Overhaul – Bujinkan Kanji, Neko & GSI Automeca"
+      },
+      "description": {
+        "fr": "Modernisation des sites existants avec intégration d'ERP Odoo. Modules personnalisés : gestion des membres et des cours pour les associations d’arts martiaux, gestion des rendez-vous clients pour un garage automobile.",
+        "en": "Modernized existing websites with Odoo ERP integration. Custom modules for membership and class management for martial arts associations, and appointment scheduling for an auto repair garage."
+      }
+    },
+    {
+      "timestamp": "2024-05-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Création du site GSI Automeca – Angular",
+        "en": "GSI Automeca Website Creation – Angular"
+      },
+      "description": {
+        "fr": "Site vitrine pour un garage automobile avec prise de rendez-vous en ligne, responsive design, hébergement optimisé et interface d'administration.",
+        "en": "Showcase website for an auto garage with online appointment booking, responsive design, optimized hosting, and admin interface."
+      }
+    },
+    {
+      "timestamp": "2023-06-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Création du site Bujinkan Neko – Fréjus",
+        "en": "Bujinkan Neko Website Creation – Fréjus"
+      },
+      "description": {
+        "fr": "Site vitrine pour une association d’arts martiaux (ninjutsu) : mise en avant des cours, gestion des inscriptions et calendrier des événements.",
+        "en": "Showcase site for a martial arts association (ninjutsu): highlighting classes, managing registrations, and event calendar."
+      }
+    },
+    {
+      "timestamp": "2023-10-01T00:00:00.000Z",
+      "endDate": "2025-12-31T00:00:00.000Z",
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "Développeur Odoo – Pure Illusion (Alternance)",
+        "en": "Odoo Developer – Pure Illusion (Apprenticeship)"
+      },
+      "description": {
+        "fr": "Développement back-end en Python/Odoo, front-end JS/SCSS/XML. Intégration d’Odoo sur des projets clients, gestion d’hébergement via Docker.",
+        "en": "Back-end development with Python/Odoo, front-end with JS/SCSS/XML. Integrated Odoo for client projects and managed hosting via Docker."
+      }
+    },
+    {
+      "timestamp": "2022-03-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "Certification Développeur React JS – OpenClassrooms",
+        "en": "React JS Developer Certification – OpenClassrooms"
+      },
+      "description": {
+        "fr": "Certification professionnelle inscrite au RNCP (niveau Bac+3/4). Réalisation de 14 projets : React JS, HTML/CSS/SASS, gestion de projet agile.",
+        "en": "Professional certification registered with RNCP (equivalent to Bachelor’s level). Completed 14 projects: React JS, HTML/CSS/SASS, and agile project management."
+      }
+    },
+    {
+      "timestamp": "2022-03-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Développeur React JS – OpenClassrooms",
+        "en": "React JS Developer – OpenClassrooms"
+      },
+      "description": {
+        "fr": "Contrat de professionnalisation axé sur la création d’applications React. Méthodologie agile, suivi client, versioning Git/GitHub.",
+        "en": "Professional contract focused on building React applications. Agile methodology, client follow-up, and versioning with Git/GitHub."
+      }
+    },
+    {
+      "timestamp": "2018-09-01T00:00:00.000Z",
+      "endDate": "2021-06-30T00:00:00.000Z",
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "Licence 2 LEA Anglais/Japonais – Université Grenoble Alpes",
+        "en": "Bachelor’s Degree in Applied Foreign Languages (English/Japanese) – University Grenoble Alpes"
+      },
+      "description": {
+        "fr": "3 ans de cursus : une année de mise à niveau en japonais suivie de 2 années d’études en Langues Étrangères Appliquées (anglais/japonais).",
+        "en": "3-year program: one year of Japanese leveling followed by two years in Applied Foreign Languages (English/Japanese)."
+      }
+    },
+    {
+      "timestamp": "2016-05-01T00:00:00.000Z",
+      "endDate": "2016-09-30T00:00:00.000Z",
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Développeur AngularJS & RubyOnRails – FreshPigment",
+        "en": "AngularJS & Ruby on Rails Developer – FreshPigment"
+      },
+      "description": {
+        "fr": "Stage puis mission freelance. Développement d’une web app métier : AngularJS côté front, Ruby on Rails côté back.",
+        "en": "Internship followed by freelance work. Developed a business web app: AngularJS on the front-end and Ruby on Rails on the back-end."
+      }
+    },
+    {
+      "timestamp": "2015-12-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Développeur PHP & Wordpress – Bujinkan-Kanji (Bénévolat)",
+        "en": "PHP & WordPress Developer – Bujinkan-Kanji (Volunteer)"
+      },
+      "description": {
+        "fr": "Migration du site Joomla vers Wordpress personnalisé pour une association de ninjutsu. Maintenance technique et graphique.",
+        "en": "Migrated Joomla site to a custom WordPress solution for a ninjutsu association. Technical and graphic maintenance."
+      }
+    },
+    {
+      "timestamp": "2015-06-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Développeur Unity 3D – OrcWarRTS (Freelance)",
+        "en": "Unity 3D Developer – OrcWarRTS (Freelance)"
+      },
+      "description": {
+        "fr": "Développement de fonctionnalités pour un jeu mobile temps réel Android/iOS : IA, équilibrage, gestion des assets.",
+        "en": "Developed features for a real-time mobile game on Android/iOS: AI, balancing, asset management."
+      }
+    },
+    {
+      "timestamp": "2014-12-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Développeur PHP – Jonquille Sportive Reignier (Bénévolat)",
+        "en": "PHP Developer – Jonquille Sportive Reignier (Volunteer)"
+      },
+      "description": {
+        "fr": "Création complète d’un site associatif en PHP/HTML/CSS pour un club de sport. Projet de validation de DUT.",
+        "en": "Built a complete association website in PHP/HTML/CSS for a sports club. Project to validate DUT degree."
+      }
+    },
+    {
+      "timestamp": "2014-09-01T00:00:00.000Z",
+      "endDate": "2016-08-31T00:00:00.000Z",
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "DUT Informatique – IUT Savoie Mont Blanc",
+        "en": "DUT Computer Science – IUT Savoie Mont Blanc"
+      },
+      "description": {
+        "fr": "Formation diplômante Bac+2. Compétences en algorithmique, base de données, développement web, système UNIX, architecture matérielle.",
+        "en": "2-year degree program. Skills in algorithms, databases, web development, UNIX systems, and hardware architecture."
+      }
+    },
+    {
+      "timestamp": "2014-07-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_RIGHT",
+      "title": {
+        "fr": "BAC STI2D Mention Bien – Lycée de l'Albanais",
+        "en": "BAC STI2D with Honors – Lycée de l'Albanais"
+      },
+      "description": {
+        "fr": "Spécialité Systèmes d’Information et Numérique. Mise en place de projets techniques en électronique et informatique.",
+        "en": "Specialized in Information and Digital Systems. Implemented technical projects in electronics and computing."
+      }
+    },
+    {
+      "timestamp": "2008-10-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Professeur xHTML/CSS/PHP – Collège du Val des Usses (Bénévolat)",
+        "en": "xHTML/CSS/PHP Teacher – Collège du Val des Usses (Volunteer)"
+      },
+      "description": {
+        "fr": "Initiation des collégiens à la création de pages web statiques et dynamiques. Formation pédagogique adaptée aux jeunes publics.",
+        "en": "Introduced middle school students to creating static and dynamic web pages. Provided pedagogical training tailored to young learners."
+      }
+    }
+  ]
+}

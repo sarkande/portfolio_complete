@@ -1,0 +1,58 @@
+{
+  "home": "Home",
+  "resume": "Resume",
+  "skills": "Skills",
+  "projects": "Projects",
+  "about": "Contact",
+
+  "contact-me": "Contact me",
+
+  "home.title1": "Odoo Expert",
+  "home.title2": "Passionate Developer",
+  "home.title3": "Full-Stack Developer",
+  "home.title4": "Front-End Expert (React & Angular)",
+  "home.title5": "Back-End Expert (Node.js & Java Spring)",
+  "home.title6": "Software Engineer",
+  "home.title7": "Software Architect",
+  "home.title8": "ERP Architect (Python & Odoo)",
+  "home.title9": "DevOps & Containers Engineer",
+  "home.title10": "Docker & CI/CD Specialist",
+
+  "home.description": "Your full-stack partner: React & Angular front-end, Node.js & Spring back-end, Python/Odoo ERP, automated CI/CD pipelines and containerized deployments with Docker.",
+
+  "home.my-journey": "My Journey",
+  "home.last-projects": "Latest Projects",
+  "home.top-skills": "Top Skills",
+
+  "home.see-more": "See more",
+  "home.see-all-projects": "See all projects",
+  "home.see-all-skills": "See all skills",
+
+  "home.resume": "Download my CV (PDF)",
+  "home.resume-ast": "Download my CV (ATS)",
+
+  "error.404": "Oops! The page you’re looking for doesn’t exist.",
+  "error.go_home": "Go back home",
+
+  "contact.title": "Contact me",
+  "contact.name": "Name",
+  "contact.email": "Email",
+  "contact.phone": "Phone",
+  "contact.message": "Message",
+  "contact.send": "Send",
+  "contact.success": "Your message has been successfully sent!",
+  "contact.error": "An error occurred while sending your message. Please try again later.",
+  "contact.required": "This field is required.",
+  "contact.name_required": "Name is required.",
+
+  "contact.email_required": "Email is required.",
+  "contact.email_invalid": "Email is invalid.",
+
+
+  "contact.message_required": "Message is required.",
+  "contact.message_length": "Message must be at least 10 characters long.",
+
+  "contact.phone_invalid": "Please enter a valid phone number.",
+  "contact.recaptcha": "Please check the reCAPTCHA box.",
+  "contact.invalid_email": "Please enter a valid email address."
+}

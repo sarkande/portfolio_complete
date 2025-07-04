@@ -1,0 +1,95 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+
+  p {
+    // Styles pour les paragraphes
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  ul {
+    // Styles pour les listes non ordonnées
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      // Styles pour les éléments de liste
+      svg {
+        margin-left: 20px;
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+      }
+      margin: 5px;
+    }
+  }
+
+  a {
+    // Styles pour les liens
+    color: $color-blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: darkblue;
+    }
+  }
+
+  pre {
+    // Styles pour les blocs de code préformaté
+    background-color: $color-silver;
+    padding: 10px;
+    overflow-x: auto;
+    font-family: monospace;
+    code {
+      li {
+        margin-bottom: 10px;
+        margin-left: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        // Styles for nested unordered lists
+        ul {
+          margin-top: 5px;
+          margin-left: 20px;
+          list-style-type: none;
+        }
+
+        // Custom arrow bullet styles
+        &:before {
+          content: '\2192'; // Right arrow character
+          color: black;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+    }
+  }
+
+  .has-medium-font-size {
+    // Styles pour la classe has-medium-font-size
+    font-size: medium;
+  }
+
+  strong {
+    // Styles pour le texte en gras
+    font-weight: bold;
+  }
+
+  em {
+    // Styles pour le texte en italique
+    font-style: italic;
+  }
+
+  sup {
+    // Styles pour les exposants
+    vertical-align: super;
+    font-size: smaller;
+  }
+}

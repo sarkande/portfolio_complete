@@ -1,0 +1,78 @@
+/* skill-card.component.scss */
+.skill-card {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-image {
+        width: 100%;
+        height: 50px;
+        /* taille fixe pour laisser de la place au texte */
+        object-fit: contain;
+    }
+
+    .skill-info {
+        display: flex;
+        flex-direction: column;
+        padding: 0.75rem;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .skill-name {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        color: #333;
+        text-align: center;
+    }
+
+    .description {
+        flex: 1;
+        font-size: 0.85rem;
+        color: #666;
+        margin: 0 0 0.5rem;
+        overflow: hidden;
+        /* coupe le texte après 3 lignes */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .level {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .level-text {
+            font-weight: bold;
+            margin-right: 0.25rem;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        .level-value {
+            /* ajuste la taille de la notation si nécessaire */
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* Optionnel : si tu utilises un parent flex pour les cartes */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
