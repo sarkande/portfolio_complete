@@ -32,7 +32,7 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:4200","http://localhost:3000" )); // ton front Angular
+        configuration.setAllowedOrigins(List.of("http://localhost:4200","http://localhost:3000", "http://allanperez.fr:3000" )); // ton front Angular
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true); // autorise les cookies/JWT
