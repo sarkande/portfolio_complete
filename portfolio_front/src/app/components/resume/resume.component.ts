@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import {
   NgxTimelineEvent,
   NgxTimelineItemPosition,
@@ -26,6 +26,7 @@ export interface MyResumeTimelineEvent extends NgxTimelineEvent {
 export class ResumeComponent implements OnInit, OnDestroy {
   events: MyResumeTimelineEvent[] = [];
   private destroy$ = new Subject<void>();
+  isMobile: boolean = false;
 
   constructor(private langService: LanguageService) { }
 
@@ -33,8 +34,13 @@ export class ResumeComponent implements OnInit, OnDestroy {
     this.langService.currentLang$
       .pipe(takeUntil(this.destroy$))
       .subscribe((lang: string) => this.mapEvents(lang));
+    this.checkWindow();
   }
 
+  @HostListener('window:resize')
+  checkWindow() {
+    this.isMobile = window.innerWidth < 768; // ou ta breakpoint mobile
+  }
   /**
    * Mappe les événements en fonction de la langue ('fr' | 'en').
    * Si la langue n'est pas reconnue, on retombe sur 'fr'.

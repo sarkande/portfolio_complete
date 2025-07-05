@@ -1,10 +1,10 @@
 <div class="timeline">
-  <img src="/assets/medias/scroll.gif" alt="Timeline Image" class="timeline-image" />
+  <img src="/assets/medias/scroll.gif" alt="Timeline Image" class="timeline-image" *ngIf="!isMobile"/>
   <ngx-timeline class="timeline"
   [reverseOrder]="true"
   [events]="events"
   [eventCustomTemplate]="customEventTemplate"
-  [virtualScroll]="true"
+  [virtualScroll]="!isMobile"
 
   ></ngx-timeline>
 </div>
