@@ -24,6 +24,55 @@
       <h1>{{ project.title }}</h1>
     </header>
     <!-- Sommaire en début -->
+    
+    
+    <!-- Métadonnées du projet -->
+<!-- project-meta.component.html -->
+<section class="project-meta">
+  <div class="meta-item">
+    <span class="label">Catégorie</span>
+    <span class="value">{{ project.category }}</span>
+  </div>
+
+  <div class="meta-item">
+    <span class="label">Période</span>
+    <span class="value">
+      {{ project.startDate | date:'MMM yyyy' }}
+      <span class="dash">–</span>
+      {{ project.endDate | date:'MMM yyyy' }}
+    </span>
+  </div>
+
+  <div class="meta-item">
+    <span class="label">Rôle</span>
+    <span class="value">{{ project.role }}</span>
+  </div>
+
+  <div class="meta-item techno">
+    <span class="label">Technos</span>
+    <div class="tags">
+      <span
+        *ngFor="let skill of project.skills"
+        class="tag"
+        [ngStyle]="{
+          'background-color': getTagBgColor(skill.id),
+          'color': getTagTextColor(skill.id)
+        }"
+        matTooltip="{{ skill.content }}"
+        matTooltipPosition="above"
+      >
+        {{ skill.name }}
+      </span>
+    </div>
+  </div>
+
+  <div class="meta-item" *ngIf="project.liveUrl">
+    <a class="button-link" [href]="project.liveUrl" target="_blank" rel="noopener">
+      Voir en ligne
+    </a>
+  </div>
+</section>
+    
     <nav *ngIf="!isLoading && project && toc.length" class="toc">
       <h2>Sommaire</h2>
       <ul>
@@ -35,24 +84,6 @@
         </li>
       </ul>
     </nav>
-
-
-    <!-- Métadonnées du projet -->
-    <section class="project-meta">
-      <p><strong>Catégorie :</strong> Projets récents</p>
-      <p>
-        <strong>Période :</strong> {{ project.startDate }} –
-        {{ project.endDate }}
-      </p>
-      <p><strong>Rôle :</strong> {{ project.role }}</p>
-      <p><strong>Techno :</strong> {{ project.technologies.join(", ") }}</p>
-      <p *ngIf="project.liveUrl">
-        <a [href]="project.liveUrl" target="_blank" rel="noopener">
-          Voir le site
-        </a>
-      </p>
-    </section>
-
     <!-- Galerie d’images -->
     <div *ngIf="project.gallery?.length" class="post-gallery">
       <h3 id="Galerie">Galerie</h3>

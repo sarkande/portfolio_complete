@@ -8,6 +8,7 @@ import { ProjectService } from '../../services/project.service';
 import { ProjectModel } from '../../interfaces/project.model';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { LanguageService } from '../../services/language.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-project',
@@ -16,12 +17,13 @@ import { LanguageService } from '../../services/language.service';
     CommonModule,
     RouterModule,
     MarkdownModule,
-    CarouselComponent
+    CarouselComponent,
+    MatTooltipModule
   ],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss']
 })
-export class ProjectComponent implements OnInit, OnDestroy  {
+export class ProjectComponent implements OnInit, OnDestroy {
   project: ProjectModel | null = null;
   prevProject?: ProjectModel;
   nextProject?: ProjectModel;
@@ -37,13 +39,13 @@ export class ProjectComponent implements OnInit, OnDestroy  {
 
   constructor() {
     this.langService.currentLang$
-    .pipe(takeUntil(this.destroy$))
-    .subscribe(lang => this.currentLang = lang);
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(lang => this.currentLang = lang);
   }
-  
+
   ngOnInit() {
     this.route.paramMap
-    .pipe(
+      .pipe(
         tap(() => {
           // reset avant chaque chargement
           this.isLoading = true;
@@ -57,7 +59,7 @@ export class ProjectComponent implements OnInit, OnDestroy  {
             return of(null);
           }
           return this.projectService.getProjects()
-          .pipe(
+            .pipe(
               finalize(() => this.isLoading = false),
               switchMap(projects => of({ projects, slug }))
             );
@@ -74,13 +76,32 @@ export class ProjectComponent implements OnInit, OnDestroy  {
         }
         // assignation
         this.project = this.translateProject(projects[idx]);
+
         this.prevProject = this.translateProject(projects[idx - 1]);
         this.nextProject = this.translateProject(projects[idx + 1]);
         this.buildToc(this.project.content);
       });
-    }
+  }
+  private goldenAngle = 137.508;
 
-    private buildToc(markdown: string) {
+  /**
+   * Retourne une teinte HSL en fonction de l'id
+   */
+  getTagBgColor(id: number = 1): string {
+    const hue = (id * this.goldenAngle) % 360;
+    // saturation 50%, lightness 85% pour un fond doux
+    return `hsl(${hue.toFixed(1)}, 50%, 85%)`;
+  }
+
+  /**
+   * Texte en contraste : on garde une luminosité basse
+   */
+  getTagTextColor(id: number = 1): string {
+    const hue = (id * this.goldenAngle) % 360;
+    // saturation 70%, lightness 25% pour un texte bien lisible
+    return `hsl(${hue.toFixed(1)}, 70%, 25%)`;
+  }
+  private buildToc(markdown: string) {
     const regex = /^(#{2,6})\s+(.*)$/gm;
     let match: RegExpExecArray | null;
     while ((match = regex.exec(markdown))) {
@@ -90,12 +111,12 @@ export class ProjectComponent implements OnInit, OnDestroy  {
       this.toc.push({ level, text, slug });
     }
   }
-  
+
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
   }
-  
+
   translateProject(project: ProjectModel): ProjectModel {
     console.log('Translating project:', project);
     if (!project) return project;
@@ -104,10 +125,14 @@ export class ProjectComponent implements OnInit, OnDestroy  {
       ...project,
       title: this.langService.translateContent(project.title),
       description: this.langService.translateContent(project.description),
-      content: this.langService.translateContent(project.content)
+      content: this.langService.translateContent(project.content),
+      skills: project.skills ? project.skills.map(skill => ({
+        ...skill,
+       content: this.langService.translateContent(skill.content)
+      })) : [],
     };
   }
-  
+
   //Meme algo que pour slugify les titres dans le markdown (app.config.ts)
   private slugify(text: string): string {
     return text
@@ -115,7 +140,7 @@ export class ProjectComponent implements OnInit, OnDestroy  {
       .trim()
       .replace(/[^\w]+/g, '-');
   }
-  
-  
-  
+
+
+
 }

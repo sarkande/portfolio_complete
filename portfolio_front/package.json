@@ -11,12 +11,13 @@
   "private": true,
   "dependencies": {
     "@angular-slider/ngx-slider": "^19.0.0",
-    "@angular/animations": "^20.0.3",
-    "@angular/cdk": "^20.0.3",
+    "@angular/animations": "^20.0.6",
+    "@angular/cdk": "^20.0.5",
     "@angular/common": "^20.0.3",
     "@angular/compiler": "^20.0.3",
     "@angular/core": "^20.0.3",
     "@angular/forms": "^20.0.3",
+    "@angular/material": "^20.0.5",
     "@angular/platform-browser": "^20.0.3",
     "@angular/platform-browser-dynamic": "^20.0.3",
     "@angular/router": "^20.0.3",
@@ -42,5 +43,14 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.3"
+  },
+  "overrides": {
+    "ng-recaptcha": {
+      "@angular/core": "20.0.3",
+      "@angular/common": "20.0.3"
+    },
+    "@angular-slider/ngx-slider": {
+      "@angular/common": "20.0.3"
+    }
   }
 }

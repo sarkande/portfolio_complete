@@ -39,7 +39,7 @@ export class ResumeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize')
   checkWindow() {
-    this.isMobile = window.innerWidth < 768; // ou ta breakpoint mobile
+    this.isMobile = window.innerWidth < 900; // ou ta breakpoint mobile
   }
   /**
    * Mappe les événements en fonction de la langue ('fr' | 'en').

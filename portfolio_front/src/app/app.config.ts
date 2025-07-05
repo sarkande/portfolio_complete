@@ -14,7 +14,6 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { MarkdownModule, MarkedOptions, MARKED_OPTIONS, MarkedRenderer } from 'ngx-markdown';
 import { Parser } from 'marked';
-import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 
 
 import { JwtInterceptor } from './services/jwt.interceptor';

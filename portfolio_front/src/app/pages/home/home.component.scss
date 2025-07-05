@@ -9,7 +9,6 @@ $red: #d10606;
     padding: 15px;
     padding-top: 80px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
     background: linear-gradient(135deg,
             $dark 0%,
             $purple 45%,
@@ -201,7 +200,7 @@ a {
     cursor: pointer;
     transition: transform 0.2s ease;
     margin: 5px;
-
+    display: inline-block;
     &:hover {
         transform: scale(1.05);
     }
