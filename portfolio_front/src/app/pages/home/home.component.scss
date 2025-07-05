@@ -36,15 +36,27 @@ $red: #d10606;
 
             h1 {
                 font-size: 80px;
+
+                @include medias.for-tablet-portrait {
+                    font-size: 60px;
+                }
             }
 
             h2 {
                 font-size: 60px;
                 min-height: 120px;
+
+                @include medias.for-tablet-portrait {
+                    font-size: 40px;
+                }
             }
 
             h3 {
                 font-size: 40px;
+
+                @include medias.for-tablet-portrait {
+                    font-size: 30px;
+                }
             }
         }
 
@@ -52,7 +64,7 @@ $red: #d10606;
             width: 100%;
 
             img {
-                
+
                 &::before {
                     content: "";
                     width: 100%;
@@ -64,6 +76,7 @@ $red: #d10606;
                     /* adapte selon la forme de ta photo */
                     z-index: -1;
                 }
+
                 display: block;
                 width: 100%;
                 height: auto;
@@ -145,11 +158,12 @@ $red: #d10606;
         padding: 15px;
     }
 
-    .projects-about{
+    .projects-about {
         display: flex;
         justify-content: center;
     }
 }
+
 .skills-section {
     .skills-about {
         display: flex;
@@ -162,6 +176,7 @@ $red: #d10606;
         }
     }
 }
+
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -170,7 +185,8 @@ $red: #d10606;
     padding-bottom: 25px;
     ;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
@@ -185,7 +201,7 @@ a{
     cursor: pointer;
     transition: transform 0.2s ease;
     margin: 5px;
-    
+
     &:hover {
         transform: scale(1.05);
     }
