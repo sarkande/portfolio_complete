@@ -23,6 +23,8 @@ export class ProjectListComponent implements OnInit, OnDestroy {
   minYear = 2000;
   maxYear = new Date().getFullYear();
 
+  isSearchbarCollapsed = false; 
+
   private currentSearch = '';
   private currentTags: string[] = [];
   private currentGitPublic = false;
@@ -97,6 +99,10 @@ export class ProjectListComponent implements OnInit, OnDestroy {
     this.currentStartYear = filters.startYear;
     this.currentEndYear = filters.endYear;
     this.applyFilters();
+  }
+  onSidebarToggled(collapsed: boolean) {
+    console.log('Sidebar toggled:', collapsed);
+    this.isSearchbarCollapsed = collapsed;
   }
 
   private applyFilters() {

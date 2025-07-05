@@ -3,9 +3,10 @@
   [minYear]="minYear"
   [maxYear]="maxYear"
   (filtersChanged)="onFiltersChanged($event)"
+  (sidebarToggled)="onSidebarToggled($event)"
 ></app-search-sidebar>
 
-<div class="project-list">
+<div class="project-list" [ngClass]="{'collapsed': isSearchbarCollapsed}">
   <app-project-card
     *ngFor="let project of filtered"
     [project]="project"

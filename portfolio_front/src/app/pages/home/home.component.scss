@@ -43,10 +43,23 @@ $red: #d10606;
 
             h2 {
                 font-size: 60px;
-                min-height: 120px;
+                line-height: 1.2;
+
+                // 3 lignes garantis
+                min-height: calc(60px * 1.2 * 2); // 216px
+                // on ne veut pas dépasser 2 lignes
+                max-height: calc(60px * 1.2 * 2);
+
+                overflow: hidden; // coupe au-delà de 2 lignes
+                white-space: normal; // autorise le retour à la ligne
+                display: flex;
+                align-items: center; // centre le texte verticalement
+                justify-content: center; // (optionnel) centre aussi horizontalement
 
                 @include medias.for-tablet-portrait {
                     font-size: 40px;
+                    min-height: calc(40px * 1.2 * 2); // 144px
+                    max-height: calc(40px * 1.2 * 2);
                 }
             }
 
@@ -56,6 +69,17 @@ $red: #d10606;
                 @include medias.for-tablet-portrait {
                     font-size: 30px;
                 }
+            }
+        }
+
+        &__description {
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+
+            @include medias.for-tablet-portrait {
+                font-size: 16px;
             }
         }
 
@@ -201,6 +225,7 @@ a {
     transition: transform 0.2s ease;
     margin: 5px;
     display: inline-block;
+
     &:hover {
         transform: scale(1.05);
     }

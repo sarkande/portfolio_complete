@@ -7,16 +7,16 @@
 
   "contact-me": "Contactez-moi",
 
-  "home.title1": "Expert Odoo",
-  "home.title2": "Développeur passionné",
-  "home.title3": "Développeur full-stack",
-  "home.title4": "Expert front-end (React & Angular)",
-  "home.title5": "Expert back-end (Node.js & Java Spring)",
-  "home.title6": "Ingénieur logiciel",
-  "home.title7": "Architecte logiciel",
-  "home.title8": "Architecte ERP (Python & Odoo)",
-  "home.title9": "Ingénieur DevOps & containers",
-  "home.title10": "Spécialiste Docker & CI/CD",
+  "home.title1": "Spécialiste Odoo",
+  "home.title2": "Développeur créatif",
+  "home.title3": "Ingénieur Fullstack",
+  "home.title4": "Expert Front-end",
+  "home.title5": "Expert Back-end",
+  "home.title6": "Ingénieur Logiciel",
+  "home.title7": "Architecte Logiciel",
+  "home.title8": "Consultant ERP",
+  "home.title9": "Ingénieur DevOps",
+  "home.title10": "Spécialiste CI/CD",
 
   "home.description": "Votre partenaire full-stack : React & Angular en front, Node.js & Spring en back, Python/Odoo pour l’ERP, CI/CD automatisé et déploiement containerisé avec Docker.",
 

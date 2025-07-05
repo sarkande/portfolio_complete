@@ -5,11 +5,11 @@
       <div class="title">
         <h1>Allan PEREZ</h1>
         <h2 #titleEl></h2>
+        <p class="header__description">
+          {{ "home.description" | translate }}
+  
+        </p>
       </div>
-      <p class="header__description">
-        {{ "home.description" | translate }}
-
-      </p>
       <button
         class="btn btn-primary"
         [routerLink]="['/', currentLang, 'about']"

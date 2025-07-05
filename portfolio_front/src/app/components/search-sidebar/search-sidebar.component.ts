@@ -24,6 +24,7 @@ export class SearchSidebarComponent implements OnInit {
     startYear: number;
     endYear: number;
   }>();
+  @Output() sidebarToggled = new EventEmitter<boolean>();
 
   searchText: string = '';
   selectedTags: string[] = [];
@@ -37,6 +38,7 @@ export class SearchSidebarComponent implements OnInit {
     ceil: new Date().getFullYear(),
     step: 1,
   };
+  public collapsed = false;
 
   ngOnInit(): void {
     this.startYearFilter = this.minYear;
@@ -48,7 +50,11 @@ export class SearchSidebarComponent implements OnInit {
       translate: (value: number): string => `${value}`
     };
   }
-
+  
+  toggleSidebar() {
+    this.collapsed = !this.collapsed;
+    this.sidebarToggled.emit(this.collapsed);
+  }
   onFilterChange() {
     this.filtersChanged.emit({
       searchText: this.searchText.trim().toLowerCase(),
