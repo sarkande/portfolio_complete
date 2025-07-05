@@ -6,7 +6,7 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private static baseURL: string = 'http://allanperez.fr:8080';
+  private static baseURL: string = 'http://api.allanperez.fr';
   constructor(private http: HttpClient) { }
 
   get<T>(url: string): Observable<T> {
