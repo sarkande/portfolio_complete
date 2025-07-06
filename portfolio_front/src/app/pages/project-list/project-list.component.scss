@@ -21,28 +21,24 @@ $project-transition-duration: 0.3s;
 
 .project-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: $project-gap;
-    padding: $project-padding-top 0 $project-padding-bottom $project-padding-left;
-    transition: padding-left $project-transition-duration ease;
-
-    // Fade-in animation globale (si utile)
-    opacity: 0;
-    animation: fadeInUp 0.4s ease-out 0.2s forwards;
-
-    &.collapsed {
-        padding-left: $project-collapsed-padding-left;
-    }
-
+        flex-wrap: wrap;
+        gap: $project-gap;
+        padding: $project-padding-top 0 $project-padding-bottom $project-padding-left;
+        transition: padding-left $project-transition-duration ease;
+    
+        &.collapsed {
+            padding-left: $project-collapsed-padding-left;
+        }
     >* {
         opacity: 0;
         transform: translateY(30px);
-        animation: fadeInUp 0.3s ease-out forwards;
+        animation: fadeInUp 0.6s ease-out forwards;
 
-        @for $i from 1 through 20 {
+        @for $i from 1 through 2 {
             &:nth-child(#{$i}) {
                 animation-delay: 0.1s + ($i * 0.1s);
             }
         }
     }
 }
+
