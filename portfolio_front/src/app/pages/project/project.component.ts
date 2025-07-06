@@ -69,6 +69,14 @@ export class ProjectComponent implements OnInit, OnDestroy {
       .subscribe(result => {
         if (!result) return;
         const { projects, slug } = result;
+
+        // Tri des projets par date décroissante
+        projects.sort((a, b) => {
+          const aEnd = a.endDate ? new Date(a.endDate) : new Date();
+          const bEnd = b.endDate ? new Date(b.endDate) : new Date();
+          return bEnd.getTime() - aEnd.getTime(); // Nouveaux en premier
+        });
+
         const idx = projects.findIndex(p => p.slug === slug);
         if (idx === -1) {
           this.router.navigate(['/', this.currentLang, '404']);
