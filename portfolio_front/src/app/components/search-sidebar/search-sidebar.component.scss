@@ -1,64 +1,111 @@
-// src/app/sidebar/sidebar.component.scss
+@use "abstracts/medias";
+
+// Variables de style pour la sidebar
+$sidebar-top: 80px;
+$sidebar-width: 300px;
+$sidebar-padding: 1rem;
+$sidebar-bg: #f8f8f8;
+$sidebar-border: #ddd;
+$sidebar-shadow: rgba(0, 0, 0, 0.1);
+$sidebar-transition: 0.3s ease;
+
+$input-padding: 0.5rem;
+$input-font-size: 14px;
+$input-border: #ccc;
+$input-radius: 4px;
+
+$tag-gap: 0.4rem;
+$tag-padding: 0.4rem 0.6rem;
+$tag-bg: #eee;
+$tag-radius: 4px;
+$tag-font: 13px;
+$tag-active-bg: #ff6600;
+$tag-active-hover-bg: #e65c00;
+$tag-hover-bg: #e0e0e0;
+
+$toggle-margin-top: 12px;
+$slider-width: 40px;
+$slider-height: 20px;
+$slider-bg: #ccc;
+$slider-radius: 999px;
+$slider-thumb-size: 14px;
+$slider-thumb-bg: #fff;
+$slider-thumb-transform: translateX(20px);
+$slider-checked-bg: #3c9d9b;
+
+$label-font-size: 14px;
+$label-color: #333;
+
+$help-icon-size: 1.2em;
+$help-icon-bg: #00c61a;
+$help-bubble-bg: rgba(0, 0, 0, 0.8);
+$help-bubble-color: #fff;
+$help-bubble-font-size: 0.9em;
+
+$hr-margin: 1.5rem 0;
+$hr-color: #ddd;
+
+$glass-border: rgba(255, 255, 255, 0.3);
+$glass-bg: rgba(255, 255, 255, 0.15);
+$glass-blur: 8px;
+$toggle-size-width: 2.5rem;
+$toggle-size-height: 3.5rem;
 
 .sidebar {
     position: fixed;
-    top: 80px; // adapte selon ton layout
+    top: $sidebar-top;
     left: 0;
-    width: 300px;
-    height: calc(100% - 80px);
-    padding: 1rem;
-    background-color: #f8f8f8;
-    border-right: 1px solid #ddd;
+    width: $sidebar-width;
+    height: calc(100% - $sidebar-top);
+    padding: $sidebar-padding;
+    background-color: $sidebar-bg;
+    border-right: 1px solid $sidebar-border;
     overflow-y: auto;
-    transition: margin-left 0.3s ease;
+    transition: margin-left $sidebar-transition;
 
-    // Replié à gauche
     &.collapsed {
-        margin-left: -300px;
+        margin-left: -$sidebar-width;
     }
 
-    // Recherche
     input {
         width: 100%;
-        padding: 0.5rem;
+        padding: $input-padding;
         margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
+        border: 1px solid $input-border;
+        border-radius: $input-radius;
+        font-size: $input-font-size;
     }
 
-    // Tags
     .tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.4rem;
+        gap: $tag-gap;
 
         span {
-            padding: 0.4rem 0.6rem;
-            background-color: #eee;
-            border-radius: 4px;
+            padding: $tag-padding;
+            background-color: $tag-bg;
+            border-radius: $tag-radius;
             cursor: pointer;
-            font-size: 13px;
+            font-size: $tag-font;
             transition: background-color 0.2s ease;
 
             &.active {
-                background-color: #ff6600;
-                color: white;
+                background-color: $tag-active-bg;
+                color: #fff;
 
                 &:hover {
-                    background-color: #e65c00;
+                    background-color: $tag-active-hover-bg;
                 }
             }
 
             &:hover {
-                background-color: #e0e0e0;
+                background-color: $tag-hover-bg;
             }
         }
     }
 
-    // Toggle switches
     .filter-toggle {
-        margin-top: 12px;
+        margin-top: $toggle-margin-top;
     }
 
     .toggle-label {
@@ -75,37 +122,37 @@
 
         .slider {
             position: relative;
-            width: 40px;
-            height: 20px;
-            background-color: #ccc;
-            border-radius: 999px;
+            width: $slider-width;
+            height: $slider-height;
+            background-color: $slider-bg;
+            border-radius: $slider-radius;
             transition: background-color 0.3s ease;
             margin-right: 0.5rem;
 
             &::before {
                 content: '';
                 position: absolute;
-                height: 14px;
-                width: 14px;
+                width: $slider-thumb-size;
+                height: $slider-thumb-size;
                 left: 3px;
                 bottom: 3px;
-                background-color: white;
+                background-color: $slider-thumb-bg;
                 border-radius: 50%;
                 transition: transform 0.3s ease;
             }
         }
 
         input:checked+.slider {
-            background-color: #3c9d9b;
+            background-color: $slider-checked-bg;
         }
 
         input:checked+.slider::before {
-            transform: translateX(20px);
+            transform: $slider-thumb-transform;
         }
 
         .label-text {
-            font-size: 14px;
-            color: #333;
+            font-size: $label-font-size;
+            color: $label-color;
         }
 
         .help-container {
@@ -116,11 +163,10 @@
 
         .help-icon {
             display: inline-block;
-            width: 1.2em;
-            height: 1.2em;
-            line-height: 1.2em;
+            width: $help-icon-size;
+            height: $help-icon-size;
             border-radius: 50%;
-            background-color: #00c61a;
+            background-color: $help-icon-bg;
             color: #fff;
             text-align: center;
             font-weight: bold;
@@ -136,9 +182,9 @@
             transform: translateX(-50%);
             width: 200px;
             padding: 0.5em;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            font-size: 0.9em;
+            background-color: $help-bubble-bg;
+            color: $help-bubble-color;
+            font-size: $help-bubble-font-size;
             border-radius: 0.3em;
             text-align: center;
             z-index: 10;
@@ -152,12 +198,11 @@
     }
 
     hr {
-        margin: 1.5rem 0;
+        margin: $hr-margin;
         border: none;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid $hr-color;
     }
 
-    // Slider d’année
     .year-range.custom-slider {
         margin-top: 1rem;
     }
@@ -198,27 +243,26 @@
     }
 }
 
-// Bouton de repli/extension toujours visible
-/* Bouton en verre (glassmorphism) sans variables */
+// Bouton toggle en verre (glassmorphism)
 .sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: calc(300px + 0.5rem);
+    left: calc(#{$sidebar-width} + 0.5rem);
     transform: translateY(-50%);
-    width: 2.5rem;
-    height: 3.5rem;
+    width: $toggle-size-width;
+    height: $toggle-size-height;
     padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid $glass-border;
+    background: $glass-bg;
+    backdrop-filter: blur($glass-blur);
+    -webkit-backdrop-filter: blur($glass-blur);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: left 0.3s ease, transform 0.2s ease, background 0.2s ease;
+    transition: left $sidebar-transition, transform 0.2s ease, background 0.2s ease;
 
     &::before {
         content: '←';
@@ -235,7 +279,6 @@
     }
 }
 
-/* Position et icône inversés quand la sidebar est repliée */
 .sidebar.collapsed+.sidebar-toggle {
     left: 0.5rem;
     transform: translateY(-50%) rotate(180deg);

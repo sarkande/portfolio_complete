@@ -1,6 +1,89 @@
 @use "abstracts/medias";
 
-// 1) appliquer box-sizing pour éviter les débordements
+// Variables  
+$cf-bg : #ffffff;
+$cf-shadow : rgba(0, 0, 0, 0.05);
+$cf-shadow-hover : rgba(0, 0, 0, 0.08);
+$cf-radius : 8px;
+$cf-padding : 2rem;
+$cf-padding-sm : 1rem;
+$cf-max-width : 600px;
+$cf-offset-top : 50px;
+
+$text-color : #2d3748;
+$text-color-muted : #555555;
+$text-color-label : #4a5568;
+$text-color-small : #718096;
+$placeholder-color : #a0aec0;
+
+$input-bg : #fafafa;
+$input-border : #cccccc;
+$input-focus-border : #3182ce;
+$input-shadow : rgba(0, 0, 0, 0.08);
+
+$btn-bg : #3182ce;
+$btn-bg-hover : #2b6cb0;
+$btn-loading-bg : #6c757d;
+$btn-success-bg : #38a169;
+$btn-error-bg : #e53e3e;
+$btn-text-color : #ffffff;
+
+$card-bg : #ffffff;
+$card-shadow : rgba(0, 0, 0, 0.08);
+$card-shadow-hover : rgba(0, 0, 0, 0.12);
+$card-radius : 0.5rem;
+$card-padding : 1.5rem;
+
+$font-size-h1 : 2rem;
+$font-size-base : 1rem;
+$font-size-small : 0.875rem;
+$font-size-h2 : 1.25rem;
+$line-height-base : 1.4;
+
+// Keyframes
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translateX(-1px);
+    }
+
+    20%,
+    80% {
+        transform: translateX(2px);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateX(-4px);
+    }
+
+    40%,
+    60% {
+        transform: translateX(4px);
+    }
+}
+
+// 1) box-sizing global
 .contact-form,
 .contact-form *,
 .contact-form *::before,
@@ -10,54 +93,68 @@
 
 .contact-form {
     width: 100%;
-    max-width: 600px;
+    max-width: $cf-max-width;
     margin: 2rem auto;
-    padding: 2rem;
+    padding: $cf-padding;
     margin-top: 80px;
-    background: #ffffff;
-    border-radius: 8px;
+    background: $cf-bg;
+    border-radius: $cf-radius;
     position: relative;
-    top: 50px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    top: $cf-offset-top;
+    box-shadow: 0 4px 20px $cf-shadow;
     transition: transform 0.3s ease;
+
+    // ✨ Animation à l’apparition
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 
     @include medias.for-tablet-portrait {
         max-width: 100%;
-        padding: 1rem;
+        padding: $cf-padding-sm;
     }
 
     &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 30px $cf-shadow-hover;
     }
 
     h1 {
         text-align: center;
         margin-bottom: 2rem;
-        font-size: 2rem;
-        color: #2d3748;
+        font-size: $font-size-h1;
+        color: $text-color;
     }
 
     .contact-intro {
         margin: 0 0 1.5rem;
-        font-size: 1rem;
-        color: #555;
+        font-size: $font-size-base;
+        color: $text-color-muted;
         text-align: center;
-        line-height: 1.4;
+        line-height: $line-height-base;
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+        animation: fadeInUp 0.8s ease-out 0.3s forwards;
+        opacity: 0;
     }
 
     .field {
         position: relative;
-        margin: 0 0 1.5rem; // plus de margin-right
+        margin: 0 0 1.5rem;
+        opacity: 0;
+        animation: fadeInUp 0.6s ease-out forwards;
+
+        @for $i from 1 through 10 {
+            &:nth-of-type(#{$i}) {
+                animation-delay: 0.3s + ($i * 0.1s);
+            }
+        }
 
         label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #4a5568;
+            color: $text-color-label;
             transition: color 0.2s;
         }
 
@@ -65,23 +162,22 @@
         textarea {
             width: 100%;
             padding: 0.75rem;
-            font-size: 1rem;
-            border: 1px solid #ccc;
+            font-size: $font-size-base;
+            border: 1px solid $input-border;
             border-radius: 4px;
-            background: #fafafa;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
-            transition: border-color 0.2s, box-shadow 0.2s,
-                transform 0.2s, background 0.2s;
+            background: $input-bg;
+            box-shadow: inset 0 1px 3px $input-shadow;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s, background 0.2s;
 
             &::placeholder {
-                color: #a0aec0;
+                color: $placeholder-color;
             }
 
             &:focus {
                 outline: none;
-                border-color: #3182ce;
-                box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
-                background: #fff;
+                border-color: $input-focus-border;
+                box-shadow: 0 0 0 3px rgba(red($input-focus-border), green($input-focus-border), blue($input-focus-border), 0.2);
+                background: $cf-bg;
                 transform: translateY(-2px);
             }
         }
@@ -89,46 +185,22 @@
         small {
             display: block;
             margin-top: 0.25rem;
-            color: #718096;
-            font-size: 0.875rem;
+            color: $text-color-small;
+            font-size: $font-size-small;
         }
 
         &.invalid {
             animation: shake 0.3s;
 
             label {
-                color: #e53e3e !important;
+                color: $btn-error-bg !important;
             }
 
             input,
             textarea {
-                border-color: #e53e3e !important;
-                box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2) !important;
+                border-color: $btn-error-bg !important;
+                box-shadow: 0 0 0 3px rgba(red($btn-error-bg), green($btn-error-bg), blue($btn-error-bg), 0.2) !important;
             }
-        }
-    }
-
-    @keyframes shake {
-
-        10%,
-        90% {
-            transform: translateX(-1px);
-        }
-
-        20%,
-        80% {
-            transform: translateX(2px);
-        }
-
-        30%,
-        50%,
-        70% {
-            transform: translateX(-4px);
-        }
-
-        40%,
-        60% {
-            transform: translateX(4px);
         }
     }
 
@@ -138,16 +210,18 @@
         display: block;
         margin: 1.5rem auto 0;
         padding: 0.75rem 2rem;
-        font-size: 1rem;
+        font-size: $font-size-base;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         border: none;
         border-radius: 4px;
-        background-color: #3182ce;
-        color: #fff;
+        background-color: $btn-bg;
+        color: $btn-text-color;
         cursor: pointer;
-        transition: background 0.3s, transform 0.2s;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+        animation: fadeInUp 0.8s ease-out 1.2s forwards;
+        opacity: 0;
 
         &::after {
             content: "";
@@ -162,8 +236,9 @@
         }
 
         &:hover {
-            background-color: #2b6cb0;
+            background-color: $btn-bg-hover;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         &:hover::after {
@@ -171,32 +246,26 @@
         }
 
         &:active {
-            transform: translateY(0) scale(0.98);
+            transform: scale(0.97);
         }
 
         &.btn-loading {
             cursor: wait;
-            background-color: #6c757d !important;
+            background-color: $btn-loading-bg !important;
         }
 
         &.btn-success {
-            background-color: #38a169 !important;
+            background-color: $btn-success-bg !important;
         }
 
         &.btn-error {
-            background-color: #e53e3e !important;
+            background-color: $btn-error-bg !important;
         }
 
         .spinner {
             margin-left: 0.5rem;
             vertical-align: middle;
             animation: spin 1s linear infinite;
-        }
-    }
-
-    @keyframes spin {
-        to {
-            transform: rotate(360deg);
         }
     }
 }
@@ -207,44 +276,54 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
     margin: 3rem 0;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
 
     @include medias.for-tablet-portrait {
         grid-template-columns: 1fr;
     }
 
     .card {
-        background: #ffffff;
-        border-radius: 0.5rem;
-        padding: 1.5rem;
+        background: $card-bg;
+        border-radius: $card-radius;
+        padding: $card-padding;
         text-align: center;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 6px $card-shadow;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        animation: fadeInUp 0.6s ease-out forwards;
+
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                animation-delay: 0.7s + ($i * 0.1s);
+            }
+        }
 
         &:hover {
             transform: translateY(-6px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 6px 20px $card-shadow-hover;
         }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: $font-size-h2;
             margin-bottom: 0.75rem;
-            color: #2d3748;
+            color: $text-color;
             line-height: 1.2;
         }
 
         p {
             margin: 0;
-            font-size: 1rem;
-            color: #4a5568;
+            font-size: $font-size-base;
+            color: $text-color-muted;
 
             a {
-                color: #3182ce;
+                color: $input-focus-border;
                 text-decoration: none;
                 position: relative;
                 transition: color 0.2s ease;
 
                 &:hover {
-                    color: #2b6cb0;
+                    color: $btn-bg-hover;
                 }
 
                 &::after {
@@ -254,7 +333,7 @@
                     bottom: -2px;
                     width: 0;
                     height: 2px;
-                    background: #3182ce;
+                    background: $input-focus-border;
                     transition: width 0.3s ease;
                 }
 

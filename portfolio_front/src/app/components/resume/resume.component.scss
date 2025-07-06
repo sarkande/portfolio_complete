@@ -1,9 +1,21 @@
+// Animation fadeInUp
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .timeline {
     img {
         position: absolute;
     }
 }
-
 
 .custom-timeline-event {
     background-color: #f0f0f0;
@@ -13,7 +25,16 @@
     margin-bottom: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    /* Pour une transition douce des couleurs */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+
+    // Effet cascade (jusqu’à 20 événements)
+    @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+            animation-delay: 0.3s + ($i * 0.1s);
+        }
+    }
 }
 
 .event-header {
@@ -45,25 +66,19 @@
 
 .event-left {
     border-left: 5px solid #007bff;
-    /* Bordure bleue pour la gauche */
     background-color: #e6f3ff;
-    /* Fond légèrement bleuté */
 
     .event-title {
         color: #0056b3;
-        /* Titre bleu foncé */
     }
 }
 
 .event-right {
     border-right: 5px solid #28a745;
-    /* Bordure verte pour la droite */
     background-color: #e9ffe9;
-    /* Fond légèrement verdâtre */
 
     .event-title {
         color: #1e7e34;
-        /* Titre vert foncé */
     }
 }
 
@@ -71,25 +86,18 @@
 
 .event-en-cours {
     border: 2px dashed #ffc107 !important;
-    /* Bordure jaune pointillée, plus épaisse */
     background-color: #fffde7 !important;
-    /* Fond jaune très clair */
     box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
-
 
     .event-title {
         color: #c19200 !important;
-        /* Titre orange/jaune */
         font-weight: bold;
-        /* Texte du titre en gras */
     }
 
     .event-date {
         color: #666;
         font-size: 0.9em;
         white-space: nowrap;
-        // Optionnel: ajuster la marge si les plages de dates sont plus longues
-        // margin-left: 10px;
     }
 }
 
@@ -98,5 +106,4 @@
 }
 
 :host ::ng-deep ngx-timeline.timeline cdk-virtual-scroll-viewport {
-    height: 500px;
-}
+    height: 500px; }

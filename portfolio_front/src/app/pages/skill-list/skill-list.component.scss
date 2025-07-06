@@ -1,9 +1,42 @@
+// Variables de layout des listes
+$skill-gap: 1rem;
+$skill-padding-vertical: 150px 0px 100px 0px; // top right bottom left
+$skill-justify-content: space-evenly;
+
+// Animation fadeInUp (si non déjà incluse)
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .skill-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 150px 0px 100px 0px;
-    justify-content: space-evenly;
-    
+    gap: $skill-gap;
+    padding: $skill-padding-vertical;
+    justify-content: $skill-justify-content;
 
+    // Animation globale au chargement
+    opacity: 0;
+    animation: fadeInUp 0.3s ease-out 0.2s forwards;
+
+    // Animation de chaque élément de la liste
+    >* {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.3s ease-out forwards;
+
+        @for $i from 1 through 20 {
+            &:nth-child(#{$i}) {
+                animation-delay: 0.1s + ($i * 0.1s);
+            }
+        }
+    }
 }

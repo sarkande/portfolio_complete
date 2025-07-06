@@ -134,9 +134,9 @@
       <span *ngIf="!loading && result === true" class="btn-icon">✔</span>
       <span *ngIf="!loading && result === false" class="btn-icon">✖</span>
     </button>
+    <div *ngIf="result === true" class="success-message">
+      {{ "contact.success" | translate }}
+    </div>
   </form>
 
-  <div *ngIf="result === true" class="success-message">
-    {{ "contact.success" | translate }}
-  </div>
 </div>

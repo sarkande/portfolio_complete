@@ -1,24 +1,45 @@
 /* skill-card.component.scss */
+@use "abstracts/medias";
+
+// Variables génériques
+$card-size: 200px;
+$card-bg: #fff;
+$card-radius: 8px;
+$card-shadow: rgba(0, 0, 0, 0.1);
+$card-shadow-hover: rgba(0, 0, 0, 0.15);
+$card-transition: 0.3s ease;
+
+// Variables image
+$image-height: 50px;
+
+// Variables typographiques
+$font-size-name: 1.1rem;
+$font-size-desc: 0.85rem;
+$font-size-level: 0.9rem;
+$color-text: #333;
+$color-desc: #666;
+$color-level-text: #444;
+
 .skill-card {
-    width: 200px;
-    height: 200px;
-    background: #fff;
-    border-radius: 8px;
+    width: $card-size;
+    height: $card-size;
+    background: $card-bg;
+    border-radius: $card-radius;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px $card-shadow;
+    transition: transform $card-transition, box-shadow $card-transition;
     display: flex;
     flex-direction: column;
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
     &:hover {
         transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 8px $card-shadow-hover;
     }
 
     .skill-image {
         width: 100%;
-        height: 50px;
-        /* taille fixe pour laisser de la place au texte */
+        height: $image-height;
         object-fit: contain;
     }
 
@@ -31,20 +52,19 @@
     }
 
     .skill-name {
-        margin: 0 0 0.25rem 0;
-        font-size: 1.1rem;
+        margin: 0 0 0.25rem;
+        font-size: $font-size-name;
         line-height: 1.2;
-        color: #333;
+        color: $color-text;
         text-align: center;
     }
 
     .description {
         flex: 1;
-        font-size: 0.85rem;
-        color: #666;
+        font-size: $font-size-desc;
+        color: $color-desc;
         margin: 0 0 0.5rem;
         overflow: hidden;
-        /* coupe le texte après 3 lignes */
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
@@ -58,18 +78,17 @@
         .level-text {
             font-weight: bold;
             margin-right: 0.25rem;
-            color: #444;
-            font-size: 0.9rem;
+            color: $color-level-text;
+            font-size: $font-size-level;
         }
 
         .level-value {
-            /* ajuste la taille de la notation si nécessaire */
-            font-size: 0.9rem;
+            font-size: $font-size-level;
         }
     }
 }
 
-/* Optionnel : si tu utilises un parent flex pour les cartes */
+/* Optionnel : container pour plusieurs skill-card */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
