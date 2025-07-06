@@ -5,11 +5,10 @@ import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SkillWithProjects } from '../../interfaces/skill-with-projects';
-import { SkillHomeCardComponent } from '../../components/skill-home-card/skill-home-card.component';
 
 @Component({
   selector: 'app-skill-list',
-  imports: [SkillCardComponent, CommonModule, SkillHomeCardComponent],
+  imports: [SkillCardComponent, CommonModule ],
   templateUrl: './skill-list.component.html',
   styleUrl: './skill-list.component.scss'
 })

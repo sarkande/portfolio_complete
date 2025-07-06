@@ -12,25 +12,28 @@ import { SkillListComponent } from './pages/skill-list/skill-list.component';
 
 
 const childRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'skills', component: SkillListComponent },
-  { path: 'projects', component: ProjectListComponent },
-  { path: 'projects/:slug', component: ProjectComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent, data: { title: 'title.home' } },
+  { path: 'skills', component: SkillListComponent, data: { title: 'title.skills' } },
+  { path: 'projects', component: ProjectListComponent, data: { title: 'title.projects' } },
+  { path: 'projects/:slug', component: ProjectComponent, data: { title: 'title.projectDetail' } },
+  { path: 'about', component: AboutComponent, data: { title: 'title.about' } },
+  { path: 'login', component: LoginComponent, data: { title: 'title.login' } },
   {
     path: 'panel',
     component: PanelAdminComponent,
     canActivate: [AuthGuard],
+    data: { title: 'title.adminPanel' }
   },
-  { path: '404', component: ErrorNotFoundComponent },
+  { path: '404', component: ErrorNotFoundComponent, data: { title: 'title.notFound' } },
   { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
+
 
 export const routes: Routes = [
   {
     path: ':lang',
     canActivate: [LangGuard],
+    data: { title: 'title.home' },
     children: childRoutes,
   },
   { path: '', redirectTo: 'fr', pathMatch: 'full' },

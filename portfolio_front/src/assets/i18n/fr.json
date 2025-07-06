@@ -4,6 +4,14 @@
   "skills": "Compétences",
   "projects": "Projets",
   "about": "Contact",
+  "title.home": "Accueil – Allan Perez",
+  "title.skills": "Compétences – Allan Perez",
+  "title.projects": "Projets – Allan Perez",
+  "title.projectDetail": "Détail du projet – Allan Perez",
+  "title.about": "À propos – Allan Perez",
+  "title.login": "Connexion – Allan Perez",
+  "title.adminPanel": "Panneau d’administration – Allan Perez",
+  "title.notFound": "Page non trouvée – Allan Perez",
 
   "contact-me": "Contactez-moi",
 
@@ -35,6 +43,11 @@
   "error.go_home": "Retour à l'accueil",
 
   "contact.title": "Contactez-moi",
+  "contact.intro": "Si vous souhaitez me contacter pour un projet ou une question, n’hésitez pas à remplir le formulaire ci-dessous ! Je vous répondrai dans les plus brefs délais.",
+  "contact.address": "Adresse",
+  "contact.address_details": "Annecy, France",
+  "contact.email_address": "aperezgo74@gmail.com",
+  "contact.phone_number": "06 25 77 23 43",
   "contact.name": "Nom & Prénom",
   "contact.email": "Email",
   "contact.phone": "Téléphone",

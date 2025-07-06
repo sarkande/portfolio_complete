@@ -45,9 +45,34 @@ export class NavbarComponent {
   switchLang(lang: string) {
     const segments = this.router.url.split('/').slice(2);
     const targetPath = [lang, ...segments].join('/');
+    
+    this.updateMetadata(lang);
+
     if (this.router.url !== `/${targetPath}`) {
       this.router.navigate([lang, ...segments]);
     }
+  }
+
+  private updateMetadata(lang: string) {
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) {
+      const content =
+        lang === 'fr'
+          ? `Portfolio d'Allan Perez, expert en ingénierie logicielle : découvrez mes projets et solutions full-stack en Odoo, Angular, Java, React et C#.`
+          : `Allan Perez's portfolio, showcasing software engineering expertise: discover my full-stack projects and solutions in Odoo, Angular, Java, React and C#.`;
+      descriptionMeta.setAttribute('content', content);
+    }
+
+    const keywordsMeta = document.querySelector('meta[name="keywords"]');
+    if (keywordsMeta) {
+      const content =
+        lang === 'fr'
+          ? 'Allan Perez, portfolio, ingénieur logiciel, Odoo, Angular, Java, React, C#, projets, solutions full-stack'
+          : 'Allan Perez, portfolio, software engineer, Odoo, Angular, Java, React, C#, projects, full-stack solutions';
+      keywordsMeta.setAttribute('content', content);
+    }
+
+    document.documentElement.lang = lang;
   }
 
   toggleMobileMenu() {

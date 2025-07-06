@@ -7,6 +7,15 @@
 
   "contact-me": "Contact me",
 
+  "title.home": "Home – Allan Perez",
+  "title.skills": "Skills – Allan Perez",
+  "title.projects": "Projects – Allan Perez",
+  "title.projectDetail": "Project Details – Allan Perez",
+  "title.about": "About – Allan Perez",
+  "title.login": "Login – Allan Perez",
+  "title.adminPanel": "Admin Panel – Allan Perez",
+  "title.notFound": "Page Not Found – Allan Perez",
+
   "home.title1": "Odoo Specialist",
   "home.title2": "Creative Developer",
   "home.title3": "Fullstack Engineer",
@@ -35,7 +44,12 @@
   "error.go_home": "Go back home",
 
   "contact.title": "Contact me",
+  "contact.intro": "If you’d like to reach out for a project or have any questions, feel free to fill in the form below! I’ll get back to you as soon as possible.",
   "contact.name": "Name",
+  "contact.address": "Address",
+  "contact.address_details": "Annecy, France",
+  "contact.email_address": "aperezgo74@gmail.com",
+  "contact.phone_number": "+33 6 25 77 23 43",
   "contact.email": "Email",
   "contact.phone": "Phone",
   "contact.message": "Message",
@@ -47,7 +61,6 @@
 
   "contact.email_required": "Email is required.",
   "contact.email_invalid": "Email is invalid.",
-
 
   "contact.message_required": "Message is required.",
   "contact.message_length": "Message must be at least 10 characters long.",
