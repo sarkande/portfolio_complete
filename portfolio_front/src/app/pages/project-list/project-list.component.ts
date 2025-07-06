@@ -7,6 +7,7 @@ import { ProjectService } from '../../services/project.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
+import { SkillModel } from '../../interfaces/skill-model';
 
 @Component({
   selector: 'app-projects',
@@ -48,6 +49,14 @@ export class ProjectListComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (projects) => {
           this.rawProjects = projects;
+          //sort project by date, newest first, and if a project has no end date, it is considered as ongoing. if a project.old is true, it is considered as obsolete, so it is sorted last
+          this.rawProjects.sort((a, b) => {
+            const aEnd = a.endDate ? new Date(a.endDate) : new Date();
+            const bEnd = b.endDate ? new Date(b.endDate) : new Date();
+
+            return bEnd.getTime() - aEnd.getTime(); // newest first
+          });
+
           this.initYears(projects);
           this.translateAll();           // première traduction
           this.setupLangListener();      // écoute les changements de langue
@@ -120,10 +129,18 @@ export class ProjectListComponent implements OnInit, OnDestroy {
     });
   }
 
-  get allTags(): string[] {
-    const s = new Set<string>();
-    this.rawProjects.forEach(p => p.technologies.forEach(t => s.add(t)));
-    return Array.from(s).sort();
+  get allSkills(): SkillModel[] {
+    const map = new Map<string, SkillModel>();
+
+    this.rawProjects.forEach(project => {
+      project.skills?.forEach(skill => {
+        map.set(skill.name, skill);
+      });
+    });
+
+    return Array
+      .from(map.values())
+      .sort((a, b) => a.name.localeCompare(b.name));
   }
 
   handleClickProject(slug: string) {

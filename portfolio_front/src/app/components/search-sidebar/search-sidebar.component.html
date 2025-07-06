@@ -8,17 +8,17 @@
 
   <div class="tags">
     <span
-      *ngFor="let tag of tags"
-      (click)="toggleTag(tag)"
-      [class.active]="isActive(tag)"
+      *ngFor="let skill of skills"
+      (click)="toggleTag(skill.name)"
+      [class.active]="isActive(skill.name)"
     >
       <img
-        [src]="'/assets/icons/' + (tag | icon) + '.svg'"
+        [src]="'/assets/' + (skill.icon | icon)"
         alt="Tag Icon"
         width="16"
         height="16"
       />
-      {{ tag }}
+      {{ skill.name }}
     </span>
   </div>
   <hr />

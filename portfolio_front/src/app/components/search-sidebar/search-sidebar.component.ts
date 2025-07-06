@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconPipe } from '../../pipes/icon.pipe';
 import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
+import { SkillModel } from '../../interfaces/skill-model';
 
 @Component({
   selector: 'app-search-sidebar',
@@ -12,7 +13,7 @@ import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
   styleUrl: './search-sidebar.component.scss',
 })
 export class SearchSidebarComponent implements OnInit {
-  @Input() tags: string[] = [];
+  @Input() skills: SkillModel[] = [];
   @Input() minYear!: number;
   @Input() maxYear!: number;
 
