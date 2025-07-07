@@ -253,9 +253,18 @@ a {
   &:hover {
     transform: scale(1.05);
   }
-}
+  
+  &.btn-primary {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: #fff;
+  }
 
-.btn-primary {
-  background: linear-gradient(90deg, #ff416c, #ff4b2b);
-  color: #fff;
+  &.btn-secondary {
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
 }

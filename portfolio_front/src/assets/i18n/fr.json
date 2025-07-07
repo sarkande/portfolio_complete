@@ -4,6 +4,7 @@
   "skills": "Compétences",
   "projects": "Projets",
   "about": "Contact",
+  "legalNotice-link": "Mentions légales",
   "title.home": "Accueil – Allan Perez",
   "title.skills": "Compétences – Allan Perez",
   "title.projects": "Projets – Allan Perez",
@@ -12,6 +13,7 @@
   "title.login": "Connexion – Allan Perez",
   "title.adminPanel": "Panneau d’administration – Allan Perez",
   "title.notFound": "Page non trouvée – Allan Perez",
+  "title.legalNotice": "Mentions légales – Allan Perez",
 
   "contact-me": "Contactez-moi",
 
@@ -63,5 +65,20 @@
   "contact.message_length": "Le message doit comporter au moins 10 caractères.",
   "contact.phone_invalid": "Veuillez saisir un numéro de téléphone valide.",
   "contact.recaptcha": "Veuillez cocher la case reCAPTCHA.",
-  "contact.invalid_email": "Veuillez saisir une adresse email valide."
+  "contact.invalid_email": "Veuillez saisir une adresse email valide.",
+
+  "title": {
+    "legalNotice": "Mentions légales"
+  },
+  "legalNotice": {
+    "intro": "Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, nous informons les utilisateurs du site de ces mentions légales.",
+    "owner": "Propriétaire du site",
+    "ownerDetails": "Ce site est édité par Allan PEREZ. Pour toute question, merci d'utiliser le formulaire de contact du site.",
+    "hosting": "Hébergement",
+    "hostingDetails": "Ce site est hébergé par :\n\nOVH SAS au capital de 50 000 000 €\nRCS Lille Métropole 424 761 419 00045\nCode APE 2620Z — N° TVA : FR 22 424 761 419\nSiège social : 2 rue Kellermann - 59100 Roubaix - France\n\nOVH SAS est une filiale d’OVH Groupe SA (RCS Lille 537 407 926).\n\nDirecteur de la publication : Benjamin Revcolevschi\n\nConditions d’utilisation disponibles sur www.ovhcloud.com/fr/",
+    "copyright": "Droits d’auteur",
+    "copyrightDetails": "Ce site, ses contenus (textes, images, logo, code source) sont protégés par le droit de la propriété intellectuelle. Toute reproduction ou représentation sans autorisation est interdite.\n\nLa marque OVHcloud et les autres marques citées sont la propriété d’OVH ou de leurs titulaires respectifs.",
+    "privacy": "Données personnelles",
+    "privacyDetails": "Aucune donnée personnelle n’est collectée à des fins publicitaires. Vous pouvez naviguer sur ce site librement, sans avoir à décliner votre identité ou fournir d’informations personnelles."
+  }
 }

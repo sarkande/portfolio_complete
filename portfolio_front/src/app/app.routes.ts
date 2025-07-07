@@ -9,6 +9,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ErrorNotFoundComponent } from './pages/error-not-found/error-not-found.component';
 import { LangGuard } from './guards/lang.guard';
 import { SkillListComponent } from './pages/skill-list/skill-list.component';
+import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
 
 
 const childRoutes: Routes = [
@@ -16,6 +17,7 @@ const childRoutes: Routes = [
   { path: 'skills', component: SkillListComponent, data: { title: 'title.skills' } },
   { path: 'projects', component: ProjectListComponent, data: { title: 'title.projects' } },
   { path: 'projects/:slug', component: ProjectComponent, data: { title: 'title.projectDetail' } },
+  { path: 'legal-notice', component: LegalNoticeComponent, data: { title: 'title.legalNotice' } },
   { path: 'about', component: AboutComponent, data: { title: 'title.about' } },
   { path: 'login', component: LoginComponent, data: { title: 'title.login' } },
   {

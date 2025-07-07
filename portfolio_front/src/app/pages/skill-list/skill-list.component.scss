@@ -1,6 +1,6 @@
+@use "abstracts/medias";
 // Variables de layout des listes
 $skill-gap: 1rem;
-$skill-padding-vertical: 150px 0px 100px 0px; // top right bottom left
 $skill-justify-content: space-evenly;
 
 // Animation fadeInUp (si non déjà incluse)
@@ -20,13 +20,16 @@ $skill-justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
     gap: $skill-gap;
-    padding: $skill-padding-vertical;
+    padding: 150px 10% 100px 10%;
     justify-content: $skill-justify-content;
 
     // Animation globale au chargement
     opacity: 0;
     animation: fadeInUp 0.3s ease-out 0.2s forwards;
 
+    @include medias.for-tablet-portrait {
+        padding: 150px 5% 100px 5%;
+    }
     // Animation de chaque élément de la liste
     >* {
         opacity: 0;

@@ -8,10 +8,11 @@ import {
 import { filter } from 'rxjs';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LanguageService } from './services/language.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, NavbarComponent],
+    imports: [RouterOutlet, NavbarComponent, FooterComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     standalone: true,

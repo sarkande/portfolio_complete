@@ -63,6 +63,7 @@ $toggle-size-height: 3.5rem;
     overflow-y: auto;
     transition: margin-left $sidebar-transition;
 
+    
     &.collapsed {
         margin-left: -$sidebar-width;
     }

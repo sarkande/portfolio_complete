@@ -1,5 +1,5 @@
 @use "abstracts/medias";
-
+@use "sass:color";
 // Variables  
 $cf-bg : #ffffff;
 $cf-shadow : rgba(0, 0, 0, 0.05);
@@ -176,7 +176,7 @@ $line-height-base : 1.4;
             &:focus {
                 outline: none;
                 border-color: $input-focus-border;
-                box-shadow: 0 0 0 3px rgba(red($input-focus-border), green($input-focus-border), blue($input-focus-border), 0.2);
+                box-shadow: 0 0 0 3px rgba(color.channel($input-focus-border, "red", $space: rgb), color.channel($input-focus-border, "green", $space: rgb), color.channel($input-focus-border, "blue", $space: rgb), 0.2);
                 background: $cf-bg;
                 transform: translateY(-2px);
             }
@@ -199,7 +199,7 @@ $line-height-base : 1.4;
             input,
             textarea {
                 border-color: $btn-error-bg !important;
-                box-shadow: 0 0 0 3px rgba(red($btn-error-bg), green($btn-error-bg), blue($btn-error-bg), 0.2) !important;
+                box-shadow: 0 0 0 3px rgba(color.channel($btn-error-bg, "red", $space: rgb), color.channel($btn-error-bg, "green", $space: rgb), color.channel($btn-error-bg, "blue", $space: rgb), 0.2) !important;
             }
         }
     }

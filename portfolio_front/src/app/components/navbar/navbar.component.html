@@ -48,6 +48,15 @@
         {{ link.name | translate }}
       </a>
     </ng-container>
+    <a *ngIf="mobileMenuOpen"
+    [routerLink]=" ['/', currentLang, 'legal-notice']  "
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="navBar__menu_link"
+    (click)="closeMobileMenu()"
+  >
+    {{ 'legalNotice-link' | translate }}
+  </a> 
   </div>
 
   <!-- Langues + réseaux (restent visibles) -->

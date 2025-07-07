@@ -4,6 +4,7 @@
   "skills": "Skills",
   "projects": "Projects",
   "about": "Contact",
+  "legalNotic-link": "Legal notice",
 
   "contact-me": "Contact me",
 
@@ -15,6 +16,7 @@
   "title.login": "Login – Allan Perez",
   "title.adminPanel": "Admin Panel – Allan Perez",
   "title.notFound": "Page Not Found – Allan Perez",
+  "title.legalNotice": "Legal notice – Allan Perez",
 
   "home.title1": "Odoo Specialist",
   "home.title2": "Creative Developer",
@@ -67,5 +69,19 @@
 
   "contact.phone_invalid": "Please enter a valid phone number.",
   "contact.recaptcha": "Please check the reCAPTCHA box.",
-  "contact.invalid_email": "Please enter a valid email address."
+  "contact.invalid_email": "Please enter a valid email address.",
+  "title": {
+    "legalNotice": "Legal Notice"
+  },
+  "legalNotice": {
+    "intro": "In accordance with articles 6-III and 19 of French Law No. 2004-575 of June 21, 2004, users of this website are informed of the following legal information.",
+    "owner": "Site Owner",
+    "ownerDetails": "This site is published by Allan PEREZ. For any inquiries, please use the site's contact form.",
+    "hosting": "Hosting",
+    "hostingDetails": "This site is hosted by:\n\nOVH SAS with a capital of €50,000,000\nRCS Lille Métropole 424 761 419 00045\nAPE Code 2620Z — VAT No: FR 22 424 761 419\nHead office: 2 rue Kellermann - 59100 Roubaix - France\n\nOVH SAS is a subsidiary of OVH Groupe SA (RCS Lille 537 407 926).\n\nPublishing Director: Benjamin Revcolevschi\n\nTerms of use available on www.ovhcloud.com/en/",
+    "copyright": "Copyright",
+    "copyrightDetails": "This website and its contents (texts, images, logo, source code) are protected by intellectual property laws. Any reproduction or representation without permission is prohibited.\n\nThe OVHcloud brand and other trademarks mentioned are the property of OVH or their respective owners.",
+    "privacy": "Personal Data",
+    "privacyDetails": "No personal data is collected for advertising purposes. You can browse this website freely without having to disclose your identity or provide personal information."
+  }
 }
