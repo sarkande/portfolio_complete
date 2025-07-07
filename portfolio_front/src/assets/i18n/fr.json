@@ -67,9 +67,6 @@
   "contact.recaptcha": "Veuillez cocher la case reCAPTCHA.",
   "contact.invalid_email": "Veuillez saisir une adresse email valide.",
 
-  "title": {
-    "legalNotice": "Mentions légales"
-  },
   "legalNotice": {
     "intro": "Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, nous informons les utilisateurs du site de ces mentions légales.",
     "owner": "Propriétaire du site",

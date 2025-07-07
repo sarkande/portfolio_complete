@@ -70,9 +70,7 @@
   "contact.phone_invalid": "Please enter a valid phone number.",
   "contact.recaptcha": "Please check the reCAPTCHA box.",
   "contact.invalid_email": "Please enter a valid email address.",
-  "title": {
-    "legalNotice": "Legal Notice"
-  },
+
   "legalNotice": {
     "intro": "In accordance with articles 6-III and 19 of French Law No. 2004-575 of June 21, 2004, users of this website are informed of the following legal information.",
     "owner": "Site Owner",
