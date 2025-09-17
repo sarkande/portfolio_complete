@@ -10,6 +10,7 @@ import { ErrorNotFoundComponent } from './pages/error-not-found/error-not-found.
 import { LangGuard } from './guards/lang.guard';
 import { SkillListComponent } from './pages/skill-list/skill-list.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 const childRoutes: Routes = [
@@ -20,6 +21,7 @@ const childRoutes: Routes = [
   { path: 'legal-notice', component: LegalNoticeComponent, data: { title: 'title.legalNotice' } },
   { path: 'about', component: AboutComponent, data: { title: 'title.about' } },
   { path: 'login', component: LoginComponent, data: { title: 'title.login' } },
+  { path: 'profile', component: ProfileComponent, data: { title: 'title.profile' } },
   {
     path: 'panel',
     component: PanelAdminComponent,

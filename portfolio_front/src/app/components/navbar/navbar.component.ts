@@ -17,6 +17,7 @@ export class NavbarComponent {
 
   links = [
     { name: 'home', path: '' },
+    { name: 'profile', path: 'profile' },
     { name: 'skills', path: 'skills' },
     { name: 'projects', path: 'projects' },
     { name: 'about', path: 'about' },

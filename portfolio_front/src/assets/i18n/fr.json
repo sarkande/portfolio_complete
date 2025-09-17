@@ -5,6 +5,7 @@
   "projects": "Projets",
   "about": "Contact",
   "legalNotice-link": "Mentions légales",
+  "profile": "Présentation",
   "title.home": "Accueil – Allan Perez",
   "title.skills": "Compétences – Allan Perez",
   "title.projects": "Projets – Allan Perez",
@@ -14,6 +15,7 @@
   "title.adminPanel": "Panneau d’administration – Allan Perez",
   "title.notFound": "Page non trouvée – Allan Perez",
   "title.legalNotice": "Mentions légales – Allan Perez",
+  "title.profile": "Présentation – Allan Perez",
 
   "contact-me": "Contactez-moi",
 

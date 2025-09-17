@@ -10,9 +10,9 @@
     width: 100vw;
     overflow-x: hidden;
 
-    @include medias.for-tablet-portrait {
-        display: none;
-    }
+    // @include medias.for-tablet-portrait {
+    //     display: none;
+    // }
 
     .footer__content {
         max-width: 1200px;
@@ -25,6 +25,11 @@
 
     }
 
+    .footer__photo {
+        height: 50px;
+        margin-left: 10px;
+        border-radius: 100%;
+    }
     .footer__text {
         font-size: 0.9rem;
 

@@ -5,6 +5,7 @@
   "projects": "Projects",
   "about": "Contact",
   "legalNotic-link": "Legal notice",
+  "profile": "Profile",
 
   "contact-me": "Contact me",
 
@@ -17,6 +18,7 @@
   "title.adminPanel": "Admin Panel – Allan Perez",
   "title.notFound": "Page Not Found – Allan Perez",
   "title.legalNotice": "Legal notice – Allan Perez",
+  "title.profile": "Présentation – Allan Perez",
 
   "home.title1": "Odoo Specialist",
   "home.title2": "Creative Developer",

@@ -1,8 +1,8 @@
+@use "abstracts/medias";
 // Variables de layout
 $project-gap: 1rem;
 $project-padding-top: 150px;
 $project-padding-bottom: 100px;
-$project-padding-left: 400px;
 $project-collapsed-padding-left: 70px;
 $project-transition-duration: 0.3s;
 
@@ -23,11 +23,12 @@ $project-transition-duration: 0.3s;
     display: flex;
         flex-wrap: wrap;
         gap: $project-gap;
-        padding: $project-padding-top 0 $project-padding-bottom $project-padding-left;
+        padding: $project-padding-top 10% $project-padding-bottom 10%;
         transition: padding-left $project-transition-duration ease;
-    
-        &.collapsed {
-            padding-left: $project-collapsed-padding-left;
+        justify-content: space-around;
+
+        @include medias.for-tablet-portrait {
+            padding: $project-padding-top/1.5 0 $project-padding-bottom 0;
         }
     >* {
         opacity: 0;

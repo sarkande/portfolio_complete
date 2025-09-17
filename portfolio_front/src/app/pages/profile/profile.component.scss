@@ -1,0 +1,157 @@
+@use "abstracts/medias";
+@use "sass:color";
+// 🎨 Variables de style
+$color-text: #2a2a2a;
+$color-text-light: #444;
+$color-heading: #1c1c1c;
+$color-muted: #999;
+$color-primary: #0077cc;
+$color-bg-light: #f5f5f5;
+$color-bg-hover: #e0e0e0;
+
+$font-base: "Inter", "Segoe UI", Roboto, sans-serif;
+
+$cf-padding-lg: 2rem 1.5rem;
+$cf-padding-sm: 1.5rem 1rem;
+$cf-max-width: 900px;
+
+// 📄 Page Présentation
+article[itemscope][itemtype="https://schema.org/AboutPage"] {
+    max-width: $cf-max-width;
+    margin: 100px auto;
+    padding: $cf-padding-lg;
+    line-height: 1.7;
+    font-family: $font-base;
+    color: $color-text;
+
+    header {
+        margin-bottom: 3rem;
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: $color-heading;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            list-style: none;
+            padding: 0;
+
+            li {
+                &:not(:last-child)::after {
+                    content: "›";
+                    margin-left: 0.5rem;
+                    color: $color-muted;
+                }
+
+                a {
+                    color: $color-primary;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                span[itemprop="name"] {
+                    font-weight: 600;
+                    color: $color-text-light;
+                }
+            }
+        }
+
+        .toc {
+            margin: 1rem 0 2rem;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                li {
+                    a {
+                        display: inline-block;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 6px;
+                        background: $color-bg-light;
+                        color: $color-text;
+                        text-decoration: none;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        transition: background 0.2s;
+
+                        &:hover,
+                        &:focus {
+                            background: $color-bg-hover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: $color-text-light;
+            border-left: 4px solid $color-primary;
+            padding-left: 1rem;
+            margin-top: 1.5rem;
+        }
+    }
+
+    section {
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: $color-heading;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+            color: $color-text;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: $color-text-light;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+
+            li {
+                margin-bottom: 0.5rem;
+                color: $color-text-light;
+
+                strong {
+                    color: $color-heading;
+                }
+            }
+        }
+    }
+
+    // 📱 Responsive avec mixin projet
+    @include medias.for-tablet-portrait {
+        max-width: 100%;
+        padding: $cf-padding-sm;
+
+        header {
+            .toc ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    }
+}

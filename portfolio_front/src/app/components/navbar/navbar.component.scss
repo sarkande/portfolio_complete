@@ -59,6 +59,8 @@
         }
     }
 
+
+
     .navBar__profile {
         margin-left: 10px;
         display: flex;
@@ -130,7 +132,7 @@
             }
 
             &_link {
-                padding: 1rem;
+                padding: 1rem 0 1rem 0;
                 border-top: 1px solid #333;
                 width: 100%;
                 margin: 0;
