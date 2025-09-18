@@ -24,8 +24,14 @@ public class Skill {
     @Column(nullable = false)
     private Integer level= 1;
 
+    private Boolean isTechnical;
+
     @Lob
     private String content;
+    @Lob
+    private String longDescription;
+    @Lob
+    private String description;
 
     private String icon;
 

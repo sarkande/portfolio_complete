@@ -9,6 +9,9 @@ public record SkillWithProjects(
         Integer id,
         String name,
         String content,
+        String longDescription,
+        String description,
+        Boolean isTechnical,
         Integer level,
         String icon,
         List<ProjectInfo> projects
@@ -18,6 +21,9 @@ public record SkillWithProjects(
                 skill.getId(),
                 skill.getName(),
                 skill.getContent(),
+                skill.getLongDescription(),
+                skill.getDescription(),
+                skill.getIsTechnical(),
                 skill.getLevel(),
                 skill.getIcon(),
                 skill.getProjects().stream()

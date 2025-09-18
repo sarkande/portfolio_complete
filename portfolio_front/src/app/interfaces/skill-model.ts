@@ -3,5 +3,7 @@ export interface SkillModel {
     name: string;
     level: number;
     content: string;
+    longDescription: string;
+    description: string;
     icon: string;
 }
