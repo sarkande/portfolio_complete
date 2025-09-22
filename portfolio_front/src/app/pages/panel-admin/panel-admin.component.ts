@@ -140,10 +140,17 @@ export class PanelAdminComponent implements OnInit {
   /** Convertit un SkillModel en ParsedSkill en extrayant les champs fr/en */
   private parseSkill(s: SkillModel): ParsedSkill {
     const cont = this.safeParse(s.content);
+    const desc = this.safeParse(s.description);
+    const longDesc = this.safeParse(s.longDescription);
+
     return {
       ...s,
       contentFr: cont.fr,
-      contentEn: cont.en
+      contentEn: cont.en,
+      descriptionEn: desc.en,
+      descriptionFr: desc.fr,
+      longDescriptionEn: longDesc.en,
+      longDescriptionFr: longDesc.fr,
     };
   }
   editProject(project: ParsedProject) {
@@ -347,7 +354,10 @@ export class PanelAdminComponent implements OnInit {
       name: this.newSkill.name,
       level: this.newSkill.level,
       content: JSON.stringify({ fr: this.newSkill.contentFr, en: this.newSkill.contentEn }),
-      icon: this.newSkill.icon || ''
+      icon: this.newSkill.icon || '',
+      description: JSON.stringify({ fr: this.newSkill.descriptionFr, en: this.newSkill.descriptionEn }),
+      longDescription: JSON.stringify({ fr: this.newSkill.longDescriptionFr, en: this.newSkill.longDescriptionEn }),
+      isTechnical: this.newSkill.isTechnical || false
     };
     console.log('Compétence à créer:', skillToCreate);
 
@@ -374,7 +384,10 @@ export class PanelAdminComponent implements OnInit {
       name: skill.name,
       level: skill.level,
       icon: skill.icon,
-      content: JSON.stringify({ fr: skill.contentFr, en: skill.contentEn })
+      content: JSON.stringify({ fr: skill.contentFr, en: skill.contentEn }),
+      description: JSON.stringify({ fr: skill.descriptionFr, en: skill.descriptionEn }),
+      longDescription: JSON.stringify({ fr: skill.longDescriptionFr, en: skill.longDescriptionEn }),
+      isTechnical: skill.isTechnical || false,
     };
     console.log('Compétence à mettre à jour:', skillToUpdate);
 
@@ -412,6 +425,13 @@ export class PanelAdminComponent implements OnInit {
       content: '',
       contentFr: '',
       contentEn: '',
+      description: '',
+      descriptionFr: '',
+      descriptionEn: '',
+      longDescription: '',
+      longDescriptionFr: '',
+      longDescriptionEn: '',
+      isTechnical: false,
       icon: '',
     };
   }

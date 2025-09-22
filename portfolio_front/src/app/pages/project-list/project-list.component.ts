@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProjectModel } from '../../interfaces/project.model';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { CommonModule } from '@angular/common';
-import { SearchSidebarComponent } from '../../components/search-sidebar/search-sidebar.component';
 import { ProjectService } from '../../services/project.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -12,7 +11,7 @@ import { SkillModel } from '../../interfaces/skill-model';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectCardComponent, CommonModule, SearchSidebarComponent],
+  imports: [ProjectCardComponent, CommonModule],
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss'],
 })

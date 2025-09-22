@@ -5,5 +5,6 @@ export interface SkillModel {
     content: string;
     longDescription: string;
     description: string;
+    isTechnical: boolean;
     icon: string;
 }

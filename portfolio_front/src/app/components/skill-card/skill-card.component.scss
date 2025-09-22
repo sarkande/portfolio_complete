@@ -1,5 +1,5 @@
 @use "abstracts/medias";
-
+@use "sass:color";
 // Variables Skill Card
 $card-width: 250px;
 $card-border: #ddd;
@@ -78,7 +78,7 @@ $skill-font: 0.65rem;
             display: block;
             margin-top: 0.5rem;
             font-size: $font-size-date;
-            color: darken($card-border, 20%);
+            color: color.adjust($card-border, $lightness: -20%);
         }
     }
 

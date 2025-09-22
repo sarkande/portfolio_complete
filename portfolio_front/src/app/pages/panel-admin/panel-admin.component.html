@@ -372,8 +372,13 @@
         <th>ID</th>
         <th>Nom</th>
         <th>Niveau</th>
+        <th>Technique</th>
         <th>Contenu FR</th>
         <th>Contenu EN</th>
+        <th>Description FR</th>
+        <th>Description EN</th>
+        <th>Long Description FR</th>
+        <th>Long Description EN</th>
         <th>Icone</th>
         <th>Actions</th>
       </tr>
@@ -437,6 +442,13 @@
           />
         </td>
         <td class="editable">
+          <input
+            type="checkbox"
+            [(ngModel)]="skill.isTechnical"
+            (change)="editSkill(skill)"
+          />
+        </td>
+        <td class="editable">
           <textarea
             rows="2"
             cols="30"
@@ -449,6 +461,42 @@
             rows="2"
             cols="30"
             [(ngModel)]="skill.contentEn"
+            (blur)="editSkill(skill)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Description FR"
+            [(ngModel)]="skill.descriptionFr"
+            (blur)="editSkill(skill)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Description EN"
+            [(ngModel)]="skill.descriptionEn"
+            (blur)="editSkill(skill)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Long Description FR"
+            [(ngModel)]="skill.longDescriptionFr"
+            (blur)="editSkill(skill)"
+          ></textarea>
+        </td>
+        <td class="editable">
+          <textarea
+            rows="2"
+            cols="30"
+            placeholder="Long Description EN"
+            [(ngModel)]="skill.longDescriptionEn"
             (blur)="editSkill(skill)"
           ></textarea>
         </td>

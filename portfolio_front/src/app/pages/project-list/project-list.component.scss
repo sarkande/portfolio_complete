@@ -28,7 +28,7 @@ $project-transition-duration: 0.3s;
         justify-content: space-around;
 
         @include medias.for-tablet-portrait {
-            padding: $project-padding-top/1.5 0 $project-padding-bottom 0;
+            padding: calc($project-padding-top / 1.5) 0 $project-padding-bottom 0;
         }
     >* {
         opacity: 0;
