@@ -54,6 +54,9 @@ public class SkillServiceImpl implements SkillService {
         existingSkill.setName(skill.getName());
         existingSkill.setLevel(skill.getLevel());
         existingSkill.setContent(skill.getContent());
+        existingSkill.setDescription(skill.getDescription());
+        existingSkill.setLongDescription(skill.getLongDescription());
+        existingSkill.setIsTechnical(skill.getIsTechnical());
         existingSkill.setIcon(skill.getIcon());
 
         // Save the updated skill and return it
