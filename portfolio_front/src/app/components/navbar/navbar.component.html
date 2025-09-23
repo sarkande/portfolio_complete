@@ -1,74 +1,104 @@
 <div class="navBar">
+  <!-- Langues -->
   <div class="navBar__lang">
-    <button
-      (click)="switchLang('fr')"
-      [disabled]="currentLang === 'fr'"
-      [attr.aria-pressed]="currentLang === 'fr'"
-      aria-label="Switch to French"
-      title="Français"
-    >
-      🇫🇷
-    </button>
-    <button
-      (click)="switchLang('en')"
-      [disabled]="currentLang === 'en'"
-      [attr.aria-pressed]="currentLang === 'en'"
-      aria-label="Switch to English"
-      title="English"
-    >
-      🇬🇧
-    </button>
+    <button (click)="switchLang('fr')" [disabled]="currentLang === 'fr'">🇫🇷</button>
+    <button (click)="switchLang('en')" [disabled]="currentLang === 'en'">🇬🇧</button>
   </div>
-  
-  <!-- Bouton burger -->
-  <button
-    class="navBar__burger"
-    (click)="toggleMobileMenu()"
-    [attr.aria-expanded]="mobileMenuOpen"
-    aria-label="Toggle navigation"
-  >
+
+  <!-- Burger -->
+  <button class="navBar__burger" (click)="toggleMobileMenu()">
     <span class="navBar__burger_line"></span>
     <span class="navBar__burger_line"></span>
     <span class="navBar__burger_line"></span>
   </button>
 
-  <!-- Menu principal -->
-  <div
-    class="navBar__menu"
-    [class.navBar__menu--open]="mobileMenuOpen"
-  >
-    <ng-container *ngFor="let link of links">
-      <a
-        [routerLink]=" link.path ? ['/', currentLang, link.path] : ['/', currentLang] "
-        routerLinkActive="selected"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="navBar__menu_link"
-        (click)="closeMobileMenu()"
-      >
-        {{ link.name | translate }}
-      </a>
+  <!-- Menu (desktop + mobile conteneur) -->
+  <div class="navBar__menu" [class.navBar__menu--open]="mobileMenuOpen">
+    <!-- Bouton fermer (mobile) -->
+    <button class="navBar__close" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()">✕</button>
+
+    <!-- Vue principale -->
+    <ng-container *ngIf="!mobileSubmenu; else submenuView">
+      <ng-container *ngFor="let link of links">
+        <!-- Compétences avec dropdown desktop + vue mobile -->
+        <div *ngIf="link.hasSubmenu; else normalLink" class="navBar__submenu">
+          <a
+            [routerLink]="['/', currentLang, link.path]"
+            routerLinkActive="selected"
+            class="navBar__menu_link"
+            (click)="handleSkillsClick($event)"
+          >
+            {{ link.name | translate }}
+          </a>
+
+          <!-- Dropdown desktop -->
+          <div class="navBar__submenu_list">
+            <div class="navBar__submenu_group">
+              <span>{{ 'technicalSkills' | translate }}</span>
+              <ng-container *ngFor="let skill of technicalSkills">
+                <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
+                  {{ skill.name }}
+                </a>
+              </ng-container>
+            </div>
+
+            <div class="navBar__submenu_group">
+              <span>{{ 'humanSkills' | translate }}</span>
+              <ng-container *ngFor="let skill of humanSkills">
+                <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
+                  {{ skill.name }}
+                </a>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+
+        <!-- Liens normaux -->
+        <ng-template #normalLink>
+          <a
+            [routerLink]="link.path ? ['/', currentLang, link.path] : ['/', currentLang]"
+            routerLinkActive="selected"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="navBar__menu_link"
+            (click)="closeMobileMenu()"
+          >
+            {{ link.name | translate }}
+          </a>
+        </ng-template>
+      </ng-container>
     </ng-container>
 
+    <!-- Vue sous-menu mobile -->
+    <ng-template #submenuView>
+      <div class="navBar__submenu_mobile" *ngIf="mobileSubmenu === 'skills'">
+        <button class="navBar__back" (click)="mobileSubmenu = null">← {{ 'back' | translate }}</button>
+
+        <div class="navBar__submenu_group">
+          <span>{{ 'technicalSkills' | translate }}</span>
+          <ng-container *ngFor="let skill of technicalSkills">
+            <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
+              {{ skill.name }}
+            </a>
+          </ng-container>
+        </div>
+
+        <div class="navBar__submenu_group">
+          <span>{{ 'humanSkills' | translate }}</span>
+          <ng-container *ngFor="let skill of humanSkills">
+            <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
+              {{ skill.name }}
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </ng-template>
   </div>
 
-  <!-- Langues + réseaux (restent visibles) -->
-
-
+  <!-- Réseaux sociaux -->
   <div class="navBar__network">
     <ng-container *ngFor="let social of socials">
-      <a
-        [href]="social.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        [title]="social.name"
-      >
-        <img
-          class="navBar__network_img"
-          [src]="'/assets/icons/' + social.icon"
-          [alt]="social.name"
-          width="30"
-          height="30"
-        />
+      <a [href]="social.url" target="_blank" rel="noopener noreferrer" [title]="social.name">
+        <img class="navBar__network_img" [src]="'/assets/icons/' + social.icon" [alt]="social.name" width="30" height="30" />
       </a>
     </ng-container>
   </div>

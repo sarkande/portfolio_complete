@@ -101,16 +101,13 @@ public class DatabaseInitializer implements CommandLineRunner {
 
                 // mapping technologies → entités Skill déjà en base
                 Set<Skill> linkedSkills = project.getTechnologies().stream()
-                    .map(name -> skillIndex.computeIfAbsent(name, missingName -> {
-                        // en cas d’absence, crée une compétence par défaut
-                        Skill s = new Skill();
-                        s.setName(missingName);
-                        s.setLevel(1);
-                        Skill saved = skillRepository.save(s);
-                        skillIndex.put(missingName, saved);
-                        return saved;
-                    }))
-                    .collect(Collectors.toSet());
+                        .map(name -> skillIndex.computeIfAbsent(name, missingName -> {
+                            Skill s = new Skill();
+                            s.setName(missingName);
+                            s.setLevel(1);
+                            return skillRepository.save(s);
+                        }))
+                        .collect(Collectors.toSet());
 
                 project.setSkills(linkedSkills);
             });

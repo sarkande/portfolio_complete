@@ -23,7 +23,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
   minYear = 2000;
   maxYear = new Date().getFullYear();
 
-  isSearchbarCollapsed = false; 
+  isSearchbarCollapsed = false;
 
   private currentSearch = '';
   private currentTags: string[] = [];
@@ -67,15 +67,17 @@ export class ProjectListComponent implements OnInit, OnDestroy {
   /** Initialise minYear / maxYear */
   private initYears(projects: ProjectModel[]) {
     const years = projects.flatMap(p => {
-      const start = +p.startDate.slice(0, 4);
+      const start = p.startDate ? +p.startDate.slice(0, 4) : this.minYear;
       const end = p.endDate ? +p.endDate.slice(0, 4) : start;
       return [start, end];
     });
+
     this.minYear = Math.min(...years);
     this.maxYear = Math.max(...years);
     this.currentStartYear = this.minYear;
     this.currentEndYear = this.maxYear;
   }
+
 
   /** Traduit tous les rawProjects et met à jour filtered */
   private translateAll() {
@@ -121,7 +123,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
         || this.currentTags.some(tag => project.technologies.includes(tag));
       const matchGit = !this.currentGitPublic || !!project.gitUrl;
       const matchObs = !this.currentObsolete || project.old;
-      const startY = +project.startDate.slice(0, 4);
+      const startY = project.startDate ? +project.startDate.slice(0, 4) : this.minYear;
       const endY = project.endDate ? +project.endDate.slice(0, 4) : startY;
       const matchYear = startY <= this.currentEndYear && endY >= this.currentStartYear;
       return matchSearch && matchTags && matchGit && matchObs && matchYear;

@@ -1,24 +1,18 @@
 @use "abstracts/medias";
 
 .navBar {
-    // border: solid 1px black;
-    // background-color: #0b0c18;
     min-height: 80px;
-    color: rgb(255, 255, 255);
+    color: #fff;
     display: flex;
-    align-content: center;
     align-items: center;
     justify-content: space-between;
-    // flex-wrap: wrap;
-    flex-direction: row;
     background-color: #1A2324;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; // Assure que la barre de navigation est au-dessus des autres éléments
+    z-index: 1000;
 
-    // Burger (caché par défaut)
     .navBar__burger {
         display: none;
         flex-direction: column;
@@ -54,39 +48,25 @@
             }
 
             &:not(:disabled):hover {
-                color: #1a2561; // couleur au hover
+                color: teal;
             }
-        }
-    }
-
-
-
-    .navBar__profile {
-        margin-left: 10px;
-        display: flex;
-        align-items: center;
-
-        img {
-            border-radius: 100%;
-            margin-right: 10px;
         }
     }
 
     .navBar__menu {
         display: flex;
+        position: relative;
 
         &_link {
             text-decoration: none;
             display: inline-block;
             padding: 5px 5px;
-            // border-radius: 10px;
             text-align: center;
             margin-right: 5px;
             width: 100px;
-            color: rgb(255, 255, 255);
+            color: #fff;
 
             &:hover {
-                // background-color: #283a9d;
                 color: teal;
                 cursor: pointer;
                 border-bottom: teal solid 2px;
@@ -95,6 +75,59 @@
             &.selected {
                 border-bottom: teal solid 2px;
             }
+        }
+    }
+
+    /* Desktop : dropdown Compétences */
+    .navBar__submenu {
+        position: relative;
+
+        .navBar__submenu_list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1A2324;
+            flex-direction: column;
+            width: 200px;
+            border: 1px solid #333;
+            z-index: 2000;
+            box-sizing: border-box;
+
+            a {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                text-align: left;
+                color: #fff;
+                text-decoration: none;
+                border-bottom: 1px solid #333;
+
+                &:hover {
+                    background-color: #222;
+                    color: teal;
+                }
+            }
+
+            .navBar__submenu_group {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 5px 0;
+
+                span {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                    color: #aaa;
+                    margin: 5px 0;
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        &:hover .navBar__submenu_list {
+            display: flex;
         }
     }
 
@@ -110,32 +143,100 @@
         }
     }
 
-    // Responsive pour tablettes en portrait et plus petit
+    /* Mobile */
     @include medias.for-tablet-portrait {
         .navBar__burger {
             display: flex;
         }
 
         .navBar__menu {
-            position: absolute;
-            top: 100%;
+            display: none;
+            /* fermé par défaut */
+            position: fixed;
+            top: 0;
             left: 0;
             right: 0;
+            bottom: 0;
             background-color: #1A2324;
             flex-direction: column;
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.3s ease;
+            overflow-y: auto;
+            padding-top: 3rem;
 
             &--open {
-                max-height: 500px; // assez grand pour tout afficher
+                display: flex;
+                /* ouvert */
             }
 
             &_link {
-                padding: 1rem 0 1rem 0;
+                padding: 1rem;
                 border-top: 1px solid #333;
                 width: 100%;
                 margin: 0;
+                text-align: left;
+            }
+        }
+
+        .navBar__close {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+
+            &:hover {
+                color: teal;
+            }
+        }
+
+        /* Désactiver le dropdown desktop en mobile */
+        .navBar__submenu {
+            .navBar__submenu_list {
+                display: none !important;
+            }
+        }
+
+        /* Vue sous-menu mobile */
+        .navBar__submenu_mobile {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+
+            .navBar__back {
+                background: none;
+                border: none;
+                color: teal;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            .navBar__submenu_group {
+                margin-bottom: 1rem;
+
+                span {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                    color: #aaa;
+                    margin-bottom: 0.5rem;
+                }
+
+                a {
+                    display: block;
+                    padding: 10px;
+                    color: #fff;
+                    text-decoration: none;
+                    border-bottom: 1px solid #333;
+
+                    &:hover {
+                        background-color: #222;
+                        color: teal;
+                    }
+                }
             }
         }
     }

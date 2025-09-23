@@ -1,4 +1,5 @@
 @use "abstracts/medias";
+
 // Variables de layout des listes
 $skill-gap: 1rem;
 $skill-justify-content: space-evenly;
@@ -9,7 +10,6 @@ $skill-justify-content: space-evenly;
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -17,9 +17,6 @@ $skill-justify-content: space-evenly;
 }
 
 .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $skill-gap;
     padding: 150px 10% 100px 10%;
     justify-content: $skill-justify-content;
 
@@ -30,15 +27,28 @@ $skill-justify-content: space-evenly;
     @include medias.for-tablet-portrait {
         padding: 150px 5% 100px 5%;
     }
-    // Animation de chaque élément de la liste
-    >* {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.3s ease-out forwards;
-
-        @for $i from 1 through 20 {
-            &:nth-child(#{$i}) {
-                animation-delay: 0.1s + ($i * 0.1s);
+    
+    // Sélectionner les conteneurs pour chaque type de compétences
+    .technical-skills,
+    .non-technical-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $skill-gap;
+        h2{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        // Cibler les cartes de compétences uniquement (les app-skill-card)
+        app-skill-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.3s ease-out forwards;
+            
+            @for $i from 1 through 20 {
+                &:nth-of-type(#{$i}) {
+                    animation-delay: calc(0.1s + ($i * 0.1s));
+                }
             }
         }
     }
