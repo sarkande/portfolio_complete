@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SkillWithProjects } from '../../interfaces/skill-with-projects';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SkillModel } from '../../interfaces/skill-model';
 
 @Component({
   selector: 'app-skill-list',
@@ -16,7 +18,7 @@ export class SkillListComponent implements OnInit {
   rawSkills: SkillWithProjects[] = []; // ← tous les skills bruts, non traduits
   skills: SkillWithProjects[] = [];
   private destroy$ = new Subject<void>();        // ← pour nettoyer l’abonnement
-  constructor(private skillService: SkillService, private langService: LanguageService) { }
+  constructor(private skillService: SkillService, private langService: LanguageService, private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.skillService.getSkills()
@@ -40,16 +42,21 @@ export class SkillListComponent implements OnInit {
       });
   }
 
+  handleClickSkill(name: string) {
+    console.log('Navigating to skill:', name);
+    this.router.navigate([name], { relativeTo: this.route });
+  }
   translateAll() {
-    this.skills = this.rawSkills.map(skill => ({
+    this.skills = this.rawSkills.map(s => this.translateSkill(s));
+  }
+
+  private translateSkill(skill: SkillModel): SkillModel {
+    return {
       ...skill,
-      name: skill.name,
+      name: this.langService.translateContent(skill.name),
+      description: this.langService.translateContent(skill.description),
       content: this.langService.translateContent(skill.content),
-      projects: skill.projects?.map(project => ({
-        ...project,
-        title: this.langService.translateContent(project.title),
-        slug: project.slug
-      }))
-    }));
+      longDescription: this.langService.translateContent(skill.longDescription)
+    }
   }
 }

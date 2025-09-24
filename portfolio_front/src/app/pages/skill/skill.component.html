@@ -61,8 +61,8 @@
       </ul>
     </nav>
 
-    <section class="post-content" *ngIf="skill.longDescription || skill.content">
-      <markdown [data]="skill.longDescription || skill.content"></markdown>
+    <section class="post-content" *ngIf="skill.content">
+      <markdown [data]="skill.content"></markdown>
     </section>
 
     <header class="post-header">
