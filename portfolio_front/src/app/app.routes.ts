@@ -17,7 +17,7 @@ import { SkillComponent } from './pages/skill/skill.component';
 const childRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'title.home' } },
   { path: 'skills', component: SkillListComponent, data: { title: 'title.skills' } },
-  { path: 'skills/:slug', component: SkillComponent, data: { title: 'title.skillDetail' } },
+  { path: 'skills/:name', component: SkillComponent, data: { title: 'title.skillDetail' } },
   { path: 'projects', component: ProjectListComponent, data: { title: 'title.projects' } },
   { path: 'projects/:slug', component: ProjectComponent, data: { title: 'title.projectDetail' } },
 
