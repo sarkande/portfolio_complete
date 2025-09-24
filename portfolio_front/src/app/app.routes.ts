@@ -11,13 +11,16 @@ import { LangGuard } from './guards/lang.guard';
 import { SkillListComponent } from './pages/skill-list/skill-list.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SkillComponent } from './pages/skill/skill.component';
 
 
 const childRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'title.home' } },
   { path: 'skills', component: SkillListComponent, data: { title: 'title.skills' } },
+  { path: 'skills/:slug', component: SkillComponent, data: { title: 'title.skillDetail' } },
   { path: 'projects', component: ProjectListComponent, data: { title: 'title.projects' } },
   { path: 'projects/:slug', component: ProjectComponent, data: { title: 'title.projectDetail' } },
+
   { path: 'legal-notice', component: LegalNoticeComponent, data: { title: 'title.legalNotice' } },
   { path: 'about', component: AboutComponent, data: { title: 'title.about' } },
   { path: 'login', component: LoginComponent, data: { title: 'title.login' } },

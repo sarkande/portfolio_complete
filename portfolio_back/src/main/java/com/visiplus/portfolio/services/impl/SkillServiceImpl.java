@@ -64,6 +64,11 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
+    public Skill findByName(String name) {
+        return skillRepository.findByName(name).orElseThrow(() -> new RuntimeException("Skill not found"));
+    }
+
+    @Override
     public List<SkillWithProjects> findAllfindAllSkillsWithProjects() {
         return skillRepository.findAll()
                 .stream()

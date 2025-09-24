@@ -31,13 +31,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
   isLoading = true;
   currentLang = 'fr';
 
-  private projectService = inject(ProjectService);
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
-  private langService = inject(LanguageService);
   private destroy$ = new Subject<void>();
 
-  constructor() {
+  constructor(private langService: LanguageService, private projectService: ProjectService, private route: ActivatedRoute, private router: Router) {
     this.langService.currentLang$
       .pipe(takeUntil(this.destroy$))
       .subscribe(lang => this.currentLang = lang);

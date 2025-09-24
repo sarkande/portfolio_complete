@@ -34,6 +34,11 @@ public class SkillController {
     public List<Project> findAllProjectsBySkillName(@PathVariable String skill_name) {
         return skillService.findAllProjectsBySkillName(skill_name);
     }
+    
+    @GetMapping("/{name}")
+    public Skill findById(@PathVariable String name) {
+        return skillService.findByName(name);
+    }
 
     @GetMapping("/projects/{projectSlug}")
     public List<Skill> findAllByProjectSlug(String projectSlug) {

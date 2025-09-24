@@ -11,6 +11,7 @@ public interface SkillService {
     List<Project> findAllProjectsBySkillName(String skill_name);
     Skill create(Skill skill);
     Skill update(Integer id, Skill skill);
+    Skill findByName(String name);
     List<SkillWithProjects> findAllfindAllSkillsWithProjects();
     List<Skill> findAllByProjectId(Integer projectId);
     List<Skill> findAllByProjectSlug(String slug);
