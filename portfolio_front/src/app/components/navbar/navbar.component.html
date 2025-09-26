@@ -34,7 +34,7 @@
           <!-- Dropdown desktop -->
           <div class="navBar__submenu_list">
             <div class="navBar__submenu_group">
-              <span>{{ 'technicalSkills' | translate }}</span>
+              <span>{{ 'navbar.skill.technical' | translate }}</span>
               <ng-container *ngFor="let skill of technicalSkills">
                 <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
                   {{ skill.name }}
@@ -43,7 +43,7 @@
             </div>
 
             <div class="navBar__submenu_group">
-              <span>{{ 'humanSkills' | translate }}</span>
+              <span>{{ 'navbar.skill.human' | translate }}</span>
               <ng-container *ngFor="let skill of humanSkills">
                 <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
                   {{ skill.name }}
@@ -74,7 +74,7 @@
         <button class="navBar__back" (click)="mobileSubmenu = null">← {{ 'back' | translate }}</button>
 
         <div class="navBar__submenu_group">
-          <span>{{ 'technicalSkills' | translate }}</span>
+          <span>{{ 'navbar.skill.technical' | translate }}</span>
           <ng-container *ngFor="let skill of technicalSkills">
             <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
               {{ skill.name }}
@@ -83,7 +83,7 @@
         </div>
 
         <div class="navBar__submenu_group">
-          <span>{{ 'humanSkills' | translate }}</span>
+          <span>{{ 'navbar.skill.human' | translate }}</span>
           <ng-container *ngFor="let skill of humanSkills">
             <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
               {{ skill.name }}

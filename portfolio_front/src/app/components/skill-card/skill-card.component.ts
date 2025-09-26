@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { SkillWithProjects } from '../../interfaces/skill-with-projects';
 import {  Router, RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skill-card',
-  imports: [StarRatingComponent, CommonModule, RouterModule],
+  imports: [StarRatingComponent, CommonModule, RouterModule, TranslateModule],
   templateUrl: './skill-card.component.html',
   styleUrl: './skill-card.component.scss'
 })

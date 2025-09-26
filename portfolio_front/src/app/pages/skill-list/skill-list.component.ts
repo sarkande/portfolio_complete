@@ -7,10 +7,11 @@ import { Subject, takeUntil } from 'rxjs';
 import { SkillWithProjects } from '../../interfaces/skill-with-projects';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SkillModel } from '../../interfaces/skill-model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skill-list',
-  imports: [SkillCardComponent, CommonModule ],
+  imports: [SkillCardComponent, CommonModule , TranslateModule],
   templateUrl: './skill-list.component.html',
   styleUrl: './skill-list.component.scss'
 })
@@ -57,6 +58,7 @@ export class SkillListComponent implements OnInit {
       description: this.langService.translateContent(skill.description),
       content: this.langService.translateContent(skill.content),
       longDescription: this.langService.translateContent(skill.longDescription)
+      
     }
   }
 }
