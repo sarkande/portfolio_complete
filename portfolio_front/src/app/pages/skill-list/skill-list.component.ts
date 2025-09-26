@@ -6,7 +6,6 @@ import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SkillWithProjects } from '../../interfaces/skill-with-projects';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SkillModel } from '../../interfaces/skill-model';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -51,14 +50,19 @@ export class SkillListComponent implements OnInit {
     this.skills = this.rawSkills.map(s => this.translateSkill(s));
   }
 
-  private translateSkill(skill: SkillModel): SkillModel {
+  private translateSkill(skill: SkillWithProjects): SkillWithProjects {
     return {
       ...skill,
       name: this.langService.translateContent(skill.name),
       description: this.langService.translateContent(skill.description),
       content: this.langService.translateContent(skill.content),
-      longDescription: this.langService.translateContent(skill.longDescription)
-      
+      longDescription: this.langService.translateContent(skill.longDescription),
+      projects: skill.projects?.map(project => ({
+        ...project,
+        title: project.title
+          ? this.langService.translateContent(project.title)
+          : ''
+      }))
     }
   }
 }
