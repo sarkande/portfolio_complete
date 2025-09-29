@@ -9,6 +9,9 @@
 
   "contact-me": "Contact me",
 
+  "navbar.skill.technical": "Technical Skills",
+  "navbar.skill.human": "Soft Skills",
+
   "title.home": "Home – Allan Perez",
   "title.skills": "Skills – Allan Perez",
   "title.projects": "Projects – Allan Perez",
@@ -18,7 +21,7 @@
   "title.adminPanel": "Admin Panel – Allan Perez",
   "title.notFound": "Page Not Found – Allan Perez",
   "title.legalNotice": "Legal notice – Allan Perez",
-  "title.profile": "Présentation – Allan Perez",
+  "title.profile": "Profile – Allan Perez",
 
   "home.title1": "Odoo Specialist",
   "home.title2": "Creative Developer",
