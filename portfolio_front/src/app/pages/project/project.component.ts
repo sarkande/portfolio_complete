@@ -9,6 +9,7 @@ import { ProjectModel } from '../../interfaces/project.model';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { LanguageService } from '../../services/language.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project',
@@ -18,7 +19,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     RouterModule,
     MarkdownModule,
     CarouselComponent,
-    MatTooltipModule
+    MatTooltipModule,
+    TranslateModule
   ],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss']
@@ -88,23 +90,12 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
   private goldenAngle = 137.508;
 
-  /**
-   * Retourne une teinte HSL en fonction de l'id
-   */
-  getTagBgColor(id: number = 1): string {
+  getTagHue(id: number = 1): string {
     const hue = (id * this.goldenAngle) % 360;
-    // saturation 50%, lightness 85% pour un fond doux
-    return `hsl(${hue.toFixed(1)}, 50%, 85%)`;
+    return hue.toFixed(1);
   }
 
-  /**
-   * Texte en contraste : on garde une luminosité basse
-   */
-  getTagTextColor(id: number = 1): string {
-    const hue = (id * this.goldenAngle) % 360;
-    // saturation 70%, lightness 25% pour un texte bien lisible
-    return `hsl(${hue.toFixed(1)}, 70%, 25%)`;
-  }
+  
   private buildToc(markdown: string) {
     const regex = /^(#{2,6})\s+(.*)$/gm;
     let match: RegExpExecArray | null;
@@ -132,7 +123,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
       content: this.langService.translateContent(project.content),
       skills: project.skills ? project.skills.map(skill => ({
         ...skill,
-       content: this.langService.translateContent(skill.content)
+        content: this.langService.translateContent(skill.content),
+        description: this.langService.translateContent(skill.description),
+        longDescription: this.langService.translateContent(skill.longDescription),
       })) : [],
     };
   }

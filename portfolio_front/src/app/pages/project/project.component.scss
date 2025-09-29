@@ -285,12 +285,26 @@ $padding-post-horizontal: 20px;
 
                     .tag {
                         background: #edf2f7;
-                        color: #2c5282;
                         font-size: 0.85rem;
                         padding: 0.25rem 0.6rem;
                         border-radius: 0.25rem;
                         font-weight: 500;
-                    }
+                        --tag-bg-saturation: 50%;
+                            --tag-bg-lightness: 85%;
+                            --tag-text-saturation: 70%;
+                            --tag-text-lightness: 25%;
+                        
+                            background-color: hsl(var(--tag-hue), var(--tag-bg-saturation), var(--tag-bg-lightness));
+                            color: hsl(var(--tag-hue), var(--tag-text-saturation), var(--tag-text-lightness));
+                        
+                            transition: background-color 0.2s ease, color 0.2s ease;
+                            cursor: pointer;
+                        
+                            &:hover {
+                                background-color: hsl(var(--tag-hue), var(--tag-text-saturation), var(--tag-text-lightness));
+                                color: hsl(var(--tag-hue), var(--tag-bg-saturation), var(--tag-bg-lightness));
+                            }
+                        }
                 }
             }
         }
