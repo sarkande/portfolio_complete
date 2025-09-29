@@ -28,11 +28,15 @@
     <!-- Métadonnées du projet -->
     <!-- project-meta.component.html -->
     <section class="project-meta">
-      <div class="meta-item">
+      <!-- <div class="meta-item">
         <span class="label">Catégorie</span>
         <span class="value">{{ project.category }}</span>
+      </div> -->
+      <div class="meta-item">
+        <span class="label">Rôle</span>
+        <span class="value">{{ project.role }}</span>
       </div>
-
+      
       <div class="meta-item">
         <span class="label">Période</span>
         <span class="value">
@@ -46,13 +50,9 @@
         </span>
       </div>
 
-      <div class="meta-item">
-        <span class="label">Rôle</span>
-        <span class="value">{{ project.role }}</span>
-      </div>
 
       <div class="meta-item techno">
-        <span class="label">Technos</span>
+        <span class="label">Compétences</span>
         <div class="tags">
           <span
             *ngFor="let skill of project.skills"

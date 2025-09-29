@@ -1,2 +1,92 @@
 [
+  {
+    "name": "Python",
+    "level": 5,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Python.svg",
+    "description": "{\"fr\":\"Langage polyvalent et lisible, utilisé en data science, web, IA et automatisation.\",\"en\":\"Versatile and readable language, used in data science, web, AI, and automation.\"}",
+    "longDescription": "{\"fr\":\"Python est un langage de programmation polyvalent, reconnu pour sa simplicité et sa lisibilité. Il est largement utilisé dans des domaines variés tels que le développement web, la data science, l’intelligence artificielle et l’automatisation. Dans mes projets, il m’a permis de développer des modules sur mesure, de travailler sur la migration d’un ERP complexe et de créer des outils analytiques adaptés aux besoins de l’entreprise.\",\"en\":\"Python is a versatile programming language, known for its simplicity and readability. It is widely used in fields such as web development, data science, artificial intelligence, and automation. In my projects, it allowed me to develop custom modules, work on ERP migration, and build analytical tools tailored to business needs.\"}",
+    "isTechnical": true
+  },
+  {
+    "name": "JS",
+    "level": 5,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/JavaScript.svg",
+    "description": "{\"fr\":\"Langage de script principal du web pour rendre les pages interactives.\",\"en\":\"The core scripting language of the web to make pages interactive.\"}",
+    "longDescription": "{\"fr\":\"JavaScript est le langage incontournable du développement web, permettant de créer des interfaces dynamiques et interactives. Il est utilisé aussi bien côté front-end avec des frameworks comme Angular ou React, que côté back-end avec Node.js. Dans mes expériences, JavaScript a été essentiel pour développer des interfaces claires, intégrer des fonctionnalités avancées et garantir une bonne expérience utilisateur sur des projets comme GamesUP et mon portfolio.\",\"en\":\"JavaScript is the essential language for web development, enabling the creation of dynamic and interactive interfaces. It is used both on the front-end with frameworks such as Angular or React, and on the back-end with Node.js. In my experiences, JavaScript was key to building clear interfaces, integrating advanced features, and ensuring a smooth user experience in projects like GamesUP and my portfolio.\"}",
+    "isTechnical": true
+  },
+  {
+    "name": "Docker",
+    "level": 4,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Docker.svg",
+    "description": "{\"fr\":\"Plateforme de conteneurisation permettant d’emballer et déployer des applications isolées.\",\"en\":\"A containerization platform for packaging and deploying applications in isolation.\"}",
+    "longDescription": "{\"fr\":\"Docker est une technologie de conteneurisation qui permet d’isoler, de déployer et de gérer facilement des applications. Elle facilite la mise en place d’environnements reproductibles et fiables, que ce soit pour le développement, les tests ou la production. Dans mes projets, j’ai utilisé Docker pour reproduire l’architecture Odoo.sh, automatiser la gestion des environnements et simplifier les déploiements avec des outils comme Docker Compose et CI/CD.\",\"en\":\"Docker is a containerization technology that makes it easy to isolate, deploy, and manage applications. It helps create reproducible and reliable environments, whether for development, testing, or production. In my projects, I used Docker to replicate the Odoo.sh architecture, automate environment management, and streamline deployments with tools such as Docker Compose and CI/CD.\"}",
+    "isTechnical": true
+  },
+  {
+    "name": "Shell",
+    "level": 4,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Bash.svg",
+    "description": "{\"fr\":\"Langage de script Unix pour automatiser tâches, scripts et gestion de systèmes.\",\"en\":\"Unix shell language for automating tasks, scripting, and system management.\"}",
+    "longDescription": "{\"fr\":\"Le Shell est un langage de script puissant utilisé pour automatiser des tâches et administrer des systèmes. Il permet d’écrire des scripts efficaces pour gérer des environnements, manipuler des fichiers et orchestrer des outils comme Docker. Dans mes projets, je m’en suis servi pour créer des scripts automatisant la construction d’environnements Odoo locaux, la génération de Dockerfiles et la gestion de Docker Compose, apportant un gain de temps significatif et une meilleure fiabilité des déploiements.\",\"en\":\"The Shell is a powerful scripting language used to automate tasks and manage systems. It enables writing efficient scripts to handle environments, manipulate files, and orchestrate tools such as Docker. In my projects, I used it to create scripts that automate the setup of local Odoo environments, generate Dockerfiles, and manage Docker Compose, providing significant time savings and more reliable deployments.\"}",
+    "isTechnical": true
+  },
+  {
+    "name": "Autonomie",
+    "level": 4,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Bash.svg",
+    "description": "{\"fr\":\"Capacité à travailler de manière indépendante.\",\"en\":\"Ability to work independently.\"}",
+    "longDescription": "{\"fr\":\"Je sais organiser mon travail et avancer efficacement sans supervision constante, tout en respectant les objectifs fixés.\",\"en\":\"I am able to organize my work and progress efficiently without constant supervision, while meeting defined objectives.\"}",
+    "isTechnical": false
+  },
+  {
+    "name": "Travail d'équipe",
+    "level": 4,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Bash.svg",
+    "description": "{\"fr\":\"Esprit collaboratif et orientation collective.\",\"en\":\"Teamwork and collaborative mindset.\"}",
+    "longDescription": "{\"fr\":\"J’apprécie travailler en groupe, partager mes connaissances et écouter les autres pour atteindre ensemble des résultats de qualité.\",\"en\":\"I enjoy working in a team, sharing knowledge, and listening to others to achieve high-quality results together.\"}",
+    "isTechnical": false
+  },
+  {
+    "name": "Communication",
+    "level": 4,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Bash.svg",
+    "description": "{\"fr\":\"Clarté et efficacité dans les échanges.\",\"en\":\"Clear and effective communication.\"}",
+    "longDescription": "{\"fr\":\"Je veille à transmettre mes idées de manière claire et structurée, tout en favorisant un dialogue constructif et transparent.\",\"en\":\"I strive to express my ideas clearly and concisely, while encouraging constructive and transparent dialogue.\"}",
+    "isTechnical": false
+  },
+  {
+    "name": "React",
+    "level": 4,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/React.svg",
+    "description": "{\"fr\":\"Interfaces réactives et scalables avec React.\",\"en\":\"Reactive, scalable UIs with React.\"}",
+    "longDescription": "{\"fr\":\"Conception d’interfaces modernes avec React (hooks, état, routing), composants réutilisables, optimisation des performances et intégration TypeScript/testing quand nécessaire.\",\"en\":\"Building modern UIs with React (hooks, state, routing), reusable components, performance optimization, and TypeScript/testing integration when needed.\"}",
+    "isTechnical": true
+  },
+  {
+    "name": "C#",
+    "level": 3,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/CSharp.svg",
+    "description": "{\"fr\":\"Développement d’applications robustes en C#.\",\"en\":\"Building robust applications in C#.\"}",
+    "longDescription": "{\"fr\":\"Maîtrise de C# pour concevoir des applications modulaires et maintenables (.NET), avec une attention particulière aux bonnes pratiques (SOLID, tests unitaires) et aux performances.\",\"en\":\"Proficient in C# to design modular, maintainable apps (.NET), with strong focus on best practices (SOLID, unit testing) and performance.\"}",
+    "isTechnical": true
+  },
+  {
+    "name": "Créativité",
+    "level": 1,
+    "content": "{\"fr\":\"null\",\"en\":\"null\"}",
+    "icon": "icons/Bash.svg",
+    "description": "{\"fr\":\"Capacité à proposer des solutions originales et efficaces.\",\"en\":\"Ability to propose original, effective solutions.\"}",
+    "longDescription": "{\"fr\":\"J’explore des approches innovantes pour résoudre les problèmes, en alliant sens pratique et imagination afin d’apporter de la valeur concrète au projet.\",\"en\":\"I explore innovative approaches to problem-solving, combining practicality and imagination to deliver tangible value to the project.\"}",
+    "isTechnical": false
+  }
 ]

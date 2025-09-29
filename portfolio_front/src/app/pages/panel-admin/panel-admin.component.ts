@@ -442,6 +442,9 @@ export class PanelAdminComponent implements OnInit {
       level: s.level,
       content: s.content,
       icon: s.icon,
+      description: s.description,
+      longDescription: s.longDescription,
+      isTechnical: s.isTechnical
     }));
     const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(skillsToExport, null, 2));
     const downloadAnchorNode = document.createElement('a');

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectModel } from '../../interfaces/project.model';
 import { IconPipe } from '../../pipes/icon.pipe';
 import {  RouterModule } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-project-card',
@@ -13,6 +14,14 @@ import {  RouterModule } from '@angular/router';
 })
 export class ProjectCardComponent {
   @Input() project!: ProjectModel;
+
+  currentLang = 'fr';
+
+  constructor(private langService: LanguageService) {
+    this.langService.currentLang$.subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
 
 
 }
