@@ -1,22 +1,55 @@
-<div class="skill-card" >
-    <img
-        [src]="skill.icon ? '/assets/' + skill.icon : '/assets/projects/image_not_available.png'"
-        alt="Miniature du projet"
-        class="project-image"
-      />
-    <div class="project-info">
-      <h3>{{ skill.name }}</h3>
-      <p class="description">{{ skill.description }}</p>
-      <div class="level">
-        <span class="level-value"><app-star-rating [priority]="skill.level" [readonly]="true"></app-star-rating></span>
-      </div>
-      <div class="projects">
-        <div *ngFor="let project of skill.projects" class="skill" [routerLink]="['/', currentLang, 'projects', project.slug]"> 
-          <i class="fa fa-folder"></i >
-         {{ project.title | translate }}
-        </div>
-      </div>
+<div class="skill-card">
+  <img
+    [src]="
+      skill.icon
+        ? '/assets/' + skill.icon
+        : '/assets/projects/image_not_available.png'
+    "
+    alt="Miniature du projet"
+    class="project-image"
+  />
 
+  <div class="project-info">
+    <div class="header">
+      <h3>{{ skill.name }}</h3>
+      <span class="level-value">
+        <app-star-rating
+          [priority]="skill.level"
+          [readonly]="true"
+        ></app-star-rating>
+      </span>
+    </div>
+
+    <p class="description">{{ skill.description }}</p>
+
+    <div class="projects">
+      <div
+        *ngFor="let project of skill.projects"
+        class="skill"
+        [routerLink]="['/', currentLang, 'projects', project.slug]"
+      >
+        <i class="fa fa-folder"></i>
+        {{ project.title | translate }}
+      </div>
     </div>
   </div>
-  
+
+  <!-- Ruban coin gauche -->
+  <div
+    class="ribbon ribbon-left"
+    [ngClass]="skill.isTechnical ? 'ribbon-technical' : 'ribbon-human'"
+  >
+    {{ skill.isTechnical ? "TECHNIQUE" : "HUMAINE" }}
+  </div>
+
+  <!-- Si tu veux à droite au lieu de gauche, commente celui du dessus
+       et décommente celui-ci : -->
+  <!--
+  <div
+    class="ribbon ribbon-right"
+    [ngClass]="skill.isTechnical ? 'ribbon-technical' : 'ribbon-human'"
+  >
+    {{ skill.isTechnical ? "TECHNIQUE" : "HUMAINE" }}
+  </div>
+  -->
+</div>

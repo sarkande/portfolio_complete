@@ -1,32 +1,41 @@
 @use "abstracts/medias";
 @use "sass:color";
-// Variables Skill Card
+
 $card-width: 250px;
+$card-height: 365px;
 $card-border: #ddd;
 $card-radius: 8px;
 $card-bg: #ffffff;
 $card-shadow: rgba(0, 0, 0, 0.1);
 $card-shadow-hover: rgba(0, 0, 0, 0.15);
 $card-transition: 0.3s ease;
-
 $image-height: 100px;
 
 $font-size-title: 1rem;
-$font-size-desc: 0.8rem;
+$font-size-desc: 0.85rem;
 $font-size-tech: 0.8rem;
 $font-size-date: 0.75rem;
 
 $tech-bg: #f0f0f0;
 $tech-color: #333;
+
 $skill-bg: #f7f7f7;
 $skill-border: #c5c9cf;
 $skill-color: #333;
-$skill-font: 0.65rem;
+$skill-font: 0.7rem;
+
+$ribbon-technical-bg: #2563eb;
+$ribbon-human-bg: #16a34a;
+$ribbon-text: #ffffff;
+$ribbon-font: 0.65rem;
 
 .skill-card {
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: $card-width;
+    min-height: $card-height;
     background: $card-bg;
     border: 1px solid $card-border;
     border-radius: $card-radius;
@@ -37,38 +46,67 @@ $skill-font: 0.65rem;
     &:hover {
         box-shadow: 0 4px 12px $card-shadow-hover;
         transform: translateY(-2px);
+        cursor: pointer;
     }
 
     .project-image {
         width: 100%;
         height: $image-height;
         object-fit: contain;
+        background: #f9f9f9;
+        flex-shrink: 0;
+        padding: 0.5rem;
     }
 
     .project-info {
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 0.75rem;
 
         h3 {
             margin: 0;
             font-size: $font-size-title;
             color: $tech-color;
+            font-weight: 600;
         }
 
         .description {
-            margin: 0.5rem 0;
+            margin: 0;
             font-size: $font-size-desc;
-            color: $tech-color;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .level {
+            margin: 0;
+
+            .level-value {
+                display: inline-block;
+            }
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
+            border-top: 1px solid #f0f0f0;
         }
 
         .technos {
-            margin-top: 0.5rem;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
 
             .tech {
                 display: inline-block;
                 background: $tech-bg;
                 color: $tech-color;
-                padding: 0.2rem 0.5rem;
-                margin: 0.1rem;
+                padding: 0.3rem 0.6rem;
                 border-radius: 4px;
                 font-size: $font-size-tech;
             }
@@ -76,36 +114,102 @@ $skill-font: 0.65rem;
 
         .dates {
             display: block;
-            margin-top: 0.5rem;
+            margin: 0;
             font-size: $font-size-date;
             color: color.adjust($card-border, $lightness: -20%);
         }
     }
 
+    /* Ruban générique */
+    .ribbon {
+        position: absolute;
+        top: 20px;
+        width: 180px;
+        text-align: center;
+        line-height: 28px;
+        font-size: $ribbon-font;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $ribbon-text;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        pointer-events: none;
+    }
+
+    /* Coin gauche */
+    .ribbon-left {
+        left: -50px;
+        transform: rotate(-45deg);
+        transform-origin: center;
+
+        &.ribbon-technical {
+            background: $ribbon-technical-bg;
+        }
+
+        &.ribbon-human {
+            background: $ribbon-human-bg;
+        }
+    }
+
+    /* Coin droit */
+    .ribbon-right {
+        right: -45px;
+        transform: rotate(45deg);
+        transform-origin: center;
+
+        &.ribbon-technical {
+            background: $ribbon-technical-bg;
+        }
+
+        &.ribbon-human {
+            background: $ribbon-human-bg;
+        }
+    }
+
     .skill {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
         background-color: $skill-bg;
         color: $skill-color;
         border: 1px solid $skill-border;
         border-radius: 4px;
-        padding: 0.15rem 0.25rem;
-        margin: 0.125rem;
+        padding: 0.3rem 0.5rem;
         font-size: $skill-font;
         box-shadow: 0 1px 2px $card-shadow;
-        transition: transform $card-transition, box-shadow $card-transition;
+        transition: transform $card-transition, box-shadow $card-transition,
+            background-color $card-transition;
+        white-space: nowrap;
+        line-height: 1.2;
+
+        i {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
 
         &:hover {
             cursor: pointer;
-            transform: scale(1.02);
-            box-shadow: 0 4px 10px $card-shadow-hover;
+            transform: scale(1.05);
+            box-shadow: 0 2px 6px $card-shadow-hover;
+            background-color: darken($skill-bg, 5%);
         }
     }
 }
 
-/* Container parent pour aligner les skill-card */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
+    padding: 1rem;
+    align-items: stretch;
+
+    @include medias.for-phone {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    @include medias.for-little-phone {
+        gap: 0.75rem;
+        padding: 0.25rem;
+    }
 }
