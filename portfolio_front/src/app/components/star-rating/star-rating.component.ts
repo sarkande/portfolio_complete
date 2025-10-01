@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-star-rating',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, TranslateModule],
     templateUrl: './star-rating.component.html',
     styleUrls: ['./star-rating.component.scss'],
 })
@@ -34,5 +35,21 @@ export class StarRatingComponent {
 
     clearHover(): void {
         this.hoveredIndex = -1;
+    }
+    getLabel(priority: number): string {
+        switch (priority) {
+            case 1:
+                return 'rating.very_low';
+            case 2:
+                return 'rating.low';
+            case 3:
+                return 'rating.medium';
+            case 4:
+                return 'rating.high';
+            case 5:
+                return 'rating.very_high';
+            default:
+                return '';
+        }
     }
 }

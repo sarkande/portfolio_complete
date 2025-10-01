@@ -1,90 +1,102 @@
 {
-  "home": "Home",
-  "resume": "Resume",
-  "skills": "Skills",
-  "projects": "Projects",
-  "about": "Contact",
-  "legalNotic-link": "Legal notice",
-  "profile": "Profile",
+  "title": {
+    "home": "Home – Allan Perez",
+    "skills": "Skills – Allan Perez",
+    "projects": "Projects – Allan Perez",
+    "projectDetail": "Project Details – Allan Perez",
+    "about": "About – Allan Perez",
+    "login": "Login – Allan Perez",
+    "adminPanel": "Admin Panel – Allan Perez",
+    "notFound": "Page Not Found – Allan Perez",
+    "legalNotice": "Legal Notice – Allan Perez",
+    "profile": "Profile – Allan Perez"
+  },
+
+  "navbar": {
+    "home": "Home",
+    "resume": "Resume",
+    "skills": "Skills",
+    "projects": "Projects",
+    "about": "Contact",
+    "legalNotice-link": "Legal Notice",
+    "profile": "Profile",
+    "skill": {
+      "technical": "Technical Skills",
+      "human": "Soft Skills"
+    }
+  },
 
   "contact-me": "Contact me",
 
-  "navbar.skill.technical": "Technical Skills",
-  "navbar.skill.human": "Soft Skills",
+  "home": {
+    "title1": "Odoo Specialist",
+    "title2": "Creative Developer",
+    "title3": "Fullstack Engineer",
+    "title4": "Front-end Expert",
+    "title5": "Back-end Expert",
+    "title6": "Software Engineer",
+    "title7": "Software Architect",
+    "title8": "ERP Consultant",
+    "title9": "DevOps Engineer",
+    "title10": "CI/CD Specialist",
+    "description": "Your full-stack partner: React & Angular for front-end, Node.js & Spring for back-end, Python/Odoo for ERP, automated CI/CD pipelines, and containerized deployments with Docker.",
+    "my-journey": "My Journey",
+    "last-projects": "Latest Projects",
+    "top-skills": "Top Skills",
+    "see-more": "See more",
+    "see-all-projects": "See all projects",
+    "see-all-skills": "See all skills",
+    "resume": "Resume – PDF",
+    "resume-ast": "Download my CV (ATS)"
+  },
 
-  "title.home": "Home – Allan Perez",
-  "title.skills": "Skills – Allan Perez",
-  "title.projects": "Projects – Allan Perez",
-  "title.projectDetail": "Project Details – Allan Perez",
-  "title.about": "About – Allan Perez",
-  "title.login": "Login – Allan Perez",
-  "title.adminPanel": "Admin Panel – Allan Perez",
-  "title.notFound": "Page Not Found – Allan Perez",
-  "title.legalNotice": "Legal notice – Allan Perez",
-  "title.profile": "Profile – Allan Perez",
+  "error": {
+    "404": "Oops! The page you’re looking for doesn’t exist.",
+    "go_home": "Go back home"
+  },
 
-  "home.title1": "Odoo Specialist",
-  "home.title2": "Creative Developer",
-  "home.title3": "Fullstack Engineer",
-  "home.title4": "Front-end Expert",
-  "home.title5": "Back-end Expert",
-  "home.title6": "Software Engineer",
-  "home.title7": "Software Architect",
-  "home.title8": "ERP Consultant",
-  "home.title9": "DevOps Engineer",
-  "home.title10": "CI/CD Specialist",
-
-  "home.description": "Your full-stack partner: React & Angular front-end, Node.js & Spring back-end, Python/Odoo ERP, automated CI/CD pipelines and containerized deployments with Docker.",
-
-  "home.my-journey": "My Journey",
-  "home.last-projects": "Latest Projects",
-  "home.top-skills": "Top Skills",
-
-  "home.see-more": "See more",
-  "home.see-all-projects": "See all projects",
-  "home.see-all-skills": "See all skills",
-
-  "home.resume": "Resume – PDF",
-  "home.resume-ast": "Download my CV (ATS)",
-
-  "error.404": "Oops! The page you’re looking for doesn’t exist.",
-  "error.go_home": "Go back home",
-
-  "contact.title": "Contact me",
-  "contact.intro": "If you’d like to reach out for a project or have any questions, feel free to fill in the form below! I’ll get back to you as soon as possible.",
-  "contact.name": "Name",
-  "contact.address": "Address",
-  "contact.address_details": "Annecy, France",
-  "contact.email_address": "aperezgo74@gmail.com",
-  "contact.phone_number": "+33 6 25 77 23 43",
-  "contact.email": "Email",
-  "contact.phone": "Phone",
-  "contact.message": "Message",
-  "contact.send": "Send",
-  "contact.success": "Your message has been successfully sent!",
-  "contact.error": "An error occurred while sending your message. Please try again later.",
-  "contact.required": "This field is required.",
-  "contact.name_required": "Name is required.",
-
-  "contact.email_required": "Email is required.",
-  "contact.email_invalid": "Email is invalid.",
-
-  "contact.message_required": "Message is required.",
-  "contact.message_length": "Message must be at least 10 characters long.",
-
-  "contact.phone_invalid": "Please enter a valid phone number.",
-  "contact.recaptcha": "Please check the reCAPTCHA box.",
-  "contact.invalid_email": "Please enter a valid email address.",
+  "contact": {
+    "title": "Contact me",
+    "intro": "If you’d like to contact me for a project or a question, feel free to fill out the form below! I’ll reply as soon as possible.",
+    "address": "Address",
+    "address_details": "Annecy, France",
+    "email_address": "aperezgo74@gmail.com",
+    "phone_number": "+33 6 25 77 23 43",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "success": "Your message has been successfully sent!",
+    "error": "An error occurred while sending your message. Please try again later.",
+    "required": "This field is required.",
+    "name_required": "Name is required.",
+    "email_required": "Email is required.",
+    "email_invalid": "Invalid email address.",
+    "message_required": "Message is required.",
+    "message_length": "Message must be at least 10 characters long.",
+    "phone_invalid": "Please enter a valid phone number.",
+    "recaptcha": "Please check the reCAPTCHA box.",
+    "invalid_email": "Please enter a valid email address."
+  },
 
   "legalNotice": {
-    "intro": "In accordance with articles 6-III and 19 of French Law No. 2004-575 of June 21, 2004, users of this website are informed of the following legal information.",
+    "intro": "In accordance with articles 6-III and 19 of French Law No. 2004-575 of June 21, 2004 on Confidence in the Digital Economy, users of this site are informed of the following legal notice.",
     "owner": "Site Owner",
-    "ownerDetails": "This site is published by Allan PEREZ. For any inquiries, please use the site's contact form.",
+    "ownerDetails": "This site is published by Allan PEREZ. For any questions, please use the site’s contact form.",
     "hosting": "Hosting",
-    "hostingDetails": "This site is hosted by:\n\nOVH SAS with a capital of €50,000,000\nRCS Lille Métropole 424 761 419 00045\nAPE Code 2620Z — VAT No: FR 22 424 761 419\nHead office: 2 rue Kellermann - 59100 Roubaix - France\n\nOVH SAS is a subsidiary of OVH Groupe SA (RCS Lille 537 407 926).\n\nPublishing Director: Benjamin Revcolevschi\n\nTerms of use available on www.ovhcloud.com/en/",
+    "hostingDetails": "This site is hosted by:\n\nOVH SAS with capital of €50,000,000\nRCS Lille Métropole 424 761 419 00045\nAPE Code 2620Z — VAT No: FR 22 424 761 419\nHead office: 2 rue Kellermann - 59100 Roubaix - France\n\nOVH SAS is a subsidiary of OVH Groupe SA (RCS Lille 537 407 926).\n\nPublishing Director: Benjamin Revcolevschi\n\nTerms of use available at www.ovhcloud.com/en/",
     "copyright": "Copyright",
-    "copyrightDetails": "This website and its contents (texts, images, logo, source code) are protected by intellectual property laws. Any reproduction or representation without permission is prohibited.\n\nThe OVHcloud brand and other trademarks mentioned are the property of OVH or their respective owners.",
+    "copyrightDetails": "This site and its contents (texts, images, logo, source code) are protected by intellectual property law. Any reproduction or representation without authorization is prohibited.\n\nThe OVHcloud brand and other trademarks mentioned are the property of OVH or their respective owners.",
     "privacy": "Personal Data",
-    "privacyDetails": "No personal data is collected for advertising purposes. You can browse this website freely without having to disclose your identity or provide personal information."
+    "privacyDetails": "No personal data is collected for advertising purposes. You can browse this site freely without disclosing your identity or providing personal information."
+  },
+
+  "rating": {
+    "very_low": "Beginner",
+    "low": "Intermediate",
+    "medium": "Confirmed",
+    "high": "Advanced",
+    "very_high": "Expert"
   }
 }

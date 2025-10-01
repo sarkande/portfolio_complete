@@ -19,11 +19,11 @@ export class NavbarComponent implements OnInit {
   mobileSubmenu: string | null = null;
 
   links = [
-    { name: 'home', path: '' },
-    { name: 'profile', path: 'profile' },
-    { name: 'skills', path: 'skills', hasSubmenu: true },
-    { name: 'projects', path: 'projects' },
-    { name: 'about', path: 'about' },
+    { name: 'navbar.home', path: '' },
+    { name: 'navbar.profile', path: 'profile' },
+    { name: 'navbar.skills', path: 'skills', hasSubmenu: true },
+    { name: 'navbar.projects', path: 'projects' },
+    { name: 'navbar.about', path: 'about' },
   ];
 
   socials = [

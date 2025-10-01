@@ -1,134 +1,171 @@
-<!-- Page Présentation — Portfolio -->
-<article itemscope itemtype="https://schema.org/AboutPage" lang="fr" dir="ltr">
-  <header>
-    <h1 itemprop="name">Présentation</h1>
-    <p class="intro" itemprop="description">
-      Actuellement en alternance chez <strong>Pure Illusion</strong>, je prépare le titre
-      d’<strong>Expert en ingénierie logicielle</strong>. Mon parcours reflète une passion ancienne
-      pour l’informatique, nourrie par la curiosité, le goût de l’apprentissage et la volonté
-      d’innover en contribuant à des projets concrets.
-    </p>
-  </header>
+<article itemscope itemtype="https://schema.org/AboutPage" [attr.lang]="currentLang" dir="ltr">
+  <!-- ================= VERSION FR ================= -->
+  <ng-container *ngIf="currentLang === 'fr'; else english">
+    <header>
+      <h1>Présentation</h1>
+      <p class="intro">
+        Actuellement en alternance chez <strong>Pure Illusion</strong>, je prépare le titre
+        d’<strong>Expert en ingénierie logicielle</strong>. Mon parcours reflète une passion ancienne
+        pour l’informatique, nourrie par la curiosité, le goût de l’apprentissage et la volonté
+        d’innover en contribuant à des projets concrets.
+      </p>
+    </header>
 
+    <!-- Mes valeurs -->
+    <section id="valeurs">
+      <h2>Mes valeurs</h2>
+      <p>
+        Mon parcours en informatique s’est construit sur l’<strong>autodidaxie</strong> : apprendre
+        seul m’a appris à chercher, à persévérer et à me remettre en question. Cette autonomie a
+        naturellement conduit à une prise de conscience : un ingénieur logiciel doit agir avec
+        <strong>responsabilité</strong> dans ses choix, car il ne produit pas seulement du code ; il
+        influence aussi des usages, des équipes et parfois des organisations entières.
+      </p>
+      <p>
+        Dans cette continuité, j’ai toujours associé <strong>apprentissage</strong> et
+        <strong>transmission</strong>. Partager mes connaissances, que ce soit dans un cadre
+        académique, professionnel ou associatif, m’a permis de renforcer mes acquis tout en favorisant
+        une progression collective.
+      </p>
+      <p>
+        Enfin, l’<strong>ouverture</strong> complète cette vision. L’apprentissage de langues
+        étrangères et la diversité de mes expériences m’ont appris à rester curieux et adaptable.
+      </p>
+    </section>
 
-  <!-- Mes valeurs -->
-  <section id="valeurs" aria-labelledby="h-valeurs">
-    <h2 id="h-valeurs">Mes valeurs</h2>
-    <p>
-      Mon parcours en informatique s’est construit sur l’<strong>autodidaxie</strong> : apprendre
-      seul m’a appris à chercher, à persévérer et à me remettre en question. Cette autonomie a
-      naturellement conduit à une prise de conscience : un ingénieur logiciel doit agir avec
-      <strong>responsabilité</strong> dans ses choix, car il ne produit pas seulement du code ; il
-      influence aussi des usages, des équipes et parfois des organisations entières.
-    </p>
-    <p>
-      Dans cette continuité, j’ai toujours associé <strong>apprentissage</strong> et
-      <strong>transmission</strong>. Partager mes connaissances, que ce soit dans un cadre
-      académique, professionnel ou associatif, m’a permis de renforcer mes acquis tout en favorisant
-      une progression collective. Je considère que la valeur d’une compétence ne se mesure pas
-      seulement à sa maîtrise personnelle, mais aussi à sa capacité à élever un groupe.
-    </p>
-    <p>
-      Enfin, l’<strong>ouverture</strong> complète cette vision. L’apprentissage de langues
-      étrangères et la diversité de mes expériences m’ont appris à rester curieux et adaptable. Dans
-      un domaine en constante évolution, accueillir des points de vue différents et intégrer des
-      approches variées est, à mes yeux, une condition essentielle pour progresser en tant
-      qu’ingénieur logiciel.
-    </p>
-  </section>
+    <!-- Projet pro/perso -->
+    <section id="projet">
+      <h2>Mon projet professionnel et personnel</h2>
 
-
-   <!-- Projet pro/perso -->
-  <section id="projet" aria-labelledby="h-projet">
-    <h2 id="h-projet">Mon projet professionnel et personnel</h2>
-
-    <section aria-labelledby="h-projet-court-terme">
-      <h3 id="h-projet-court-terme">À court terme</h3>
+      <h3>À court terme</h3>
       <p>
         Mon objectif est de valider le titre d’<em>Expert en ingénierie logicielle</em> grâce à mon
         alternance chez <strong>Pure Illusion</strong>, où je contribue à l’intégration d’
         <strong>Odoo</strong> et au développement de fonctionnalités adaptées aux besoins des
         clients.
       </p>
-    </section>
 
-    <section aria-labelledby="h-projet-moyen-terme">
-      <h3 id="h-projet-moyen-terme">À moyen terme</h3>
+      <h3>À moyen terme</h3>
       <p>
         Je souhaite entrer sur le marché du travail en tant qu’ingénieur logiciel. Mon objectif est
         de rejoindre une entreprise dans laquelle je pourrai mettre à profit mes compétences et
         évoluer vers un rôle de <strong>Lead Technique</strong> ou m’orienter davantage vers des
         missions de <strong>recherche et développement</strong>.
       </p>
-    </section>
 
-    <section aria-labelledby="h-projet-long-terme">
-      <h3 id="h-projet-long-terme">À long terme</h3>
+      <h3>À long terme</h3>
       <p>
         Mon ambition est d’évoluer vers un rôle de <strong>référent technique</strong> ou
-        d’<strong>architecte logiciel</strong>. Je souhaite y associer une forte dimension humaine :
-        accompagner les équipes, transmettre les bonnes pratiques et maintenir une veille active pour
-        anticiper les évolutions technologiques et proposer des solutions innovantes.
+        d’<strong>architecte logiciel</strong>, avec une forte dimension humaine : accompagner les
+        équipes, transmettre les bonnes pratiques et maintenir une veille active.
       </p>
     </section>
-  </section>
 
+    <!-- Qualités humaines -->
+    <section id="qualites">
+      <h2>Mes principales qualités humaines</h2>
+      <ul>
+        <li><strong>Autodidacte et curieux</strong> : apprendre de manière autonome m’a permis d’explorer de nombreux domaines.</li>
+        <li><strong>Persévérant</strong> : je sais avancer pas à pas face à la complexité.</li>
+        <li><strong>Esprit de partage</strong> : transmettre mes connaissances est une constante de mon parcours.</li>
+        <li><strong>Vision d’ensemble</strong> : je prends en compte les aspects techniques, humains et organisationnels.</li>
+        <li><strong>Adaptable</strong> : mes expériences variées m’ont appris à évoluer dans des contextes différents.</li>
+      </ul>
+    </section>
 
-  <!-- Qualités humaines -->
-  <section id="qualites" aria-labelledby="h-qualites">
-    <h2 id="h-qualites">Mes principales qualités humaines</h2>
-    <ul>
-      <li>
-        <strong>Autodidacte et curieux</strong> : apprendre de manière autonome m’a permis d’explorer
-        de nombreux domaines et d’adopter une posture d’adaptation permanente.
-      </li>
-      <li>
-        <strong>Persévérant</strong> : je sais avancer pas à pas face à la complexité et ne pas
-        renoncer devant les difficultés.
-      </li>
-      <li>
-        <strong>Esprit de partage</strong> : transmettre mes connaissances est une constante de mon
-        parcours, que ce soit dans le cadre d’études, de collaborations professionnelles ou
-        d’engagements associatifs.
-      </li>
-      <li>
-        <strong>Vision d’ensemble</strong> : je prends en compte les aspects techniques, humains et
-        organisationnels d’un projet pour en garantir la cohérence.
-      </li>
-      <li>
-        <strong>Adaptable</strong> : mes expériences variées m’ont appris à évoluer dans des contextes
-        différents, à collaborer avec des profils variés et à m’ajuster à des environnements en
-        changement.
-      </li>
-    </ul>
-  </section>
+    <!-- Centres d’intérêt -->
+    <section id="interets">
+      <h2>Mes centres d’intérêt</h2>
+      <ul>
+        <li><strong>Technologies et jeux vidéo</strong> : expérimentation et exploration de nouvelles approches techniques.</li>
+        <li><strong>Langues et cultures</strong> : anglais (avancé) et japonais (intermédiaire).</li>
+        <li><strong>Arts martiaux (ninjutsu)</strong> : discipline et rigueur, utiles en revue de code.</li>
+        <li><strong>Bénévolat associatif</strong> : développement de sites pour des associations avec contraintes de budget.</li>
+      </ul>
+    </section>
+  </ng-container>
 
+  <!-- ================= VERSION EN ================= -->
+  <ng-template #english>
+    <header>
+      <h1>Profile</h1>
+      <p class="intro">
+        Currently in a work-study program at <strong>Pure Illusion</strong>, I am preparing the degree
+        of <strong>Software Engineering Expert</strong>. My journey reflects a long-standing passion
+        for computer science, fueled by curiosity, a love of learning, and a desire to innovate by
+        contributing to real-world projects.
+      </p>
+    </header>
 
-  <!-- Centres d’intérêt -->
-  <section id="interets" aria-labelledby="h-interets">
-    <h2 id="h-interets">Mes centres d’intérêt</h2>
-    <p>Mes centres d’intérêt enrichissent ma pratique professionnelle et personnelle :</p>
-    <ul>
-      <li>
-        <strong>Technologies et jeux vidéo</strong> : expérimentation, prototypage et exploration de
-        nouvelles approches techniques, notamment autour de l’interactivité et des interfaces.
-      </li>
-      <li>
-        <strong>Langues et cultures</strong> : anglais (avancé) et japonais (intermédiaire), pour
-        renforcer la collaboration dans des contextes multiculturels.
-      </li>
-      <li>
-        <strong>Arts martiaux (ninjutsu)</strong> : discipline et rigueur, avec une forte capacité
-        d’anticipation des risques — utile en revue de code pour identifier failles et blocages
-        potentiels.
-      </li>
-      <li>
-        <strong>Bénévolat associatif</strong> : développement et gestion de sites pour des
-        associations, avec des contraintes de budget/ressources, afin de livrer des solutions
-        robustes et priorisées.
-      </li>
-    </ul>
-  </section>
+    <!-- Values -->
+    <section id="values">
+      <h2>My values</h2>
+      <p>
+        My journey in computer science has been built on <strong>self-learning</strong>: learning
+        alone taught me how to research, persevere, and challenge myself. This autonomy naturally led
+        to an awareness: a software engineer must act with <strong>responsibility</strong>, since
+        they don’t just produce code but also influence practices, teams, and sometimes entire
+        organizations.
+      </p>
+      <p>
+        I have always combined <strong>learning</strong> and <strong>sharing</strong>. Sharing my
+        knowledge, whether in academic, professional, or community contexts, has helped me strengthen
+        my skills while fostering collective growth.
+      </p>
+      <p>
+        Finally, <strong>openness</strong> completes this vision. Learning foreign languages and
+        diverse experiences have taught me to remain curious and adaptable in a constantly evolving
+        field.
+      </p>
+    </section>
 
+    <!-- Professional/Personal project -->
+    <section id="project">
+      <h2>My professional and personal project</h2>
 
+      <h3>Short term</h3>
+      <p>
+        My goal is to validate the <em>Software Engineering Expert</em> degree through my work-study
+        program at <strong>Pure Illusion</strong>, where I contribute to integrating
+        <strong>Odoo</strong> and developing features tailored to client needs.
+      </p>
+
+      <h3>Medium term</h3>
+      <p>
+        I want to enter the job market as a software engineer. My aim is to join a company where I
+        can apply my skills and grow into a <strong>Technical Lead</strong> role or move toward
+        <strong>research and development</strong> missions.
+      </p>
+
+      <h3>Long term</h3>
+      <p>
+        My ambition is to evolve into a <strong>technical advisor</strong> or <strong>software
+        architect</strong>, with a strong human dimension: supporting teams, sharing best practices,
+        and maintaining active technological watch.
+      </p>
+    </section>
+
+    <!-- Human qualities -->
+    <section id="qualities">
+      <h2>My main human qualities</h2>
+      <ul>
+        <li><strong>Self-taught and curious</strong>: learning autonomously has allowed me to explore many fields.</li>
+        <li><strong>Perseverant</strong>: I know how to progress step by step through complexity.</li>
+        <li><strong>Knowledge sharing</strong>: sharing knowledge has been a constant part of my journey.</li>
+        <li><strong>Global vision</strong>: I take into account technical, human, and organizational aspects of a project.</li>
+        <li><strong>Adaptable</strong>: varied experiences taught me to adjust to changing environments.</li>
+      </ul>
+    </section>
+
+    <!-- Interests -->
+    <section id="interests">
+      <h2>My interests</h2>
+      <ul>
+        <li><strong>Technology and video games</strong>: experimentation and exploration of new technical approaches.</li>
+        <li><strong>Languages and cultures</strong>: English (advanced) and Japanese (intermediate).</li>
+        <li><strong>Martial arts (ninjutsu)</strong>: discipline and rigor, useful in code reviews.</li>
+        <li><strong>Community volunteering</strong>: developing websites for associations with budget/resource constraints.</li>
+      </ul>
+    </section>
+  </ng-template>
 </article>
