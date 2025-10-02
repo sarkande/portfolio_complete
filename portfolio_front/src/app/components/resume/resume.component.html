@@ -1,16 +1,10 @@
 <div class="timeline">
-  <img
-    src="/assets/medias/scroll.gif"
-    alt="Timeline Image"
-    class="timeline-image"
-    *ngIf="!isMobile"
-  />
+
   <ngx-timeline
     class="timeline"
     [reverseOrder]="true"
     [events]="events"
     [eventCustomTemplate]="customEventTemplate"
-    [virtualScroll]="!isMobile"
   ></ngx-timeline>
 </div>
 
@@ -27,19 +21,15 @@
       <h3 class="event-title">{{ event.eventInfo.title }}</h3>
       <span class="event-date">
         {{ event.eventInfo.timestamp | date: 'MMM yyyy' }}
-        @if (
-          event.eventInfo.endDate &&
-          event.eventInfo.timestamp.getTime() !==
-            event.eventInfo.endDate.getTime()
-        ) {
+        <ng-container *ngIf="event.eventInfo.endDate && event.eventInfo.timestamp.getTime() !== event.eventInfo.endDate.getTime()">
           - {{ event.eventInfo.endDate | date: 'MMM yyyy' }}
-        }
+        </ng-container>
       </span>
     </div>
 
     <!-- META -->
     <div class="event-meta">
-      <ng-container *ngIf="event.eventInfo.company">
+      <div class="company-info" *ngIf="event.eventInfo.company">
         <img
           *ngIf="event.eventInfo.company.logo"
           [src]="'/assets/' + event.eventInfo.company.logo"
@@ -50,12 +40,13 @@
           *ngIf="event.eventInfo.company.url"
           [href]="event.eventInfo.company.url"
           target="_blank"
+          rel="noopener noreferrer"
         >
           {{ event.eventInfo.company.name }}
         </a>
-      </ng-container>
+      </div>
 
-      <ng-container *ngIf="event.eventInfo.school">
+      <div class="school-info" *ngIf="event.eventInfo.school">
         <img
           *ngIf="event.eventInfo.school.logo"
           [src]="'/assets/' + event.eventInfo.school.logo"
@@ -66,17 +57,16 @@
           *ngIf="event.eventInfo.school.url"
           [href]="event.eventInfo.school.url"
           target="_blank"
+          rel="noopener noreferrer"
         >
           {{ event.eventInfo.school.name }}
         </a>
-      </ng-container>
+      </div>
 
       <ng-container *ngIf="event.eventInfo.certificationName">
         <p>
           <b>{{ event.eventInfo.certificationName }}</b>
-          <span *ngIf="event.eventInfo.issuer"
-            >({{ event.eventInfo.issuer }})</span
-          >
+          <span *ngIf="event.eventInfo.issuer">({{ event.eventInfo.issuer }})</span>
         </p>
       </ng-container>
     </div>
@@ -88,7 +78,7 @@
     <div class="tags" *ngIf="event.eventInfo.skills?.length">
       <a
         *ngFor="let skill of event.eventInfo.skills"
-        [routerLink]="['/', currentLang, 'skills',('slug'+ skill) | translate]"
+        [routerLink]="['/', currentLang, 'skills', ('slug' + skill) | translate]"
         class="tag"
       >
         {{ ('skill.' + skill.split('.').pop()) | translate }}
@@ -99,7 +89,7 @@
     <div class="tags" *ngIf="event.eventInfo.projects?.length">
       <a
         *ngFor="let project of event.eventInfo.projects"
-        [routerLink]="['/', currentLang, 'projects', ('slug'+ project) | translate]"
+        [routerLink]="['/', currentLang, 'projects', ('slug' + project) | translate]"
         class="tag project-tag"
       >
         {{ project | translate }}

@@ -13,12 +13,6 @@
     }
 }
 
-.timeline {
-    img {
-        position: absolute;
-    }
-}
-
 .custom-timeline-event {
     background-color: #f0f0f0;
     border: 1px solid #ddd;
@@ -29,6 +23,9 @@
     transition: all 0.3s ease-in-out;
     opacity: 1;
     transform: translateY(30px);
+    animation-name: fadeInUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 
     // Effet cascade (jusqu’à 20 événements)
     @for $i from 1 through 20 {
@@ -41,37 +38,55 @@
         width: 90%;
         margin: 0 auto 1.5rem auto;
     }
-}
 
-.event-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    .event-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
 
-    @include medias.for-tablet-portrait {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        @include medias.for-tablet-portrait {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .event-info {
+            flex-grow: 1;
+
+            .event-title {
+                color: #333;
+                font-size: 1.2em;
+                margin: 0;
+            }
+
+            .event-subtitle {
+                color: #666;
+                font-size: 1em;
+                margin: 0;
+            }
+        }
+
+        .event-logos {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            img {
+                max-height: 40px;
+                max-width: 120px;
+                object-fit: contain;
+                margin-left: 0;
+                position: static; // annule le positionnement absolu
+            }
+        }
     }
-}
 
-.event-title {
-    color: #333;
-    font-size: 1.2em;
-    margin: 0;
-}
-
-.event-date {
-    color: #666;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-.event-description {
-    color: #555;
-    font-size: 0.95em;
-    line-height: 1.5;
+    .event-description {
+        color: #555;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
 }
 
 /* --- Styles spécifiques aux types --- */
@@ -158,4 +173,113 @@
 
 :host ::ng-deep ngx-timeline.timeline cdk-virtual-scroll-viewport {
     height: 500px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #f3f4f6; // gris clair
+        color: #333;
+        border: 1px solid #d1d5db;
+        border-radius: 16px;
+
+        padding: 0.35rem 0.75rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            background-color: #2563eb; // bleu
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            transform: translateY(0);
+            background-color: #1d4ed8;
+        }
+    }
+
+    // Variante pour les projets
+    .project-tag {
+        background-color: #e9ffe9; // vert clair
+        border-color: #a7f3d0;
+        color: #1e7e34;
+
+        &:hover {
+            background-color: #16a34a;
+            border-color: #15803d;
+            color: #fff;
+        }
+    }
+}
+
+.school-info,
+.company-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem; // espace entre logo et texte si tu ajoutes un logo
+
+        text-decoration: none;
+        color: #2563eb; // bleu moderne
+        background: #f9fafb; // fond clair
+        border-radius: 8px;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+
+        border: 1px solid #e5e7eb;
+        transition: all 0.2s ease;
+
+        // Logo optionnel
+        img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        &:hover {
+            background: #2563eb;
+            color: #fff;
+            border-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+    }
+}
+.school-logo , .company-logo{
+    max-height: 40px;
+    max-width: 120px;
+    object-fit: contain;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.event-meta {
+    color: #555;
 }

@@ -1,20 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectModel } from '../../interfaces/project.model';
 import { IconPipe } from '../../pipes/icon.pipe';
 import {  RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule, IconPipe, RouterModule, TranslateModule],
+  imports: [CommonModule, IconPipe, RouterModule],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss',
 })
-export class ProjectCardComponent implements OnInit
-{
+export class ProjectCardComponent {
   @Input() project!: ProjectModel;
 
   currentLang = 'fr';
@@ -23,9 +21,6 @@ export class ProjectCardComponent implements OnInit
     this.langService.currentLang$.subscribe((lang) => {
       this.currentLang = lang;
     });
-  }
-  ngOnInit(): void {
-    console.log(this.project);
   }
 
 
