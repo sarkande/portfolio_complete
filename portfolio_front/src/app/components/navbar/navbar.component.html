@@ -20,19 +20,19 @@
     <!-- Vue principale -->
     <ng-container *ngIf="!mobileSubmenu; else submenuView">
       <ng-container *ngFor="let link of links">
-        <!-- Compétences avec dropdown desktop + vue mobile -->
+        <!-- Liens avec dropdown (Skills et Projects) -->
         <div *ngIf="link.hasSubmenu; else normalLink" class="navBar__submenu">
           <a
             [routerLink]="['/', currentLang, link.path]"
             routerLinkActive="selected"
             class="navBar__menu_link"
-            (click)="handleSkillsClick($event)"
+            (click)="handleSubmenuClick($event, link.path)"
           >
             {{ link.name | translate }}
           </a>
 
-          <!-- Dropdown desktop -->
-          <div class="navBar__submenu_list">
+          <!-- Dropdown desktop pour Skills -->
+          <div *ngIf="link.path === 'skills'" class="navBar__submenu_list">
             <div class="navBar__submenu_group">
               <span>{{ 'navbar.skill.technical' | translate }}</span>
               <ng-container *ngFor="let skill of technicalSkills">
@@ -47,6 +47,17 @@
               <ng-container *ngFor="let skill of humanSkills">
                 <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
                   {{ skill.name | translate }}
+                </a>
+              </ng-container>
+            </div>
+          </div>
+
+          <!-- Dropdown desktop pour Projects -->
+          <div *ngIf="link.path === 'projects'" class="navBar__submenu_list">
+            <div class="navBar__submenu_group">
+              <ng-container *ngFor="let project of projects">
+                <a [routerLink]="['/', currentLang, 'projects', project.slug]" (click)="closeMobileMenu()">
+                  {{ project.title }}
                 </a>
               </ng-container>
             </div>
@@ -70,8 +81,19 @@
 
     <!-- Vue sous-menu mobile -->
     <ng-template #submenuView>
+      <!-- Sous-menu Skills -->
       <div class="navBar__submenu_mobile" *ngIf="mobileSubmenu === 'skills'">
         <button class="navBar__back" (click)="mobileSubmenu = null">← {{ 'back' | translate }}</button>
+
+        <div class="navBar__submenu_group">
+          <a 
+            [routerLink]="['/', currentLang, 'skills']" 
+            (click)="closeMobileMenu()"
+            class="navBar__submenu_viewAll"
+          >
+            {{ 'navbar.viewAll' | translate }}
+          </a>
+        </div>
 
         <div class="navBar__submenu_group">
           <span>{{ 'navbar.skill.technical' | translate }}</span>
@@ -86,7 +108,30 @@
           <span>{{ 'navbar.skill.human' | translate }}</span>
           <ng-container *ngFor="let skill of humanSkills">
             <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
-              {{ skill.name }}
+              {{ skill.name | translate }}
+            </a>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Sous-menu Projects -->
+      <div class="navBar__submenu_mobile" *ngIf="mobileSubmenu === 'projects'">
+        <button class="navBar__back" (click)="mobileSubmenu = null">← {{ 'back' | translate }}</button>
+
+        <div class="navBar__submenu_group">
+          <a 
+            [routerLink]="['/', currentLang, 'projects']" 
+            (click)="closeMobileMenu()"
+            class="navBar__submenu_viewAll"
+          >
+            {{ 'navbar.viewAll' | translate }}
+          </a>
+        </div>
+
+        <div class="navBar__submenu_group">
+          <ng-container *ngFor="let project of projects">
+            <a [routerLink]="['/', currentLang, 'projects', project.slug]" (click)="closeMobileMenu()">
+              {{ project.title }}
             </a>
           </ng-container>
         </div>

@@ -25,7 +25,8 @@
     "skill": {
       "technical": "Compétences techniques",
       "human": "Compétences humaines"
-    }
+    },
+    "viewAll": "Voir tout"
   },
   
   "contact-me": "Contactez-moi",

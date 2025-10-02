@@ -1,10 +1,13 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SkillModel } from '../../interfaces/skill-model';
 import { SkillService } from '../../services/skill.service';
+import { ProjectService } from '../../services/project.service';
+import { ProjectModel } from '../../interfaces/project.model';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +16,7 @@ import { SkillService } from '../../services/skill.service';
   styleUrl: './navbar.component.scss',
   standalone: true,
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   currentLang = 'fr';
   mobileMenuOpen = false;
   mobileSubmenu: string | null = null;
@@ -22,7 +25,7 @@ export class NavbarComponent implements OnInit {
     { name: 'navbar.home', path: '' },
     { name: 'navbar.profile', path: 'profile' },
     { name: 'navbar.skills', path: 'skills', hasSubmenu: true },
-    { name: 'navbar.projects', path: 'projects' },
+    { name: 'navbar.projects', path: 'projects', hasSubmenu: true },
     { name: 'navbar.about', path: 'about' },
   ];
 
@@ -36,10 +39,16 @@ export class NavbarComponent implements OnInit {
   technicalSkills: SkillModel[] = [];
   humanSkills: SkillModel[] = [];
 
+  rawProjects: ProjectModel[] = []; // Projets bruts non traduits
+  projects: ProjectModel[] = [];     // Projets traduits
+
+  private destroy$ = new Subject<void>();
+
   constructor(
     private langService: LanguageService,
     private router: Router,
-    private skillService: SkillService
+    private skillService: SkillService,
+    private projectService: ProjectService
   ) {
     this.langService.currentLang$.subscribe((lang) => {
       this.currentLang = lang;
@@ -47,23 +56,59 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Chargement des compétences
     this.skillService.getSkills().subscribe((skills) => {
       this.skills = skills;
       this.technicalSkills = skills.filter((s) => s.isTechnical);
       this.humanSkills = skills.filter((s) => !s.isTechnical);
     });
+
+    // Chargement des projets avec traduction
+    this.projectService.getProjects()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (projects) => {
+          this.rawProjects = projects;
+          this.translateProjects();
+          this.setupLangListener();
+        },
+        error: (err) => console.error('Error loading projects:', err),
+      });
+  }
+
+  /** Traduit tous les projets */
+  private translateProjects() {
+    this.projects = this.rawProjects.map(p => this.translateProject(p));
+  }
+
+  /** Traduit un projet individuel */
+  private translateProject(p: ProjectModel): ProjectModel {
+    return {
+      ...p,
+      title: this.langService.translateContent(p.title),
+      description: this.langService.translateContent(p.description),
+      content: this.langService.translateContent(p.content),
+    };
+  }
+
+  /** Écoute les changements de langue pour retraduire */
+  private setupLangListener() {
+    this.langService.currentLang$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.translateProjects();
+      });
   }
 
   @HostListener('window:resize')
   onResize() {
-    // En repassant desktop, on nettoie l'état mobile
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1300) {
       this.mobileSubmenu = null;
     }
   }
 
   private isMobile(): boolean {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 1300;
   }
 
   switchLang(lang: string) {
@@ -109,15 +154,16 @@ export class NavbarComponent implements OnInit {
     this.mobileSubmenu = null;
   }
 
-  // Clic sur "Compétences"
-  handleSkillsClick(event: MouseEvent) {
+  // Gestion du clic sur les liens avec sous-menu
+  handleSubmenuClick(event: MouseEvent, submenuType: string) {
     if (this.isMobile()) {
-      // Mobile : ouvrir la vue sous-menu et empêcher la navigation
       event.preventDefault();
-      this.mobileSubmenu = 'skills';
-    } else {
-      // Desktop : laisser la navigation vers /skills si l'utilisateur clique.
-      // Le hover gère le dropdown (pas de toggle ici).
+      this.mobileSubmenu = submenuType;
     }
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

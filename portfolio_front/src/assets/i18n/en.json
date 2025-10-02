@@ -24,7 +24,8 @@
     "skill": {
       "technical": "Technical Skills",
       "human": "Soft Skills"
-    }
+    },
+    "viewAll": "View All"
   },
 
   "contact-me": "Contact me",

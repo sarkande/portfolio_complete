@@ -31,6 +31,8 @@ $skill-justify-content: space-evenly;
     // Sélectionner les conteneurs pour chaque type de compétences
     .technical-skills,
     .non-technical-skills {
+        app-skill-card {
+        }
         display: flex;
         flex-wrap: wrap;
         gap: $skill-gap;
@@ -44,6 +46,11 @@ $skill-justify-content: space-evenly;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.3s ease-out forwards;
+
+            @include medias.for-phone {
+                flex: 1 1 100%; // permet à la card de prendre toute la largeur
+                max-width: 100%; // supprime toute limite
+                }
             
             @for $i from 1 through 20 {
                 &:nth-of-type(#{$i}) {
