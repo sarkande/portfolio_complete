@@ -1,5 +1,5 @@
 <!-- skill-card.component.html -->
-<div class="skill-card">
+<div class="skill-card" [routerLink]="['/', currentLang, 'skills', ('slug' + skill.name) | translate]">
     <img
       [src]="skill.icon ? '/assets/' + skill.icon : '/assets/projects/image_not_available.png'"
       alt="{{ skill.name }}"
