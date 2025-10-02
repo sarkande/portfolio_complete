@@ -1,3 +1,5 @@
+@use "abstracts/medias";
+
 // Animation fadeInUp
 @keyframes fadeInUp {
     from {
@@ -25,15 +27,19 @@
     margin-bottom: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(30px);
-    animation: fadeInUp 0.6s ease-out forwards;
 
     // Effet cascade (jusqu’à 20 événements)
     @for $i from 1 through 20 {
         &:nth-child(#{$i}) {
             animation-delay: 0.3s + ($i * 0.1s);
         }
+    }
+
+    @include medias.for-tablet-portrait {
+        width: 90%;
+        margin: 0 auto 1.5rem auto;
     }
 }
 
@@ -42,6 +48,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+
+    @include medias.for-tablet-portrait {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 }
 
 .event-title {
@@ -62,7 +74,7 @@
     line-height: 1.5;
 }
 
-/* --- Styles spécifiques à la position --- */
+/* --- Styles spécifiques aux types --- */
 
 .event-left {
     border-left: 5px solid #007bff;
@@ -70,6 +82,11 @@
 
     .event-title {
         color: #0056b3;
+    }
+
+    @include medias.for-tablet-portrait {
+        border-left: 5px solid #007bff;
+        border-right: none;
     }
 }
 
@@ -80,17 +97,51 @@
     .event-title {
         color: #1e7e34;
     }
+
+    @include medias.for-tablet-portrait {
+        border-left: 5px solid #28a745;
+        border-right: none;
+    }
 }
 
-/* --- Style pour les éléments "en cours" --- */
+/* Expérience */
+.event-experience {
+    border-left: 5px solid #007bff;
+    background-color: #e6f3ff;
 
+    .event-title {
+        color: #0056b3;
+    }
+}
+
+/* Formation */
+.event-formation {
+    border-left: 5px solid #6f42c1;
+    background-color: #f4e9ff;
+
+    .event-title {
+        color: #4b0082;
+    }
+}
+
+/* Certification */
+.event-certification {
+    border-left: 5px solid #17a2b8;
+    background-color: #e0f7fa;
+
+    .event-title {
+        color: #0d6efd;
+    }
+}
+
+/* --- Style pour les éléments "en cours" sans type --- */
 .event-en-cours {
-    border: 2px dashed #ffc107 !important;
-    background-color: #fffde7 !important;
+    border: 2px dashed #ffc107;
+    background-color: #fffde7;
     box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
 
     .event-title {
-        color: #c19200 !important;
+        color: #c19200;
         font-weight: bold;
     }
 
@@ -106,4 +157,5 @@
 }
 
 :host ::ng-deep ngx-timeline.timeline cdk-virtual-scroll-viewport {
-    height: 500px; }
+    height: 500px;
+}

@@ -1,11 +1,16 @@
 <div class="timeline">
-  <img src="/assets/medias/scroll.gif" alt="Timeline Image" class="timeline-image" *ngIf="!isMobile"/>
-  <ngx-timeline class="timeline"
-  [reverseOrder]="true"
-  [events]="events"
-  [eventCustomTemplate]="customEventTemplate"
-  [virtualScroll]="!isMobile"
-
+  <img
+    src="/assets/medias/scroll.gif"
+    alt="Timeline Image"
+    class="timeline-image"
+    *ngIf="!isMobile"
+  />
+  <ngx-timeline
+    class="timeline"
+    [reverseOrder]="true"
+    [events]="events"
+    [eventCustomTemplate]="customEventTemplate"
+    [virtualScroll]="!isMobile"
   ></ngx-timeline>
 </div>
 
@@ -15,17 +20,90 @@
     [ngClass]="{
       'event-left': event.position === 'ON_LEFT',
       'event-right': event.position === 'ON_RIGHT',
+      'event-en-cours': !event.endDate
     }"
   >
     <div class="event-header">
       <h3 class="event-title">{{ event.eventInfo.title }}</h3>
       <span class="event-date">
-        {{ event.eventInfo.timestamp | date:'MMM yyyy' }}
-        @if (event.eventInfo.endDate && (event.eventInfo.timestamp.getTime() !== event.eventInfo.endDate.getTime())) {
-          - {{ event.eventInfo.endDate | date:'MMM yyyy' }}
+        {{ event.eventInfo.timestamp | date: 'MMM yyyy' }}
+        @if (
+          event.eventInfo.endDate &&
+          event.eventInfo.timestamp.getTime() !==
+            event.eventInfo.endDate.getTime()
+        ) {
+          - {{ event.eventInfo.endDate | date: 'MMM yyyy' }}
         }
       </span>
     </div>
+
+    <!-- META -->
+    <div class="event-meta">
+      <ng-container *ngIf="event.eventInfo.company">
+        <img
+          *ngIf="event.eventInfo.company.logo"
+          [src]="'/assets/' + event.eventInfo.company.logo"
+          alt="{{ event.eventInfo.company.name }}"
+          class="company-logo"
+        />
+        <a
+          *ngIf="event.eventInfo.company.url"
+          [href]="event.eventInfo.company.url"
+          target="_blank"
+        >
+          {{ event.eventInfo.company.name }}
+        </a>
+      </ng-container>
+
+      <ng-container *ngIf="event.eventInfo.school">
+        <img
+          *ngIf="event.eventInfo.school.logo"
+          [src]="'/assets/' + event.eventInfo.school.logo"
+          alt="{{ event.eventInfo.school.name }}"
+          class="school-logo"
+        />
+        <a
+          *ngIf="event.eventInfo.school.url"
+          [href]="event.eventInfo.school.url"
+          target="_blank"
+        >
+          {{ event.eventInfo.school.name }}
+        </a>
+      </ng-container>
+
+      <ng-container *ngIf="event.eventInfo.certificationName">
+        <p>
+          <b>{{ event.eventInfo.certificationName }}</b>
+          <span *ngIf="event.eventInfo.issuer"
+            >({{ event.eventInfo.issuer }})</span
+          >
+        </p>
+      </ng-container>
+    </div>
+
+    <!-- DESCRIPTION -->
     <p class="event-description">{{ event.eventInfo.description }}</p>
+
+    <!-- SKILLS -->
+    <div class="tags" *ngIf="event.eventInfo.skills?.length">
+      <a
+        *ngFor="let skill of event.eventInfo.skills"
+        [routerLink]="['/', currentLang, 'skills',('slug'+ skill) | translate]"
+        class="tag"
+      >
+        {{ ('skill.' + skill.split('.').pop()) | translate }}
+      </a>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="tags" *ngIf="event.eventInfo.projects?.length">
+      <a
+        *ngFor="let project of event.eventInfo.projects"
+        [routerLink]="['/', currentLang, 'projects', ('slug'+ project) | translate]"
+        class="tag project-tag"
+      >
+        {{ project | translate }}
+      </a>
+    </div>
   </div>
 </ng-template>

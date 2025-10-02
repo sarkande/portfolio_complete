@@ -40,7 +40,12 @@
     "viewOnline": "View online",
     "associatedSkills": "Associated skills",
     "associatedSkillsIntro": "This project allowed me to utilize and strengthen these skills",
-    "gallery": "Gallery"
+    "gallery": "Gallery",
+    "pure-illusion-erp": "Pure Illusion ERP",
+    "bujinkan": "Bujinkan – Odoo Migration",
+    "gsi-automeca": "GSI Automeca – ERP Deployment",
+    "capture-trame": "Capture Trame",
+    "better-organizer": "BetterOrganizer"
   },
   "home": {
     "title1": "Odoo Specialist",
@@ -118,6 +123,34 @@
     "agility": "Agility",
     "project-management": "Project Management",
     "communication": "Communication",
-    "rigor": "Rigor"
+    "rigor": "Rigor",
+    "odoo": "Odoo",
+    "python": "Python",
+    "docker": "Docker",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "angular": "Angular",
+    "react": "React",
+    "csharp": "C#",
+    "shell": "Shell",
+    "scss": "SCSS",
+    "xml": "XML"
+  },
+  "slugskill": {
+    "agility": "Agilité",
+    "project-management": "Gestion de projet",
+    "communication": "Communication",
+    "rigor": "Rigueur",
+    "odoo": "Odoo",
+    "python": "Python",
+    "docker": "Docker",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "angular": "Angular",
+    "react": "React",
+    "csharp": "C#",
+    "shell": "Shell",
+    "scss": "SCSS",
+    "xml": "XML"
   }
 }

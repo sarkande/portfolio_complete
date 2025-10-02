@@ -7,56 +7,73 @@ import {
 } from '@frxjs/ngx-timeline';
 import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
-
-// Import statique du JSON contenant FR/EN
 import resumeData from '../../../assets/data/resume-events.json';
+import {  RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
-// Étend NgxTimelineEvent pour inclure endDate optionnel
 export interface MyResumeTimelineEvent extends NgxTimelineEvent {
   endDate?: Date;
+  company?: { name: string; logo: string; url?: string };
+  school?: { name: string; logo: string; url?: string };
+  certificationName?: string;
+  issuer?: string;
+  role?: string;
+  status?: string;
+  missions?: string[];
+  skills?: string[];
+  projects?: string[];
 }
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [NgxTimelineModule, CommonModule],
+  imports: [NgxTimelineModule, CommonModule, RouterModule, TranslateModule],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss'],
 })
 export class ResumeComponent implements OnInit, OnDestroy {
   events: MyResumeTimelineEvent[] = [];
   private destroy$ = new Subject<void>();
-  isMobile: boolean = false;
+  isMobile = false;
+  currentLang: 'fr' | 'en' = 'fr';
 
   constructor(private langService: LanguageService) { }
 
   ngOnInit(): void {
     this.langService.currentLang$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((lang: string) => this.mapEvents(lang));
+      .subscribe((lang: string) => {
+        this.currentLang = lang === 'en' ? 'en' : 'fr';
+        this.mapEvents(this.currentLang);
+      });
     this.checkWindow();
   }
 
   @HostListener('window:resize')
   checkWindow() {
-    this.isMobile = window.innerWidth < 900; // ou ta breakpoint mobile
+    this.isMobile = window.innerWidth < 900;
   }
-  /**
-   * Mappe les événements en fonction de la langue ('fr' | 'en').
-   * Si la langue n'est pas reconnue, on retombe sur 'fr'.
-   */
-  private mapEvents(lang: string): void {
-    const selectedLang = (lang === 'en' || lang === 'fr') ? lang : 'fr';
+
+  private mapEvents(lang: 'fr' | 'en'): void {
     this.events = (resumeData as any).events.map((e: any) => ({
       timestamp: new Date(e.timestamp),
+      endDate: e.endDate ? new Date(e.endDate) : undefined,
       itemPosition: NgxTimelineItemPosition[
         e.itemPosition as keyof typeof NgxTimelineItemPosition
       ],
-      title: e.title[selectedLang as 'fr' | 'en'],
-      description: e.description[selectedLang as 'fr' | 'en'],
+      title: e.title[lang],
+      description: e.description[lang],
+      company: e.company,
+      school: e.school,
+      certificationName: e.certificationName,
+      issuer: e.issuer,
+      role: e.role,
+      status: e.status,
+      missions: e.missions,
+      skills: e.skills,
+      projects: e.projects,
     }));
   }
-
 
   ngOnDestroy(): void {
     this.destroy$.next();

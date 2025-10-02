@@ -32,7 +32,7 @@
   "contact-me": "Contactez-moi",
   "project":{
     "role": "Développeur / Référent technique",
-    "title":{
+    "title": {
       "role": "Rôle",
       "period": "Période",
       "skills": "Compétences"
@@ -41,7 +41,12 @@
     "viewOnline": "Voir en ligne",
     "associatedSkills": "Compétences associées",
     "associatedSkillsIntro": "Ce projet m'a permis de mobiliser et renforcer les compétences",
-    "gallery": "Galerie"
+    "gallery": "Galerie",
+    "pure-illusion-erp": "Pure Illusion ERP",
+    "bujinkan": "Bujinkan – Évolution vers Odoo",
+    "gsi-automeca": "GSI Automeca – Déploiement ERP",
+    "capture-trame": "Capture Trame",
+    "better-organizer": "BetterOrganizer"
   },
   
   "home": {
@@ -119,7 +124,42 @@
     "agility": "Agilité",
     "project-management": "Gestion de projet",
     "communication": "Communication",
-    "rigor": "Rigueur"
+    "rigor": "Rigueur",
+    "odoo": "Odoo",
+    "python": "Python",
+    "docker": "Docker",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "angular": "Angular",
+    "react": "React",
+    "csharp": "C#",
+    "shell": "Shell",
+    "scss": "SCSS",
+    "xml": "XML"
+  },
+  "slugskill": {
+    "agility": "Agilité",
+    "project-management": "Gestion de projet",
+    "communication": "Communication",
+    "rigor": "Rigueur",
+    "odoo": "Odoo",
+    "python": "Python",
+    "docker": "Docker",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "angular": "Angular",
+    "react": "React",
+    "csharp": "C#",
+    "shell": "Shell",
+    "scss": "SCSS",
+    "xml": "XML"
+  },
+  "slugproject": {
+    "pure-illusion-erp": "pure-illusion-erp",
+    "bujinkan": "bujinkan",
+    "gsi-automeca": "gsi-automeca",
+    "capture-trame": "capture-trame",
+    "better-organizer": "better-organizer"
   }
     
 }

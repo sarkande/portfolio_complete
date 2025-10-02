@@ -38,3 +38,7 @@ app-root {
   flex-direction: column;
   min-height: 100vh;
 }
+ngx-timeline .event-outer-container {
+  margin: 1px 2.5rem !important;
+  width: calc(100% - 5rem) !important;
+}

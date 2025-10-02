@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectModel } from '../../interfaces/project.model';
 import { IconPipe } from '../../pipes/icon.pipe';
@@ -13,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss',
 })
-export class ProjectCardComponent {
+export class ProjectCardComponent implements OnInit
+{
   @Input() project!: ProjectModel;
 
   currentLang = 'fr';
@@ -22,6 +23,9 @@ export class ProjectCardComponent {
     this.langService.currentLang$.subscribe((lang) => {
       this.currentLang = lang;
     });
+  }
+  ngOnInit(): void {
+    console.log(this.project);
   }
 
 
