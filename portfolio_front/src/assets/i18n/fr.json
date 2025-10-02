@@ -3,6 +3,7 @@
   "title": {
     "home": "Accueil – Allan Perez",
     "skills": "Compétences – Allan Perez",
+    "skillDetail": "Détail de la compétence – Allan Perez",
     "projects": "Projets – Allan Perez",
     "projectDetail": "Détail du projet – Allan Perez",
     "about": "À propos – Allan Perez",
@@ -28,6 +29,19 @@
   },
   
   "contact-me": "Contactez-moi",
+  "project":{
+    "role": "Développeur / Référent technique",
+    "title":{
+      "role": "Rôle",
+      "period": "Période",
+      "skills": "Compétences"
+    },
+    "summary": "Sommaire",
+    "viewOnline": "Voir en ligne",
+    "associatedSkills": "Compétences associées",
+    "associatedSkillsIntro": "Ce projet m'a permis de mobiliser et renforcer les compétences",
+    "gallery": "Galerie"
+  },
   
   "home": {
     "title1": "Spécialiste Odoo",
@@ -98,5 +112,13 @@
     "medium": "Confirmé",
     "high": "Avancé",
     "very_high": "Expert"
+  },
+
+  "skill": {
+    "agility": "Agilité",
+    "project-management": "Gestion de projet",
+    "communication": "Communication",
+    "rigor": "Rigueur"
   }
+    
 }

@@ -217,6 +217,7 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
       ...s,
       name: s.name,
       content: this.langService.translateContent(s.content),
+      description: this.langService.translateContent(s.description),
     }));
   }
 

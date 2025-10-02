@@ -6,8 +6,8 @@
       class="skill-image"
     />
     <div class="skill-info">
-      <h3 class="skill-name">{{ skill.name }}</h3>
-      <p class="description">{{ skill.content }}</p>
+      <h3 class="skill-name">{{ skill.name | translate }}</h3>
+      <p class="description">{{ skill.description | translate }}</p>
       <div class="level">
         <span class="level-value">
           <app-star-rating [priority]="skill.level" [readonly]="true"></app-star-rating>

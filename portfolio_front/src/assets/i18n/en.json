@@ -2,6 +2,7 @@
   "title": {
     "home": "Home – Allan Perez",
     "skills": "Skills – Allan Perez",
+    "skillDetail": "Skill Details – Allan Perez",
     "projects": "Projects – Allan Perez",
     "projectDetail": "Project Details – Allan Perez",
     "about": "About – Allan Perez",
@@ -27,7 +28,19 @@
   },
 
   "contact-me": "Contact me",
-
+  "project": {
+    "role": "Developer / Technical Lead",
+    "title": {
+      "role": "Role",
+      "period": "Period",
+      "skills": "Skills"
+    },
+    "summary": "Summary",
+    "viewOnline": "View online",
+    "associatedSkills": "Associated skills",
+    "associatedSkillsIntro": "This project allowed me to utilize and strengthen these skills",
+    "gallery": "Gallery"
+  },
   "home": {
     "title1": "Odoo Specialist",
     "title2": "Creative Developer",
@@ -98,5 +111,12 @@
     "medium": "Confirmed",
     "high": "Advanced",
     "very_high": "Expert"
+  },
+
+  "skill": {
+    "agility": "Agility",
+    "project-management": "Project Management",
+    "communication": "Communication",
+    "rigor": "Rigor"
   }
 }

@@ -46,7 +46,7 @@
               <span>{{ 'navbar.skill.human' | translate }}</span>
               <ng-container *ngFor="let skill of humanSkills">
                 <a [routerLink]="['/', currentLang, 'skills', skill.name]" (click)="closeMobileMenu()">
-                  {{ skill.name }}
+                  {{ skill.name | translate }}
                 </a>
               </ng-container>
             </div>

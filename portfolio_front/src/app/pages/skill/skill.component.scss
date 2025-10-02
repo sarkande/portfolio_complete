@@ -290,6 +290,54 @@ $padding-post-horizontal: 20px;
             }
         }
     }
+
+    /* Projets liés en bas */
+    .related-projects {
+        margin-top: 3rem;
+        padding: 1.5rem;
+        padding-top: 0px;
+        background: $color-pop-white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out 0.8s forwards;
+
+        h2 {
+            margin-bottom: 1rem;
+            font-size: $font-xl;
+            font-weight: 600;
+            color: $color-dark;
+            text-align: left;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+
+            .tag {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+                background: #edf2f7;
+                color: #2c5282;
+                font-size: 0.9rem;
+                padding: 0.4rem 0.9rem;
+                border-radius: 9999px;
+                font-weight: 600;
+                text-decoration: none;
+                transition:
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(45, 55, 72, 0.15);
+                }
+            }
+        }
+    }
 }
 
 .spinner-container {

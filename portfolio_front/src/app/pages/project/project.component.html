@@ -23,22 +23,16 @@
       </div>
       <h1>{{ project.title }}</h1>
     </header>
-    <!-- Sommaire en début -->
 
     <!-- Métadonnées du projet -->
-    <!-- project-meta.component.html -->
     <section class="project-meta">
-      <!-- <div class="meta-item">
-        <span class="label">Catégorie</span>
-        <span class="value">{{ project.category }}</span>
-      </div> -->
       <div class="meta-item">
-        <span class="label">Rôle</span>
-        <span class="value">{{ project.role }}</span>
+        <span class="label">{{ 'project.title.role' | translate }}</span>
+        <span class="value">{{ project.role | translate}}</span>
       </div>
-      
+
       <div class="meta-item">
-        <span class="label">Période</span>
+        <span class="label">{{ 'project.title.period' | translate }}</span>
         <span class="value">
           {{ project.startDate | date : "MMM yyyy" }}
           <span class="dash">–</span>
@@ -50,9 +44,8 @@
         </span>
       </div>
 
-
       <div class="meta-item techno">
-        <span class="label">Compétences</span>
+        <span class="label">{{ 'project.title.skills' | translate }}</span>
         <div class="tags">
           <span
             *ngFor="let skill of project.skills"
@@ -62,7 +55,7 @@
             matTooltipPosition="above"
             [routerLink]="['/', currentLang, 'skills', skill.name]"
           >
-            {{ skill.name }}
+            {{ skill.name | translate }}
           </span>
         </div>
       </div>
@@ -79,8 +72,9 @@
       </div>
     </section>
 
+    <!-- Sommaire -->
     <nav *ngIf="!isLoading && project && toc.length" class="toc">
-      <h2>Sommaire</h2>
+      <h2>{{ 'project.summary' | translate }}</h2>
       <ul>
         <li
           *ngFor="let item of toc"
@@ -90,7 +84,8 @@
         </li>
       </ul>
     </nav>
-    <!-- Galerie d’images -->
+
+    <!-- Galerie -->
     <div *ngIf="project.gallery?.length" class="post-gallery">
       <h3 id="Galerie">Galerie</h3>
       <app-carousel [images]="project.gallery"></app-carousel>
@@ -101,6 +96,27 @@
       <markdown [data]="project.content"></markdown>
     </section>
 
+    <!-- Bloc compétences associées -->
+    <section class="project-skills" *ngIf="project.skills?.length">
+      <h2>{{ 'project.associatedSkills' | translate }}</h2>
+      <p class="intro">
+        {{ 'project.associatedSkillsIntro' | translate }}
+      </p>
+      <div class="tags">
+        <span
+          *ngFor="let skill of project.skills"
+          class="tag"
+          [style.--tag-hue]="getTagHue(skill.id)"
+          matTooltip="{{ skill.description | translate }}"
+          matTooltipPosition="above"
+          [routerLink]="['/', currentLang, 'skills', skill.name]"
+        >
+          {{ skill.name | translate }}
+        </span>
+      </div>
+    </section>
+
+    <!-- Navigation prev/next -->
     <header class="post-header">
       <div class="nav-links">
         <a

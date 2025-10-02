@@ -4,6 +4,7 @@
   </div>
 
   <article *ngIf="!isLoading && skill" class="post">
+    <!-- Header -->
     <header class="post-header">
       <div class="nav-links">
         <a
@@ -23,22 +24,32 @@
       <p class="intro" *ngIf="skill.description">{{ skill.description }}</p>
     </header>
 
+    <!-- Métadonnées -->
     <section class="skill-meta">
       <div class="meta-item">
         <span class="label">Type</span>
-        <span class="value">{{ skill.isTechnical ? 'Technique' : 'Transverse' }}</span>
+        <span class="value">{{
+          skill.isTechnical ? "Technique" : "Transverse"
+        }}</span>
       </div>
       <div class="meta-item">
         <span class="label">Niveau</span>
         <span class="value rating">
-          <app-star-rating [priority]="skill.level" [readonly]="true"></app-star-rating>
+          <app-star-rating
+            [priority]="skill.level"
+            [readonly]="true"
+          ></app-star-rating>
         </span>
       </div>
       <div class="meta-item projects" *ngIf="skill.projects?.length">
         <span class="label">Projets liés</span>
         <div class="tags">
           <a
-            *ngFor="let project of skill.projects; let idx = index; trackBy: trackByProject"
+            *ngFor="
+              let project of skill.projects;
+              let idx = index;
+              trackBy: trackByProject
+            "
             [routerLink]="['/', currentLang, 'projects', project.slug]"
             class="tag"
             [ngStyle]="{
@@ -52,19 +63,47 @@
       </div>
     </section>
 
+    <!-- Table des matières -->
     <nav *ngIf="toc.length" class="toc">
       <h2>Sommaire</h2>
       <ul>
-        <li *ngFor="let item of toc" [style.paddingLeft.px]="(item.level - 2) * 10">
+        <li
+          *ngFor="let item of toc"
+          [style.paddingLeft.px]="(item.level - 2) * 10"
+        >
           <a [routerLink]="[]" [fragment]="item.slug">{{ item.text }}</a>
         </li>
       </ul>
     </nav>
 
+    <!-- Contenu principal -->
     <section class="post-content" *ngIf="skill.content">
       <markdown [data]="skill.content"></markdown>
     </section>
 
+    <!-- Projets liés en bas -->
+    <section class="related-projects" *ngIf="skill.projects?.length">
+      <h2>Projets liés</h2>
+      <div class="tags">
+        <a
+          *ngFor="
+            let project of skill.projects;
+            let idx = index;
+            trackBy: trackByProject
+          "
+          [routerLink]="['/', currentLang, 'projects', project.slug]"
+          class="tag"
+          [ngStyle]="{
+            'background-color': getTagBgColor(idx + 1),
+            color: getTagTextColor(idx + 1)
+          }"
+        >
+          {{ project.title }}
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer nav -->
     <header class="post-header">
       <div class="nav-links">
         <a
