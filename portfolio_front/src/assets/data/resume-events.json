@@ -19,11 +19,7 @@
         "url": "https://iscod.fr"
       },
       "status": "Alternance",
-      "skills": [
-        "skill.python",
-        "skill.docker",
-        "skill.project-management"
-      ],
+      "skills": ["skill.python", "skill.docker", "skill.project-management"],
       "projects": ["project.pure-illusion-erp"]
     },
     {
@@ -70,7 +66,13 @@
         "logo": "logos/bujinkan.png",
         "url": "https://bujinkan-kanji.fr"
       },
-      "skills": ["skill.docker", "skill.communication", "skill.agility", "skill.rigor", "skill.shell"],
+      "skills": [
+        "skill.docker",
+        "skill.communication",
+        "skill.agility",
+        "skill.rigor",
+        "skill.shell"
+      ],
       "projects": ["project.bujinkan"]
     },
     {
@@ -89,7 +91,16 @@
         "logo": "logos/gsi.png",
         "url": "https://gsi-automeca.fr"
       },
-      "skills": ["skill.docker", "skill.python", "skill.javascript", "skill.communication", "skill.agility", "skill.shell", "skill.react", "skill.rigor"],
+      "skills": [
+        "skill.docker",
+        "skill.python",
+        "skill.javascript",
+        "skill.communication",
+        "skill.agility",
+        "skill.shell",
+        "skill.react",
+        "skill.rigor"
+      ],
       "projects": ["project.gsi-automeca"]
     },
     {
@@ -116,11 +127,7 @@
         "Support clients",
         "Déploiements Docker"
       ],
-      "skills": [
-        "skill.python",
-        "skill.docker",
-        "skill.javascript"
-      ],
+      "skills": ["skill.python", "skill.docker", "skill.javascript"],
       "projects": ["project.pure-illusion-erp"]
     },
     {
@@ -188,13 +195,13 @@
       "itemPosition": "ON_RIGHT",
       "timestamp": "2014-09-01T00:00:00.000Z",
       "endDate": "2016-08-31T00:00:00.000Z",
-      "title": {
+      "title": {g
         "fr": "DUT Informatique – IUT Savoie Mont Blanc",
         "en": "DUT Computer Science – IUT Savoie Mont Blanc"
       },
       "description": {
-        "fr": "Compétences : algo, BD, web, UNIX, archi matérielle.",
-        "en": "Skills: algorithms, DB, web, UNIX, hardware."
+        "fr": "2 ans de formation pratique en développement logiciel, bases de données, réseaux et gestion de projet.",
+        "en": "2 years of practical training in software development, databases, networks, and project management."
       },
       "school": {
         "name": "IUT Savoie Mont Blanc",
