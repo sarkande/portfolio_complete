@@ -1,44 +1,45 @@
 @use "abstracts/medias";
 @use "sass:color";
-// Variables  
-$cf-bg : #ffffff;
-$cf-shadow : rgba(0, 0, 0, 0.05);
-$cf-shadow-hover : rgba(0, 0, 0, 0.08);
-$cf-radius : 8px;
-$cf-padding : 2rem;
-$cf-padding-sm : 1rem;
-$cf-max-width : 600px;
-$cf-offset-top : 50px;
 
-$text-color : #2d3748;
-$text-color-muted : #555555;
-$text-color-label : #4a5568;
-$text-color-small : #718096;
-$placeholder-color : #a0aec0;
+// Variables
+$cf-bg: #ffffff;
+$cf-shadow: rgba(0, 0, 0, 0.05);
+$cf-shadow-hover: rgba(0, 0, 0, 0.08);
+$cf-radius: 8px;
+$cf-padding: 2rem;
+$cf-padding-sm: 1rem;
+$cf-max-width: 600px;
+$cf-offset-top: 50px;
 
-$input-bg : #fafafa;
-$input-border : #cccccc;
-$input-focus-border : #3182ce;
-$input-shadow : rgba(0, 0, 0, 0.08);
+$text-color: #2d3748;
+$text-color-muted: #555555;
+$text-color-label: #4a5568;
+$text-color-small: #718096;
+$placeholder-color: #a0aec0;
 
-$btn-bg : #3182ce;
-$btn-bg-hover : #2b6cb0;
-$btn-loading-bg : #6c757d;
-$btn-success-bg : #38a169;
-$btn-error-bg : #e53e3e;
-$btn-text-color : #ffffff;
+$input-bg: #fafafa;
+$input-border: #cccccc;
+$input-focus-border: #3182ce;
+$input-shadow: rgba(0, 0, 0, 0.08);
 
-$card-bg : #ffffff;
-$card-shadow : rgba(0, 0, 0, 0.08);
-$card-shadow-hover : rgba(0, 0, 0, 0.12);
-$card-radius : 0.5rem;
-$card-padding : 1.5rem;
+$btn-bg: #3182ce;
+$btn-bg-hover: #2b6cb0;
+$btn-loading-bg: #6c757d;
+$btn-success-bg: #38a169;
+$btn-error-bg: #e53e3e;
+$btn-text-color: #ffffff;
 
-$font-size-h1 : 2rem;
-$font-size-base : 1rem;
-$font-size-small : 0.875rem;
-$font-size-h2 : 1.25rem;
-$line-height-base : 1.4;
+$card-bg: #ffffff;
+$card-shadow: rgba(0, 0, 0, 0.08);
+$card-shadow-hover: rgba(0, 0, 0, 0.12);
+$card-radius: 0.5rem;
+$card-padding: 1.5rem;
+
+$font-size-h1: 2rem;
+$font-size-base: 1rem;
+$font-size-small: 0.875rem;
+$font-size-h2: 1.25rem;
+$line-height-base: 1.4;
 
 // Keyframes
 @keyframes fadeInUp {
@@ -83,7 +84,7 @@ $line-height-base : 1.4;
     }
 }
 
-// 1) box-sizing global
+// Structure
 .contact-form,
 .contact-form *,
 .contact-form *::before,
@@ -104,8 +105,6 @@ $line-height-base : 1.4;
     top: $cf-offset-top;
     box-shadow: 0 4px 20px $cf-shadow;
     transition: transform 0.3s ease;
-
-    // ✨ Animation à l’apparition
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
 
@@ -142,7 +141,7 @@ $line-height-base : 1.4;
     .field {
         position: relative;
         margin: 0 0 1.5rem;
-        opacity: 0;
+        opacity: 1;
         animation: fadeInUp 0.6s ease-out forwards;
 
         @for $i from 1 through 10 {
@@ -177,7 +176,10 @@ $line-height-base : 1.4;
             &:focus {
                 outline: none;
                 border-color: $input-focus-border;
-                box-shadow: 0 0 0 3px rgba(color.channel($input-focus-border, "red", $space: rgb), color.channel($input-focus-border, "green", $space: rgb), color.channel($input-focus-border, "blue", $space: rgb), 0.2);
+                box-shadow: 0 0 0 3px rgba(color.channel($input-focus-border, "red", $space: rgb),
+                        color.channel($input-focus-border, "green", $space: rgb),
+                        color.channel($input-focus-border, "blue", $space: rgb),
+                        0.2);
                 background: $cf-bg;
                 transform: translateY(-2px);
             }
@@ -200,7 +202,10 @@ $line-height-base : 1.4;
             input,
             textarea {
                 border-color: $btn-error-bg !important;
-                box-shadow: 0 0 0 3px rgba(color.channel($btn-error-bg, "red", $space: rgb), color.channel($btn-error-bg, "green", $space: rgb), color.channel($btn-error-bg, "blue", $space: rgb), 0.2) !important;
+                box-shadow: 0 0 0 3px rgba(color.channel($btn-error-bg, "red", $space: rgb),
+                        color.channel($btn-error-bg, "green", $space: rgb),
+                        color.channel($btn-error-bg, "blue", $space: rgb),
+                        0.2) !important;
             }
         }
     }
@@ -269,9 +274,25 @@ $line-height-base : 1.4;
             animation: spin 1s linear infinite;
         }
     }
+
+    .error-message {
+        margin-top: 1rem;
+        text-align: center;
+        color: $btn-error-bg;
+        font-weight: 500;
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    .success-message {
+        margin-top: 1rem;
+        text-align: center;
+        color: $btn-success-bg;
+        font-weight: 500;
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
 }
 
-// contact cards
+// Contact cards
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -291,7 +312,7 @@ $line-height-base : 1.4;
         text-align: center;
         box-shadow: 0 2px 6px $card-shadow;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        opacity: 0;
+        opacity: 1;
         animation: fadeInUp 0.6s ease-out forwards;
 
         @for $i from 1 through 10 {

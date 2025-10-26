@@ -96,7 +96,8 @@
     "message_length": "Message must be at least 10 characters long.",
     "phone_invalid": "Please enter a valid phone number.",
     "recaptcha": "Please check the reCAPTCHA box.",
-    "invalid_email": "Please enter a valid email address."
+    "invalid_email": "Please enter a valid email address.",
+    "form_invalid": "The form contains errors. Please correct them before submitting."
   },
 
   "legalNotice": {
