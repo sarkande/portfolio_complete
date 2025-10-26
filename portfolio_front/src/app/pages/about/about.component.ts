@@ -1,15 +1,7 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {
-  RecaptchaModule,
-  RecaptchaFormsModule
-} from 'ng-recaptcha';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -49,7 +41,12 @@ export class AboutComponent {
   }
 
   onCaptchaResolved(token: string | null): void {
-    this.contactForm.get('recaptcha')!.setValue(token || '');
+    if (!token) {
+      this.contactForm.get('recaptcha')?.setErrors({ required: true });
+    } else {
+      this.contactForm.get('recaptcha')?.setValue(token);
+      this.contactForm.get('recaptcha')?.setErrors(null);
+    }
   }
 
   handleSubmit(): void {
@@ -57,7 +54,6 @@ export class AboutComponent {
     this.contactForm.markAllAsTouched();
 
     if (this.contactForm.invalid) {
-      this.result = false;
       return;
     }
 
