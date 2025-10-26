@@ -7,14 +7,14 @@
         <h2 #titleEl></h2>
         <p class="header__description">
           {{ "home.description" | translate }}
-  
+
         </p>
       </div>
       <button
         class="btn btn-primary"
         [routerLink]="['/', currentLang, 'about']"
       >
-        {{ "about" | translate }}
+        {{ "contact-me" | translate }}
       </button>
       <a
         class="btn btn-secondary"
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="skills-section">
-        <h1>{{ "home.top-skills" | translate }}</h1>    
+        <h1>{{ "home.top-skills" | translate }}</h1>
             <div class="skills-about">
           <button class="btn btn-primary" (click)="goToSkill()">
             {{ "home.see-all-skills" | translate }}

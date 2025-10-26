@@ -127,6 +127,7 @@
       "type": "certification",
       "itemPosition": "ON_RIGHT",
       "timestamp": "2022-03-01T00:00:00.000Z",
+      "endDate": "2023-03-01T00:00:00.000Z",
       "title": {
         "fr": "Certification Développeur React JS – OpenClassrooms",
         "en": "React JS Developer Certification – OpenClassrooms"
