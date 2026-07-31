@@ -48,7 +48,11 @@
     "bujinkan": "Bujinkan – Odoo Migration",
     "gsi-automeca": "GSI Automeca – ERP Deployment",
     "capture-trame": "Capture Trame",
-    "better-organizer": "BetterOrganizer"
+    "better-organizer": "BetterOrganizer",
+    "formation": {
+      "title": "Training projects (OpenClassrooms)",
+      "intro": "Projects built as part of my OpenClassrooms path: a brief from a fictional client and a defense in front of a professional review board each time."
+    }
   },
   "home": {
     "title1": "Odoo Specialist",

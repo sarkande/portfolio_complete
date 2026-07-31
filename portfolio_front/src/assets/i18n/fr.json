@@ -49,7 +49,11 @@
     "bujinkan": "Bujinkan – Évolution vers Odoo",
     "gsi-automeca": "GSI Automeca – Déploiement ERP",
     "capture-trame": "Capture Trame",
-    "better-organizer": "BetterOrganizer"
+    "better-organizer": "BetterOrganizer",
+    "formation": {
+      "title": "Projets de formation (OpenClassrooms)",
+      "intro": "Projets réalisés dans le cadre de mon parcours OpenClassrooms : cahier des charges fourni par un client fictif et soutenance devant un jury professionnel à chaque fois."
+    }
   },
   
   "home": {

@@ -43,3 +43,66 @@ $project-transition-duration: 0.3s;
     }
 }
 
+.formation-projects {
+    padding: 0 10% 100px 10%;
+
+    @include medias.for-tablet-portrait {
+        padding: 0 5% 60px 5%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__intro {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: white;
+        cursor: pointer;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        text-align: left;
+        font: inherit;
+
+        &:hover {
+            border-color: #999;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    &__item-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    &__item-tech {
+        display: inline-block;
+        margin-right: 0.4rem;
+        font-size: 0.75rem;
+        color: #777;
+
+        &:not(:last-child)::after {
+            content: '·';
+            margin-left: 0.4rem;
+        }
+    }
+}
+

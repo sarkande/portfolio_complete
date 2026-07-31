@@ -7,11 +7,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SkillModel } from '../../interfaces/skill-model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectCardComponent, CommonModule],
+  imports: [ProjectCardComponent, CommonModule, TranslateModule],
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss'],
 })
@@ -128,6 +129,14 @@ export class ProjectListComponent implements OnInit, OnDestroy {
       const matchYear = startY <= this.currentEndYear && endY >= this.currentStartYear;
       return matchSearch && matchTags && matchGit && matchObs && matchYear;
     });
+  }
+
+  get mainProjects(): ProjectModel[] {
+    return this.filtered.filter((p) => p.category !== 'Formation');
+  }
+
+  get formationProjects(): ProjectModel[] {
+    return this.filtered.filter((p) => p.category === 'Formation');
   }
 
   get allSkills(): SkillModel[] {

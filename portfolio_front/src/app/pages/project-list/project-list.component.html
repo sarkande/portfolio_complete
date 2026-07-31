@@ -8,8 +8,24 @@
 
 <div class="project-list" [ngClass]="{'collapsed': isSearchbarCollapsed}">
   <app-project-card
-    *ngFor="let project of filtered"
+    *ngFor="let project of mainProjects"
     [project]="project"
     (click)="handleClickProject(project.slug)"
   ></app-project-card>
 </div>
+
+<section class="formation-projects" *ngIf="formationProjects.length">
+  <h2>{{ 'project.formation.title' | translate }}</h2>
+  <p class="formation-projects__intro">{{ 'project.formation.intro' | translate }}</p>
+  <div class="formation-projects__list">
+    <button
+      type="button"
+      class="formation-projects__item"
+      *ngFor="let project of formationProjects"
+      (click)="handleClickProject(project.slug)"
+    >
+      <span class="formation-projects__item-title">{{ project.title }}</span>
+      <span class="formation-projects__item-tech" *ngFor="let tech of project.technologies">{{ tech }}</span>
+    </button>
+  </div>
+</section>
