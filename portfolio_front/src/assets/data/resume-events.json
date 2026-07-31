@@ -37,12 +37,12 @@
       "endDate": "2025-11-01T00:00:00.000Z",
       "itemPosition": "ON_RIGHT",
       "title": {
-        "fr": "Mastère Expert en Ingénierie Logicielle – ISCOD (Titre RNCP Niveau 7, Bac+5)",
-        "en": "Master's in Software Engineering – ISCOD (RNCP Level 7, Bac+5 equivalent)"
+        "fr": "Mastère Expert en Ingénierie Logicielle – ISCOD (Bac+5 / RNCP Niveau 7)",
+        "en": "Master's in Software Engineering – ISCOD (Bac+5 / RNCP Level 7)"
       },
       "description": {
-        "fr": "Diplôme obtenu. Titre RNCP niveau 7 (Bac+5) : full-stack, architecture logicielle, DevOps, agilité, sécurité et gestion de projet. Réalisée en alternance chez Pure Illusion.",
-        "en": "Degree awarded. RNCP level 7 (Bac+5 equivalent): full-stack, software architecture, DevOps, agile, security, and project management. Completed as an apprentice at Pure Illusion."
+        "fr": "Diplôme obtenu. Bac+5 / RNCP niveau 7 : full-stack, architecture logicielle, DevOps, agilité, sécurité et gestion de projet. Réalisée en alternance chez Pure Illusion.",
+        "en": "Degree awarded. Bac+5 / RNCP level 7: full-stack, software architecture, DevOps, agile, security, and project management. Completed as an apprentice at Pure Illusion."
       },
       "school": {
         "name": "ISCOD",
