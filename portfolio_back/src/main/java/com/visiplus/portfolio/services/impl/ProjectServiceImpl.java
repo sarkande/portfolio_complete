@@ -48,7 +48,7 @@ public class ProjectServiceImpl implements ProjectService {
                                     Skill s = new Skill();
                                     s.setName(incoming.getName());
                                     s.setLevel(incoming.getLevel());
-                                    return s;
+                                    return skillRepository.save(s);
                                 })
                 )
                 .collect(Collectors.toSet());
@@ -86,7 +86,7 @@ public class ProjectServiceImpl implements ProjectService {
                                     Skill s = new Skill();
                                     s.setName(incoming.getName());
                                     s.setLevel(incoming.getLevel());
-                                    return s;
+                                    return skillRepository.save(s);
                                 })
                 )
                 .collect(Collectors.toSet());
