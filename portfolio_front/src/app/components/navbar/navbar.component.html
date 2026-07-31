@@ -1,8 +1,38 @@
 <div class="navBar">
   <!-- Langues -->
   <div class="navBar__lang">
-    <button (click)="switchLang('fr')" [disabled]="currentLang === 'fr'">🇫🇷</button>
-    <button (click)="switchLang('en')" [disabled]="currentLang === 'en'">🇬🇧</button>
+    <button
+      type="button"
+      class="navBar__lang_current"
+      (click)="toggleLangMenu($event)"
+      [attr.aria-expanded]="langMenuOpen"
+      aria-haspopup="listbox"
+    >
+      <img
+        class="navBar__lang_flag"
+        [src]="'/assets/icons/flags/' + currentLangOption.flag + '.svg'"
+        [alt]="currentLangOption.label"
+        width="20"
+        height="14"
+      />
+      <span class="navBar__lang_code">{{ currentLangOption.code | uppercase }}</span>
+      <span class="navBar__lang_chevron" [class.navBar__lang_chevron--open]="langMenuOpen">▾</span>
+    </button>
+
+    <ul class="navBar__lang_list" *ngIf="langMenuOpen" role="listbox">
+      <li *ngFor="let lang of availableLangs">
+        <button
+          type="button"
+          role="option"
+          [attr.aria-selected]="currentLang === lang.code"
+          [disabled]="currentLang === lang.code"
+          (click)="switchLang(lang.code); closeLangMenu()"
+        >
+          <img class="navBar__lang_flag" [src]="'/assets/icons/flags/' + lang.flag + '.svg'" [alt]="lang.label" width="20" height="14" />
+          <span>{{ lang.label }}</span>
+        </button>
+      </li>
+    </ul>
   </div>
 
   <!-- Burger -->

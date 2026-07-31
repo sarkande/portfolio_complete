@@ -33,22 +33,90 @@
     }
 
     .navBar__lang {
-        button {
+        position: relative;
+        margin-left: 8px;
+
+        &_current {
+            display: flex;
+            align-items: center;
+            gap: 6px;
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 24px;
-            padding: 4px;
-            margin-left: 8px;
+            color: #fff;
+            padding: 4px 6px;
             outline: none;
 
-            &:disabled {
-                cursor: default;
-                opacity: 0.6;
+            &:hover {
+                color: teal;
+            }
+        }
+
+        &_flag {
+            display: block;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        &_code {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        &_chevron {
+            font-size: 0.7rem;
+            transition: transform 0.15s ease;
+
+            &--open {
+                transform: rotate(180deg);
+            }
+        }
+
+        &_list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1A2324;
+            border: 1px solid #333;
+            width: 160px;
+            z-index: 2000;
+            box-sizing: border-box;
+
+            li {
+                border-bottom: 1px solid #333;
+
+                &:last-child {
+                    border-bottom: none;
+                }
             }
 
-            &:not(:disabled):hover {
-                color: teal;
+            button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                box-sizing: border-box;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #fff;
+                padding: 8px 10px;
+                text-align: left;
+                font-size: 0.9rem;
+
+                &:disabled {
+                    cursor: default;
+                    color: teal;
+                }
+
+                &:not(:disabled):hover {
+                    background-color: #222;
+                    color: teal;
+                }
             }
         }
     }

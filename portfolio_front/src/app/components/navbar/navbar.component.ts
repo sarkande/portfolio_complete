@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -20,6 +20,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
   currentLang = 'fr';
   mobileMenuOpen = false;
   mobileSubmenu: string | null = null;
+
+  availableLangs = [
+    { code: 'fr', flag: 'fr', label: 'Français' },
+    { code: 'en', flag: 'gb', label: 'English' },
+  ];
+  langMenuOpen = false;
+
+  get currentLangOption() {
+    return this.availableLangs.find((l) => l.code === this.currentLang) ?? this.availableLangs[0];
+  }
 
   links = [
     { name: 'navbar.home', path: '' },
@@ -48,7 +58,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private langService: LanguageService,
     private router: Router,
     private skillService: SkillService,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private elementRef: ElementRef<HTMLElement>
   ) {
     this.langService.currentLang$.subscribe((lang) => {
       this.currentLang = lang;
@@ -105,6 +116,22 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (window.innerWidth > 1300) {
       this.mobileSubmenu = null;
     }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (this.langMenuOpen && !this.elementRef.nativeElement.contains(event.target as Node)) {
+      this.langMenuOpen = false;
+    }
+  }
+
+  toggleLangMenu(event: MouseEvent) {
+    event.stopPropagation();
+    this.langMenuOpen = !this.langMenuOpen;
+  }
+
+  closeLangMenu() {
+    this.langMenuOpen = false;
   }
 
   private isMobile(): boolean {

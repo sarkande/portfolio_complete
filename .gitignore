@@ -1,0 +1,11 @@
+# Frontend
+portfolio_front/node_modules/
+portfolio_front/.angular/
+portfolio_front/dist/
+portfolio_front/.vscode/
+
+# Backend
+portfolio_back/target/
+
+# OS
+.DS_Store
