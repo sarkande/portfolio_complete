@@ -110,8 +110,8 @@
       "type": "projet",
       "timestamp": "2024-05-01T00:00:00.000Z",
       "title": {
-        "fr": "Création du site GSI Automeca – Angular, Odoo",
-        "en": "GSI Automeca Website – Angular, Odoo"
+        "fr": "Création du site GSI Automeca – React, puis Odoo",
+        "en": "GSI Automeca Website – React, then Odoo"
       },
       "description": {
         "fr": "Site vitrine Angular pour un garage auto, puis intégration Odoo : rendez-vous en ligne, responsive, interface admin.",
