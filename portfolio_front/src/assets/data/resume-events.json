@@ -10,8 +10,8 @@
         "en": "Lead Developer Odoo / Python / DevOps – Pure Illusion"
       },
       "description": {
-        "fr": "Responsable technique d'une équipe de 3 développeurs (2 encadrés directement). Mise en place des pratiques qualité et pilotage de plus de 20 projets Odoo, dont plusieurs migrations pour des clients à fort enjeu.",
-        "en": "Technical lead for a team of 3 developers (2 direct reports). Introduced quality practices and manages 20+ Odoo projects, including several migrations for high-stakes clients."
+        "fr": "Gestion d'une équipe de 3 développeurs. Mise en place des pratiques qualité et pilotage de plus de 20 projets Odoo, dont plusieurs migrations pour des clients à fort enjeu.",
+        "en": "Managing a team of 3 developers. Introduced quality practices and manages 20+ Odoo projects, including several migrations for high-stakes clients."
       },
       "company": {
         "name": "Pure Illusion",
@@ -21,7 +21,7 @@
       "role": "Lead Developer Odoo / Python / DevOps",
       "status": "CDI",
       "missions": [
-        "Encadrement et montée en compétence de 2 développeurs au sein d'une équipe de 3",
+        "Gestion d'une équipe de 3 développeurs",
         "Mise en place de la revue de code et des pratiques qualité",
         "Conception et déploiement de pipelines CI/CD",
         "Pilotage de plus de 20 projets Odoo, dont des migrations pour des clients à fort enjeu"
