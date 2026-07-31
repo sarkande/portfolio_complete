@@ -60,6 +60,14 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "preprod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.preprod.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -72,6 +80,9 @@
             },
             "development": {
               "buildTarget": "portfolio:build:development"
+            },
+            "preprod": {
+              "buildTarget": "portfolio:build:preprod"
             }
           },
           "defaultConfiguration": "development"
