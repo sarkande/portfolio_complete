@@ -82,7 +82,11 @@
   },
 
   "blog": {
-    "empty": "No articles yet."
+    "empty": "No articles yet.",
+    "eyebrow": "Technical blog",
+    "pageTitle": "Field notes",
+    "pageIntro": "Technical decisions, lessons learned, and doubts about real projects — no tutorials, just what actually happened.",
+    "latest": "Latest article"
   },
 
   "contact": {

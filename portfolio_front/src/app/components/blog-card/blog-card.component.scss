@@ -1,15 +1,17 @@
 @use "abstracts/medias";
 
+$accent: #b5651d;
+
 .blog-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid #eee;
+    border-radius: 10px;
     overflow: hidden;
-    height: 480px;
-    width: 360px;
+    height: 460px;
+    width: 340px;
     background: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 
@@ -20,8 +22,12 @@
     }
 
     &:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         transform: translateY(-2px);
+
+        h3 {
+            color: $accent;
+        }
     }
 
     .blog-image {
@@ -39,6 +45,7 @@
         h3 {
             margin: 0 0 0.75rem 0;
             font-size: 1.3rem;
+            transition: color 0.2s ease;
         }
 
         .excerpt {
@@ -55,11 +62,12 @@
             gap: 0.5rem;
 
             .tag {
-                background: #f0f0f0;
-                color: #333;
-                padding: 0.4rem 0.7rem;
-                border-radius: 4px;
-                font-size: 0.85rem;
+                background: rgba($accent, 0.1);
+                color: $accent;
+                padding: 0.25rem 0.65rem;
+                border-radius: 999px;
+                font-size: 0.75rem;
+                font-weight: 600;
             }
         }
 

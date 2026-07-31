@@ -1,5 +1,39 @@
-<div class="blog-list">
-  <app-blog-card *ngFor="let article of articles" [article]="article"></app-blog-card>
+<div class="blog-page">
+  <header class="blog-page__intro">
+    <span class="blog-page__eyebrow">{{ 'blog.eyebrow' | translate }}</span>
+    <h1>{{ 'blog.pageTitle' | translate }}</h1>
+    <p>{{ 'blog.pageIntro' | translate }}</p>
+  </header>
+
+  <a
+    *ngIf="featured"
+    class="blog-featured"
+    [routerLink]="['/', currentLang, 'blog', featured.slug]"
+  >
+    <div class="blog-featured__media">
+      <img
+        [src]="featured.thumbnailUrl ? '/assets/' + featured.thumbnailUrl : '/assets/projects/image_not_available.png'"
+        alt=""
+      />
+    </div>
+    <div class="blog-featured__body">
+      <span class="blog-featured__label">{{ 'blog.latest' | translate }}</span>
+      <h2>{{ featured.title }}</h2>
+      <p class="blog-featured__excerpt">{{ featured.excerpt }}</p>
+      <div class="blog-featured__meta">
+        <span>{{ featured.publishedDate | date : "MMM yyyy" }}</span>
+        <span class="blog-featured__dot">·</span>
+        <span>{{ readingTime(featured) }} min</span>
+        <span class="blog-featured__tags">
+          <span class="tag" *ngFor="let tag of featured.tags">{{ tag }}</span>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <div class="blog-list" *ngIf="rest.length">
+    <app-blog-card *ngFor="let article of rest" [article]="article"></app-blog-card>
+  </div>
 
   <p *ngIf="!articles.length" class="empty">{{ 'blog.empty' | translate }}</p>
 </div>

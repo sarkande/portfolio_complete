@@ -84,7 +84,11 @@
   },
 
   "blog": {
-    "empty": "Aucun article pour le moment."
+    "empty": "Aucun article pour le moment.",
+    "eyebrow": "Blog technique",
+    "pageTitle": "Notes de bord",
+    "pageIntro": "Décisions techniques, retours d'expérience et doutes sur des projets réels — pas de tutoriels, juste ce qui s'est vraiment passé.",
+    "latest": "Dernier article"
   },
   
   "contact": {
