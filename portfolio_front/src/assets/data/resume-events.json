@@ -1,6 +1,35 @@
 {
   "events": [
     {
+      "type": "experience",
+      "timestamp": "2026-01-01T00:00:00.000Z",
+      "endDate": null,
+      "itemPosition": "ON_LEFT",
+      "title": {
+        "fr": "Lead Developer Odoo / Python / DevOps – Pure Illusion",
+        "en": "Lead Developer Odoo / Python / DevOps – Pure Illusion"
+      },
+      "description": {
+        "fr": "Responsable technique d'une équipe de 3 développeurs (2 encadrés directement). Mise en place des pratiques qualité et pilotage de plus de 20 projets Odoo, dont plusieurs migrations pour des clients à fort enjeu.",
+        "en": "Technical lead for a team of 3 developers (2 direct reports). Introduced quality practices and manages 20+ Odoo projects, including several migrations for high-stakes clients."
+      },
+      "company": {
+        "name": "Pure Illusion",
+        "logo": "logos/pureillusion.png",
+        "url": "https://pure-illusion.fr"
+      },
+      "role": "Lead Developer Odoo / Python / DevOps",
+      "status": "CDI",
+      "missions": [
+        "Encadrement et montée en compétence de 2 développeurs au sein d'une équipe de 3",
+        "Mise en place de la revue de code et des pratiques qualité",
+        "Conception et déploiement de pipelines CI/CD",
+        "Pilotage de plus de 20 projets Odoo, dont des migrations pour des clients à fort enjeu"
+      ],
+      "skills": ["skill.python", "skill.docker", "skill.project-management"],
+      "projects": ["project.pure-illusion-erp"]
+    },
+    {
       "type": "formation",
       "timestamp": "2025-11-01T00:00:00.000Z",
       "endDate": "2025-11-01T00:00:00.000Z",
