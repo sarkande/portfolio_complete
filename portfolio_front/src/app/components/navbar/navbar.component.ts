@@ -36,6 +36,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     { name: 'navbar.profile', path: 'profile' },
     { name: 'navbar.skills', path: 'skills', hasSubmenu: true },
     { name: 'navbar.projects', path: 'projects', hasSubmenu: true },
+    { name: 'navbar.blog', path: 'blog' },
     { name: 'navbar.about', path: 'about' },
   ];
 

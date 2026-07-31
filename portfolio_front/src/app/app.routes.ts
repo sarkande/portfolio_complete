@@ -12,6 +12,8 @@ import { SkillListComponent } from './pages/skill-list/skill-list.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SkillComponent } from './pages/skill/skill.component';
+import { BlogListComponent } from './pages/blog-list/blog-list.component';
+import { BlogArticleComponent } from './pages/blog-article/blog-article.component';
 
 
 const childRoutes: Routes = [
@@ -20,6 +22,8 @@ const childRoutes: Routes = [
   { path: 'skills/:name', component: SkillComponent, data: { title: 'title.skillDetail' } },
   { path: 'projects', component: ProjectListComponent, data: { title: 'title.projects' } },
   { path: 'projects/:slug', component: ProjectComponent, data: { title: 'title.projectDetail' } },
+  { path: 'blog', component: BlogListComponent, data: { title: 'title.blog' } },
+  { path: 'blog/:slug', component: BlogArticleComponent, data: { title: 'title.blogDetail' } },
 
   { path: 'legal-notice', component: LegalNoticeComponent, data: { title: 'title.legalNotice' } },
   { path: 'about', component: AboutComponent, data: { title: 'title.about' } },

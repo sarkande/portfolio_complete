@@ -1,0 +1,5 @@
+<div class="blog-list">
+  <app-blog-card *ngFor="let article of articles" [article]="article"></app-blog-card>
+
+  <p *ngIf="!articles.length" class="empty">{{ 'blog.empty' | translate }}</p>
+</div>

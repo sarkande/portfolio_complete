@@ -11,14 +11,17 @@
     "adminPanel": "Panneau d'administration – Allan Perez",
     "notFound": "Page non trouvée – Allan Perez",
     "legalNotice": "Mentions légales – Allan Perez",
-    "profile": "Présentation – Allan Perez"
+    "profile": "Présentation – Allan Perez",
+    "blog": "Blog – Allan Perez",
+    "blogDetail": "Article – Allan Perez"
   },
-  
+
   "navbar": {
     "home": "Accueil",
     "resume": "CV",
     "skills": "Compétences",
     "projects": "Projets",
+    "blog": "Blog",
     "about": "Contact",
     "legalNotice-link": "Mentions légales",
     "profile": "Présentation",
@@ -74,6 +77,10 @@
   "error": {
     "404": "Oups ! La page que vous recherchez n'existe pas.",
     "go_home": "Retour à l'accueil"
+  },
+
+  "blog": {
+    "empty": "Aucun article pour le moment."
   },
   
   "contact": {

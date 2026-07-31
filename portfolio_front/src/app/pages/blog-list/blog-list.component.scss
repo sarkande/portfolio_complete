@@ -1,0 +1,19 @@
+@use "abstracts/medias";
+
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 150px 10% 100px 10%;
+    justify-content: space-around;
+
+    @include medias.for-tablet-portrait {
+        padding: 100px 0 100px 0;
+    }
+
+    .empty {
+        width: 100%;
+        text-align: center;
+        color: #777;
+    }
+}

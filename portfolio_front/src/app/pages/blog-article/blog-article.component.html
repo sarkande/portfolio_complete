@@ -1,0 +1,59 @@
+<div class="container">
+  <div *ngIf="isLoading" class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+
+  <article *ngIf="!isLoading && article" class="post">
+    <header class="post-header">
+      <div class="nav-links">
+        <a
+          *ngIf="prevArticle"
+          [routerLink]="['/', currentLang, 'blog', prevArticle.slug]"
+          class="nav-link prev"
+          >← {{ prevArticle.title }}</a
+        >
+        <a
+          *ngIf="nextArticle"
+          [routerLink]="['/', currentLang, 'blog', nextArticle.slug]"
+          class="nav-link next"
+          >{{ nextArticle.title }} →</a
+        >
+      </div>
+      <h1>{{ article.title }}</h1>
+      <small class="date">{{ article.publishedDate | date : "MMM yyyy" }}</small>
+      <div class="tags">
+        <span *ngFor="let tag of article.tags" class="tag">{{ tag }}</span>
+      </div>
+    </header>
+
+    <nav *ngIf="toc.length" class="toc">
+      <h2>{{ 'project.summary' | translate }}</h2>
+      <ul>
+        <li *ngFor="let item of toc" [style.paddingLeft.px]="(item.level - 2) * 10">
+          <a [routerLink]="[]" [fragment]="item.slug">{{ item.text }}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="post-content">
+      <markdown [data]="article.content"></markdown>
+    </section>
+
+    <header class="post-header">
+      <div class="nav-links">
+        <a
+          *ngIf="prevArticle"
+          [routerLink]="['/', currentLang, 'blog', prevArticle.slug]"
+          class="nav-link prev"
+          >← {{ prevArticle.title }}</a
+        >
+        <a
+          *ngIf="nextArticle"
+          [routerLink]="['/', currentLang, 'blog', nextArticle.slug]"
+          class="nav-link next"
+          >{{ nextArticle.title }} →</a
+        >
+      </div>
+    </header>
+  </article>
+</div>

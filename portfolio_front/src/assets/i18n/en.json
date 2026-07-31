@@ -10,7 +10,9 @@
     "adminPanel": "Admin Panel – Allan Perez",
     "notFound": "Page Not Found – Allan Perez",
     "legalNotice": "Legal Notice – Allan Perez",
-    "profile": "Profile – Allan Perez"
+    "profile": "Profile – Allan Perez",
+    "blog": "Blog – Allan Perez",
+    "blogDetail": "Article – Allan Perez"
   },
 
   "navbar": {
@@ -18,6 +20,7 @@
     "resume": "Resume",
     "skills": "Skills",
     "projects": "Projects",
+    "blog": "Blog",
     "about": "Contact",
     "legalNotice-link": "Legal Notice",
     "profile": "Profile",
@@ -72,6 +75,10 @@
   "error": {
     "404": "Oops! The page you’re looking for doesn’t exist.",
     "go_home": "Go back home"
+  },
+
+  "blog": {
+    "empty": "No articles yet."
   },
 
   "contact": {
