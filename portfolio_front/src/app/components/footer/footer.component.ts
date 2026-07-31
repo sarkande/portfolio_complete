@@ -11,6 +11,7 @@ import { LanguageService } from '../../services/language.service';
 })
 export class FooterComponent {
   currentLang: string = 'fr';
+  currentYear: number = new Date().getFullYear();
 
 
   constructor(private langService: LanguageService) {
