@@ -57,7 +57,15 @@
   <div>
     <div class="resume-section">
       <h1>{{ "home.my-journey" | translate }}</h1>
-      <app-resume></app-resume>
+      <app-resume [maxEvents]="4"></app-resume>
+      <div class="resume-about">
+        <button
+          class="btn btn-primary"
+          [routerLink]="['/', currentLang, 'profile']"
+        >
+          {{ "home.see-full-journey" | translate }}
+        </button>
+      </div>
     </div>
     <div class="projects-section">
       <h1>{{ "home.last-projects" | translate }}</h1>

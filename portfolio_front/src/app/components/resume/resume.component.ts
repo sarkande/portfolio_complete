@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, HostListener } from '@angular/core';
 import {
   NgxTimelineEvent,
   NgxTimelineItemPosition,
@@ -32,6 +32,8 @@ export interface MyResumeTimelineEvent extends NgxTimelineEvent {
   styleUrls: ['./resume.component.scss'],
 })
 export class ResumeComponent implements OnInit, OnDestroy {
+  @Input() maxEvents?: number;
+
   events: MyResumeTimelineEvent[] = [];
   private destroy$ = new Subject<void>();
   isMobile = false;
@@ -55,7 +57,10 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   private mapEvents(lang: 'fr' | 'en'): void {
-    this.events = (resumeData as any).events.map((e: any) => ({
+    const source = this.maxEvents
+      ? (resumeData as any).events.slice(0, this.maxEvents)
+      : (resumeData as any).events;
+    this.events = source.map((e: any) => ({
       timestamp: new Date(e.timestamp),
       endDate: e.endDate ? new Date(e.endDate) : undefined,
       itemPosition: NgxTimelineItemPosition[
