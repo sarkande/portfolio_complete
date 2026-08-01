@@ -34,6 +34,7 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   rawSkills: SkillModel[] = [];
   projects: ProjectModel[] = [];
   skills: SkillModel[] = [];
+  projectCount: number = 0;
   private destroy$ = new Subject<void>();
 
   // Références aux éléments du DOM
@@ -75,6 +76,13 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
       .subscribe((skills: SkillModel[]) => {
         this.rawSkills = skills;
         this.translateSkills();
+      });
+
+    this.projectService
+      .getProjects()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((projects: ProjectModel[]) => {
+        this.projectCount = projects.length;
       });
   }
 

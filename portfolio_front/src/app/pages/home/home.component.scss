@@ -37,6 +37,48 @@ $font-base: 20px;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
 
+  .stats-banner {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.35s forwards;
+
+    @include medias.for-phone {
+      gap: 1.75rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &__value {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: teal;
+        line-height: 1;
+
+        @include medias.for-phone {
+          font-size: 1.7rem;
+        }
+      }
+
+      &__label {
+        margin-top: 0.35rem;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.75);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+
   .header {
     display: flex;
     align-items: center;

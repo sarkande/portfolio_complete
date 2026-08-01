@@ -75,7 +75,12 @@
     "see-all-projects": "Voir tous les projets",
     "see-all-skills": "Voir toutes les compétences",
     "resume": "CV – PDF",
-    "resume-ast": "Télécharger mon CV (ATS)"
+    "resume-ast": "Télécharger mon CV (ATS)",
+    "stats": {
+      "projects": "projets livrés",
+      "years": "ans de code",
+      "team": "devs encadrés"
+    }
   },
   
   "error": {

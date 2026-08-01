@@ -73,7 +73,12 @@
     "see-all-projects": "See all projects",
     "see-all-skills": "See all skills",
     "resume": "Resume – PDF",
-    "resume-ast": "Download my CV (ATS)"
+    "resume-ast": "Download my CV (ATS)",
+    "stats": {
+      "projects": "projects delivered",
+      "years": "years of code",
+      "team": "developers managed"
+    }
   },
 
   "error": {
