@@ -26,6 +26,13 @@
       </div>
     </header>
 
+    <img
+      *ngIf="article.thumbnailUrl"
+      [src]="'/assets/' + article.thumbnailUrl"
+      alt=""
+      class="post-thumbnail"
+    />
+
     <nav *ngIf="toc.length" class="toc">
       <h2>{{ 'project.summary' | translate }}</h2>
       <ul>
