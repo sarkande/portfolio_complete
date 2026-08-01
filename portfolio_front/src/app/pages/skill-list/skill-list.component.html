@@ -1,20 +1,16 @@
 <div class="skill-list">
-      <div class="technical-skills">
-      <h2>{{ 'navbar.skill.technical' | translate }}</h2>
-      <ng-container *ngFor="let skill of skills">
-        <app-skill-card  [skill]="skill" (click)="handleClickSkill(skill.name)"></app-skill-card>
-      </ng-container>
-    </div>
-    <!-- <div class="technical-skills">
-      <h2>{{ 'navbar.skill.technical' | translate }}</h2>
-      <ng-container *ngFor="let skill of skills">
-        <app-skill-card *ngIf="skill.isTechnical" [skill]="skill" (click)="handleClickSkill(skill.name)"></app-skill-card>
-      </ng-container>
-    </div> -->
-    <!-- <div class="non-technical-skills">
-      <h2>{{ 'navbar.skill.human' | translate }}</h2>
-      <ng-container *ngFor="let skill of skills">
-        <app-skill-card *ngIf="!skill.isTechnical" [skill]="skill" (click)="handleClickSkill(skill.name)"></app-skill-card>
-      </ng-container>
-    </div> -->
+  <div class="skill-list__search">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      [placeholder]="'skillList.searchPlaceholder' | translate"
+    />
   </div>
+
+  <div class="technical-skills">
+    <h2>{{ 'navbar.skill.technical' | translate }}</h2>
+    <ng-container *ngFor="let skill of filteredSkills">
+      <app-skill-card [skill]="skill" (click)="handleClickSkill(skill.name)"></app-skill-card>
+    </ng-container>
+  </div>
+</div>

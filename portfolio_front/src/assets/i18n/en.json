@@ -141,6 +141,10 @@
     "very_high": "Expert"
   },
 
+  "skillList": {
+    "searchPlaceholder": "Search for a skill..."
+  },
+
   "skill": {
     "agility": "Agility",
     "project-management": "Project Management",

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SkillService } from '../../services/skill.service';
 import { SkillCardComponent } from '../../components/skill-card/skill-card.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { LanguageService } from '../../services/language.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SkillWithProjects } from '../../interfaces/skill-with-projects';
@@ -10,15 +11,25 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skill-list',
-  imports: [SkillCardComponent, CommonModule , TranslateModule],
+  imports: [SkillCardComponent, CommonModule, FormsModule, TranslateModule],
   templateUrl: './skill-list.component.html',
   styleUrl: './skill-list.component.scss'
 })
 export class SkillListComponent implements OnInit {
   rawSkills: SkillWithProjects[] = []; // ← tous les skills bruts, non traduits
   skills: SkillWithProjects[] = [];
+  searchText = '';
   private destroy$ = new Subject<void>();        // ← pour nettoyer l’abonnement
   constructor(private skillService: SkillService, private langService: LanguageService, private router: Router, private route:ActivatedRoute) { }
+
+  get filteredSkills(): SkillWithProjects[] {
+    const query = this.searchText.trim().toLowerCase();
+    if (!query) return this.skills;
+    return this.skills.filter((skill) =>
+      skill.name.toLowerCase().includes(query) ||
+      (skill.description ?? '').toLowerCase().includes(query)
+    );
+  }
 
   ngOnInit(): void {
     this.skillService.getSkills()

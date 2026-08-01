@@ -1,4 +1,5 @@
 @use "abstracts/medias";
+@use "vendors/colors" as colors;
 
 // Variables de layout des listes
 $skill-gap: 1rem;
@@ -27,7 +28,29 @@ $skill-justify-content: space-evenly;
     @include medias.for-tablet-portrait {
         padding: 150px 5% 100px 5%;
     }
-    
+
+    &__search {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.6rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+            &:focus {
+                outline: none;
+                border-color: colors.$color-accent-deep;
+                box-shadow: 0 0 0 2px rgba(colors.$color-accent-deep, 0.15);
+            }
+        }
+    }
+
     // Sélectionner les conteneurs pour chaque type de compétences
     .technical-skills,
     .non-technical-skills {

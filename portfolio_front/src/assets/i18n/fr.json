@@ -142,6 +142,10 @@
     "very_high": "Expert"
   },
 
+  "skillList": {
+    "searchPlaceholder": "Rechercher une compétence..."
+  },
+
   "skill": {
     "agility": "Agilité",
     "project-management": "Gestion de projet",

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProjectModel } from '../../interfaces/project.model';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
+import { SearchSidebarComponent } from '../../components/search-sidebar/search-sidebar.component';
 import { CommonModule } from '@angular/common';
 import { ProjectService } from '../../services/project.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectCardComponent, CommonModule, TranslateModule],
+  imports: [ProjectCardComponent, SearchSidebarComponent, CommonModule, TranslateModule],
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss'],
 })

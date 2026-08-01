@@ -3,6 +3,7 @@
 $project-gap: 1rem;
 $project-padding-top: 150px;
 $project-padding-bottom: 100px;
+$project-sidebar-width: 300px;
 $project-collapsed-padding-left: 70px;
 $project-transition-duration: 0.3s;
 
@@ -23,12 +24,20 @@ $project-transition-duration: 0.3s;
     display: flex;
         flex-wrap: wrap;
         gap: $project-gap;
-        padding: $project-padding-top 10% $project-padding-bottom 10%;
+        padding: $project-padding-top 10% $project-padding-bottom calc(#{$project-sidebar-width} + 5%);
         transition: padding-left $project-transition-duration ease;
         justify-content: space-around;
 
+        &.collapsed {
+            padding-left: $project-collapsed-padding-left;
+        }
+
         @include medias.for-tablet-portrait {
             padding: calc($project-padding-top / 1.5) 0 $project-padding-bottom 0;
+
+            &.collapsed {
+                padding-left: 0;
+            }
         }
     >* {
         opacity: 0;

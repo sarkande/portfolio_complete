@@ -12,18 +12,20 @@ $color-on-dark: #ffffff;
 $color-on-dark-muted: rgba(255, 255, 255, 0.72);
 
 // Primary accent — engineering/projects. Light tint reads well on dark
-// surfaces (nav, hero, footer); the deep shade is for text/links on light
-// surfaces, where the tint alone doesn't have enough contrast.
-$color-accent: #8fbf9f;
-$color-accent-deep: #4f8f6f;
-$color-accent-darkest: #2f5a48;
+// surfaces (nav, hero, footer); the deep shade (the original hero red) is
+// for text/links/buttons on light surfaces, where the tint alone doesn't
+// have enough contrast.
+$color-accent: #e8837a;
+$color-accent-deep: #d10606;
+$color-accent-darkest: #8a0404;
 
 // Secondary accent — writing/blog, kept distinct from the engineering accent.
 $color-accent-blog: #b5651d;
 $color-accent-blog-deep: #8f4f16;
 
-// Rare emphasis only (e.g. the "featured" ribbon) — never used as a base color.
-$color-highlight: #d10606;
+// Rare emphasis only (e.g. the "featured" ribbon) — distinct from the
+// accent now that the accent itself is red, so a featured badge still stands out.
+$color-highlight: #c99a1f;
 
 // Code blocks (project/skill/article detail pages)
 $color-code-bg-dark: #2d2d2d;

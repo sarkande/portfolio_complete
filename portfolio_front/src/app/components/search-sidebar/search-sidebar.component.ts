@@ -50,8 +50,13 @@ export class SearchSidebarComponent implements OnInit {
       step: 1,
       translate: (value: number): string => `${value}`
     };
+
+    if (typeof window !== 'undefined' && window.innerWidth <= 900) {
+      this.collapsed = true;
+      this.sidebarToggled.emit(true);
+    }
   }
-  
+
   toggleSidebar() {
     this.collapsed = !this.collapsed;
     this.sidebarToggled.emit(this.collapsed);
