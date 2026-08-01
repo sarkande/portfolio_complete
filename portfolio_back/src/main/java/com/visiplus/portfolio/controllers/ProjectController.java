@@ -36,6 +36,10 @@ public class ProjectController {
     public List<Project> findLastProjects() {
         return projectService.findAll().stream()
                 .sorted((p1, p2) -> {
+                    int featuredCompare = Boolean.compare(p2.isFeatured(), p1.isFeatured());
+                    if (featuredCompare != 0) {
+                        return featuredCompare;
+                    }
                     LocalDate d1 = (p1.getEndDate() == null || p1.getEndDate().isBlank())
                             ? LocalDate.MAX
                             : LocalDate.parse(p1.getEndDate());
