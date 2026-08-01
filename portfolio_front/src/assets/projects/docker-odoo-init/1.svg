@@ -7,7 +7,7 @@
   </defs>
   <rect width="400" height="300" fill="url(#bg)"/>
   <rect x="0" y="0" width="400" height="6" fill="#e0b168"/>
-  <text x="200" y="237" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">docker_odoo</text>
-    <text x="200" y="283" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">_init</text>
-  <text x="200" y="339" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#e0b168">Shell · Docker</text>
+  <text x="200" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">docker_odoo</text>
+    <text x="200" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">_init</text>
+  <text x="200" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#e0b168">Shell · Docker</text>
 </svg>

@@ -7,7 +7,7 @@
   </defs>
   <rect width="400" height="300" fill="url(#bg)"/>
   <rect x="0" y="0" width="400" height="6" fill="#8a8f98"/>
-  <text x="200" y="237" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Premiers</text>
-    <text x="200" y="283" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">pas</text>
-  <text x="200" y="339" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#8a8f98">2008 — 2015</text>
+  <text x="200" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Premiers</text>
+    <text x="200" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">pas</text>
+  <text x="200" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#8a8f98">2008 — 2015</text>
 </svg>

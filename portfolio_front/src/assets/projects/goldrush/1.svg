@@ -7,6 +7,6 @@
   </defs>
   <rect width="400" height="300" fill="url(#bg)"/>
   <rect x="0" y="0" width="400" height="6" fill="#c97b7b"/>
-  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Goldrush</text>
-  <text x="200" y="316" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c97b7b">AngularJS · Rails · Discord</text>
+  <text x="200" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Goldrush</text>
+  <text x="200" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c97b7b">AngularJS · Rails · Discord</text>
 </svg>
