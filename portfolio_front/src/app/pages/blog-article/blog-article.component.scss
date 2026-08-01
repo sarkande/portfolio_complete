@@ -1,12 +1,14 @@
-// Variables couleurs
-$color-dark: #1a2324;
-$accent: #b5651d;
-$color-bg-white: #ffffff;
-$color-pop-white: #fafafa;
+@use "vendors/colors" as colors;
+
+// Variables couleurs (aliased from the shared palette)
+$color-dark: colors.$color-dark;
+$accent: colors.$color-accent-blog;
+$color-bg-white: colors.$color-surface;
+$color-pop-white: colors.$color-surface-alt;
 $color-border-light: #d1d1d1;
-$color-code-bg-dark: #2d2d2d;
-$color-code-text: #f8f8f2;
-$color-code-bg-light: #f5f5f5;
+$color-code-bg-dark: colors.$color-code-bg-dark;
+$color-code-text: colors.$color-code-text;
+$color-code-bg-light: colors.$color-code-bg-light;
 
 // Variables typographiques
 $font-xxl: 2.5rem;

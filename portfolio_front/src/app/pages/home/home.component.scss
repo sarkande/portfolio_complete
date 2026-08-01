@@ -1,9 +1,5 @@
 @use "abstracts/medias";
-
-// Variables couleurs
-$dark: #1a2324;
-$purple: #1a2324;
-$red: #d10606;
+@use "vendors/colors" as *;
 
 // Variables tailles de police
 $font-xxl: 80px;
@@ -32,8 +28,8 @@ $font-base: 20px;
   padding: 15px;
   padding-top: 80px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, $dark 0%, $purple 45%, $red 100%);
-  color: white;
+  background: linear-gradient(135deg, $color-dark 0%, $color-dark-alt 60%, $color-accent-darkest 130%);
+  color: $color-on-dark;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
 
@@ -43,7 +39,7 @@ $font-base: 20px;
     gap: 3rem;
     flex-wrap: wrap;
     padding: 1.5rem 0 2.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid $color-border-on-dark;
     margin-top: 1rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.35s forwards;
@@ -61,7 +57,7 @@ $font-base: 20px;
       &__value {
         font-size: 2.2rem;
         font-weight: 700;
-        color: teal;
+        color: $color-accent;
         line-height: 1;
 
         @include medias.for-phone {
@@ -72,7 +68,7 @@ $font-base: 20px;
       &__label {
         margin-top: 0.35rem;
         font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.75);
+        color: $color-on-dark-muted;
         text-transform: uppercase;
         letter-spacing: 0.04em;
       }
@@ -174,7 +170,7 @@ $font-base: 20px;
           content: "";
           width: 100%;
           height: 100%;
-          box-shadow: 100px 0 50px 420px rgba(255, 0, 0, 0.6);
+          box-shadow: 0 0 60px 12px rgba($color-accent, 0.35);
           border-radius: 100%;
           z-index: -1;
         }
@@ -232,7 +228,7 @@ $font-base: 20px;
       object-fit: contain;
       background-color: #ffffff;
       border-radius: 100%;
-      border: #d48019 solid 2px;
+      border: $color-accent solid 2px;
     }
   }
 }
@@ -297,7 +293,7 @@ a {
   }
   
   &.btn-primary {
-    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    background: linear-gradient(90deg, $color-accent-deep, $color-accent);
     color: #fff;
   }
 
@@ -306,7 +302,7 @@ a {
     color: #fff;
     &:hover {
       background: #fff;
-      color: #000;
+      color: $color-dark;
     }
   }
 }

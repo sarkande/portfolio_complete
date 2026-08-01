@@ -1,4 +1,5 @@
 @use "abstracts/medias";
+@use "vendors/colors" as *;
 
 .navBar {
     min-height: 80px;
@@ -6,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1A2324;
+    background-color: $color-dark;
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +49,7 @@
             outline: none;
 
             &:hover {
-                color: teal;
+                color: $color-accent;
             }
         }
 
@@ -80,7 +81,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #1A2324;
+            background-color: $color-dark;
             border: 1px solid #333;
             width: 160px;
             z-index: 2000;
@@ -110,12 +111,12 @@
 
                 &:disabled {
                     cursor: default;
-                    color: teal;
+                    color: $color-accent;
                 }
 
                 &:not(:disabled):hover {
                     background-color: #222;
-                    color: teal;
+                    color: $color-accent;
                 }
             }
         }
@@ -135,13 +136,13 @@
             color: #fff;
 
             &:hover {
-                color: teal;
+                color: $color-accent;
                 cursor: pointer;
-                border-bottom: teal solid 2px;
+                border-bottom: $color-accent solid 2px;
             }
 
             &.selected {
-                border-bottom: teal solid 2px;
+                border-bottom: $color-accent solid 2px;
             }
         }
     }
@@ -155,7 +156,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #1A2324;
+            background-color: $color-dark;
             flex-direction: column;
             width: 200px;
             border: 1px solid #333;
@@ -174,7 +175,7 @@
 
                 &:hover {
                     background-color: #222;
-                    color: teal;
+                    color: $color-accent;
                 }
             }
 
@@ -225,7 +226,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #1A2324;
+            background-color: $color-dark;
             flex-direction: column;
             overflow-y: auto;
             padding-top: 3rem;
@@ -254,7 +255,7 @@
             cursor: pointer;
 
             &:hover {
-                color: teal;
+                color: $color-accent;
             }
         }
 
@@ -274,7 +275,7 @@
             .navBar__back {
                 background: none;
                 border: none;
-                color: teal;
+                color: $color-accent;
                 font-size: 1rem;
                 margin-bottom: 1rem;
                 text-align: left;
@@ -301,7 +302,7 @@
 
                     &:hover {
                         background-color: #222;
-                        color: teal;
+                        color: $color-accent;
                     }
                 }
             }

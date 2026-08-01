@@ -1,14 +1,13 @@
 @use "abstracts/medias";
+@use "vendors/colors" as colors;
 
-$color-dark: #1a2324;
-$color-purple: #1a2324;
-$color-red: #d10606;
-$color-bg-white: #ffffff;
-$color-pop-white: #fafafa;
+$color-dark: colors.$color-dark;
+$color-bg-white: colors.$color-surface;
+$color-pop-white: colors.$color-surface-alt;
 $color-border-light: #d1d1d1;
-$color-code-bg-dark: #2d2d2d;
-$color-code-text: #f8f8f2;
-$color-code-bg-light: #f5f5f5;
+$color-code-bg-dark: colors.$color-code-bg-dark;
+$color-code-text: colors.$color-code-text;
+$color-code-bg-light: colors.$color-code-bg-light;
 
 $font-xxl: 2.5rem;
 $font-xl: 1.25rem;
@@ -159,13 +158,13 @@ $padding-post-horizontal: 20px;
             }
 
             a {
-                color: #2c5282;
+                color: colors.$color-accent-deep;
                 text-decoration: none;
                 font-weight: 500;
                 transition: color 0.2s ease;
 
                 &:hover {
-                    color: #2a4365;
+                    color: colors.$color-dark;
                     text-decoration: underline;
                 }
             }
@@ -267,7 +266,7 @@ $padding-post-horizontal: 20px;
                         align-items: center;
                         gap: 0.35rem;
                         background: #edf2f7;
-                        color: #2c5282;
+                        color: colors.$color-accent-deep;
                         font-size: 0.85rem;
                         padding: 0.35rem 0.75rem;
                         border-radius: 9999px;
@@ -321,7 +320,7 @@ $padding-post-horizontal: 20px;
                 align-items: center;
                 gap: 0.35rem;
                 background: #edf2f7;
-                color: #2c5282;
+                color: colors.$color-accent-deep;
                 font-size: 0.9rem;
                 padding: 0.4rem 0.9rem;
                 border-radius: 9999px;

@@ -1,17 +1,35 @@
-$color-navy: #001f3f;
-$color-blue: #0074d9;
-$color-aqua: #7fdbff;
-$color-teal: #39cccc;
-$color-olive: #3d9970;
-$color-green: #2ecc40;
-$color-lime: #01ff70;
-$color-yellow: #ffdc00;
-$color-orange: #ff851b;
-$color-red: #ff4136;
-$color-fuchsia: #f012be;
-$color-purple: #b10dc9;
-$color-maroon: #85144b;
-$color-white: #ffffff;
-$color-gray: #aaaaaa;
-$color-silver: #dddddd;
-$color-black: #242424;
+// Base surfaces
+$color-dark: #1a2324;
+$color-dark-alt: #232f31;
+$color-surface: #ffffff;
+$color-surface-alt: #fafafa;
+$color-bg: #f5f5f5;
+
+// Text
+$color-text: #242424;
+$color-text-muted: #6b7280;
+$color-on-dark: #ffffff;
+$color-on-dark-muted: rgba(255, 255, 255, 0.72);
+
+// Primary accent — engineering/projects. Light tint reads well on dark
+// surfaces (nav, hero, footer); the deep shade is for text/links on light
+// surfaces, where the tint alone doesn't have enough contrast.
+$color-accent: #8fbf9f;
+$color-accent-deep: #4f8f6f;
+$color-accent-darkest: #2f5a48;
+
+// Secondary accent — writing/blog, kept distinct from the engineering accent.
+$color-accent-blog: #b5651d;
+$color-accent-blog-deep: #8f4f16;
+
+// Rare emphasis only (e.g. the "featured" ribbon) — never used as a base color.
+$color-highlight: #d10606;
+
+// Code blocks (project/skill/article detail pages)
+$color-code-bg-dark: #2d2d2d;
+$color-code-bg-light: #f5f5f5;
+$color-code-text: #f8f8f2;
+
+// Borders
+$color-border: rgba(0, 0, 0, 0.08);
+$color-border-on-dark: rgba(255, 255, 255, 0.15);

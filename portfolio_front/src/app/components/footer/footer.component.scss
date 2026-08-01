@@ -1,7 +1,8 @@
 @use "abstracts/medias";
+@use "vendors/colors" as *;
 
 .footer {
-    background-color: #1A2324;
+    background-color: $color-dark;
     color: #ffffff;
     min-height: 80px;
     z-index: 1000;
@@ -39,7 +40,7 @@
             transition: color 0.2s ease;
 
             &:hover {
-                color: #00bcd4;
+                color: $color-accent;
             }
         }
     }
@@ -52,7 +53,7 @@
             transition: color 0.2s ease;
 
             &:hover {
-                color: #00bcd4;
+                color: $color-accent;
                 text-decoration: underline;
             }
 

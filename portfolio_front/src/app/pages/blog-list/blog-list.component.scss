@@ -1,7 +1,8 @@
 @use "abstracts/medias";
+@use "vendors/colors" as colors;
 
-$ink: #1A2324;
-$accent: #b5651d;
+$ink: colors.$color-dark;
+$accent: colors.$color-accent-blog;
 
 @keyframes fadeInUp {
     from {
