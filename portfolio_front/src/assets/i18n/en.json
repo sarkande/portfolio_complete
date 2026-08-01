@@ -77,7 +77,8 @@
     "stats": {
       "projects": "projects delivered",
       "years": "years of code",
-      "team": "team size"
+      "odoo": "private Odoo projects",
+      "personal": "personal/public projects"
     }
   },
 

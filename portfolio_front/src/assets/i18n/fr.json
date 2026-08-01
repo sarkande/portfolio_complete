@@ -79,7 +79,8 @@
     "stats": {
       "projects": "projets livrés",
       "years": "ans de code",
-      "team": "taille d'équipe"
+      "odoo": "projets Odoo privés",
+      "personal": "projets perso/publics"
     }
   },
   

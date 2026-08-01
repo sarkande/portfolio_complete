@@ -35,6 +35,8 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   projects: ProjectModel[] = [];
   skills: SkillModel[] = [];
   projectCount: number = 0;
+  odooCount: number = 0;
+  personalCount: number = 0;
   private destroy$ = new Subject<void>();
 
   // Références aux éléments du DOM
@@ -83,6 +85,8 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((projects: ProjectModel[]) => {
         this.projectCount = projects.length;
+        this.odooCount = projects.filter((p) => p.technologies?.includes('Odoo')).length;
+        this.personalCount = projects.filter((p) => p.category === 'Personnel').length;
       });
   }
 
