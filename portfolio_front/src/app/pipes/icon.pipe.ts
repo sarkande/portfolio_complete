@@ -13,7 +13,7 @@ export class IconPipe implements PipeTransform {
     'CSS': 'css3',
     'ReactJS': 'react',
     'NodeJS': 'nodejs',
-    'UI/UX': 'uiux',
+    'UI-UX': 'uiux',
     'SHELL': 'terminal',
     'API Google': 'Google',
     'Qt': 'Qt-Framework',
@@ -22,7 +22,11 @@ export class IconPipe implements PipeTransform {
     'Accessibility': 'Aria',
   };
 
-  transform(value: string): string {
+  transform(value: string | null | undefined): string {
+    if (!value) {
+      return 'icons/about-me-icon.svg';
+    }
+
     // D'abord utiliser la map personnalisée
     if (this.customMap[value]) {
       return this.customMap[value];
