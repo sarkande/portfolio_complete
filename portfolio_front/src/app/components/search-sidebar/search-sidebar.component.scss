@@ -1,4 +1,5 @@
 @use "abstracts/medias";
+@use "vendors/colors" as colors;
 
 // Variables de style pour la sidebar
 $sidebar-top: 80px;
@@ -19,8 +20,8 @@ $tag-padding: 0.4rem 0.6rem;
 $tag-bg: #eee;
 $tag-radius: 4px;
 $tag-font: 13px;
-$tag-active-bg: #ff6600;
-$tag-active-hover-bg: #e65c00;
+$tag-active-bg: colors.$color-accent-deep;
+$tag-active-hover-bg: colors.$color-accent-darkest;
 $tag-hover-bg: #e0e0e0;
 
 $toggle-margin-top: 12px;

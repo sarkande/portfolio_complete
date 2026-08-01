@@ -1,5 +1,6 @@
 @use "abstracts/medias";
 @use "sass:color";
+@use "vendors/colors" as colors;
 
 // Variables
 $cf-bg: #ffffff;
@@ -19,11 +20,13 @@ $placeholder-color: #a0aec0;
 
 $input-bg: #fafafa;
 $input-border: #cccccc;
-$input-focus-border: #3182ce;
+$input-focus-border: colors.$color-accent-deep;
 $input-shadow: rgba(0, 0, 0, 0.08);
 
-$btn-bg: #3182ce;
-$btn-bg-hover: #2b6cb0;
+// Primary action follows the site accent; loading/success/error stay as
+// conventional state colors (grey/green/red), not brand colors.
+$btn-bg: colors.$color-accent-deep;
+$btn-bg-hover: colors.$color-accent-darkest;
 $btn-loading-bg: #6c757d;
 $btn-success-bg: #38a169;
 $btn-error-bg: #e53e3e;
